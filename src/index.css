@@ -59,7 +59,7 @@
   }
 
   body {
-    @apply font-family text-mercury-white bg-cod-gray text-base leading-[1.37];
+    @apply font-family text-mercury-white bg-cod-black text-base leading-[1.37];
     scrollbar-gutter: stable;
   }
 }
