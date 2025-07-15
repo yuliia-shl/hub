@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family: "Nunito Sans", sans-serif;
+  --second-family: "Unbounded", sans-serif;
+  --third-family: "Inter", sans-serif;
+  --font3: "Sofia Sans", sans-serif;
+  --font4: "Manrope", sans-serif;
+
+  --color-cod-gray: #080808;
+  --color-mercury-white: #e6e6e6;
+}
+
+@layer base {
+  html {
+    @apply font-sans;
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    @apply font-family text-mercury-white bg-cod-gray text-base leading-[1.37];
+    scrollbar-gutter: stable;
+  }
+}
