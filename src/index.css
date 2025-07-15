@@ -1,5 +1,59 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Unbounded';
+  src: local('Unbounded-Regular'),
+    url('./assets/fonts/Unbounded-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: local('Unbounded-Medium'),
+    url('./assets/fonts/Unbounded-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: local('Unbounded-SemiBold'),
+    url('./assets/fonts/Unbounded-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: local('NunitoSans-Light'),
+    url('./assets/fonts/NunitoSans-Light.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: local('NunitoSans-Regular'),
+    url('./assets/fonts/NunitoSans-Regular.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: local('NunitoSans-SemiBold'),
+    url('./assets/fonts/NunitoSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --font-family: 'Nunito Sans', sans-serif;
   --second-family: 'Unbounded', sans-serif;
