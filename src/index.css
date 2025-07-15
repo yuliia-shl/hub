@@ -55,10 +55,6 @@
 }
 
 @theme {
-  --font-family: 'NunitoSans', sans-serif;
-}
-
-@theme {
   --font-family: 'Nunito Sans', sans-serif;
   --second-family: 'Unbounded', sans-serif;
   --third-family: 'Inter', sans-serif;
