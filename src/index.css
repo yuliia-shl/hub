@@ -1,14 +1,55 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-family: "Nunito Sans", sans-serif;
-  --second-family: "Unbounded", sans-serif;
-  --third-family: "Inter", sans-serif;
-  --font3: "Sofia Sans", sans-serif;
-  --font4: "Manrope", sans-serif;
+  --font-family: 'Nunito Sans', sans-serif;
+  --second-family: 'Unbounded', sans-serif;
+  --third-family: 'Inter', sans-serif;
+  --font3: 'Sofia Sans', sans-serif;
+  --font4: 'Manrope', sans-serif;
 
-  --color-cod-gray: #080808;
+  /* Custom screen sizes */
+  --breakpoint-xs: 568px;
+  --breakpoint-1xl: 1440px;
+  --breakpoint-3xl: 1920px;
+  --breakpoint-4xl: 2560px;
+
+  /* Custom colors */
+  --color-black: #000000;
+  --color-cod-black: #080808;
+  --color-cod-gray: #0d0d0d;
+  --color-cod-dark: #100f0f;
+  --color-woodsmoke-dark: #151515;
+  --color-woodsmoke-dust: #141414;
+  --color-woodsmoke-black: #1a1a1a;
+  --color-woodsmoke-light: #1c1c1c;
+  --color-woodsmoke-dimmed: #191919;
+  --color-mine-shaft: #303030;
+  --color-tuatara: #393939;
+  --color-masala-light: #404040;
+  --color-masala-gray: #454545;
+  --color-fuscous-gray: #4f4f4f;
+  --color-chicago-gray: #5d5d5d;
+  --color-storm-dust: #626262;
+  --color-boulder-dark: #777;
+  --color-boulder-gray: #767676;
+  --color-boulder-dust: #757575;
+  --color-boulder-light: #7b7b7b;
+  --color-star-dust: #9b9b9b;
+  --color-silver: #bdbdbd;
+  --color-silver-chalice: #a8a8a8;
+  --color-star-dust: #a0a0a0;
+  --color-white: #ffffff;
+  --color-dust-white: #f3f3f3;
+  --color-gallery-white: #ececec;
   --color-mercury-white: #e6e6e6;
+  --color-alto-white: #dadada;
+  --color-tangerine: #f08d34;
+  --color-chilean-fire: #f1770a;
+  --color-persian-red: #d12d2d;
+
+  /* --color-menu: rgba(117, 117, 117, 0.77);
+  --color-reason: rgba(255, 255, 255, 0.4);
+  --color-form: rgba(230, 230, 230, 0.5); */
 }
 
 @layer base {
