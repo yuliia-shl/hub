@@ -60,6 +60,11 @@
   --font-third: 'Inter', sans-serif;
   --font-fourth: 'Sofia Sans', sans-serif;
   --font-fifth: 'Manrope', sans-serif;
+  --font-primary: 'Nunito Sans', sans-serif;
+  --font-second: 'Unbounded', sans-serif;
+  --font-third: 'Inter', sans-serif;
+  --font-fourth: 'Sofia Sans', sans-serif;
+  --font-fifth: 'Manrope', sans-serif;
 
   /* Custom screen sizes */
   --breakpoint-xs: 568px;
@@ -116,6 +121,10 @@
     @apply font-primary text-mercury-white bg-cod-black text-base leading-[1.37];
     scrollbar-gutter: stable;
   }
+}
+
+button {
+  cursor: pointer;
 }
 
 @layer components {
