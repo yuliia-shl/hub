@@ -55,11 +55,11 @@
 }
 
 @theme {
-  --font-family: 'Nunito Sans', sans-serif;
-  --second-family: 'Unbounded', sans-serif;
-  --third-family: 'Inter', sans-serif;
-  --font3: 'Sofia Sans', sans-serif;
-  --font4: 'Manrope', sans-serif;
+  --font-primary: 'Nunito Sans', sans-serif;
+  --font-second: 'Unbounded', sans-serif;
+  --font-third: 'Inter', sans-serif;
+  --font-fourth: 'Sofia Sans', sans-serif;
+  --font-fifth: 'Manrope', sans-serif;
 
   /* Custom screen sizes */
   --breakpoint-xs: 568px;
@@ -113,13 +113,13 @@
   }
 
   body {
-    @apply font-family text-mercury-white bg-cod-black text-base leading-[1.37];
+    @apply font-primary text-mercury-white bg-cod-black text-base leading-[1.37];
     scrollbar-gutter: stable;
   }
 }
 
 @layer components {
-  .container {
+  .section {
     @apply mx-auto xs:max-w-[568px] 1xl:max-w-[1440px] 2xl:max-w-[1920px] 4xl:max-w-[2560px] xs:px-6 1xl:px-10 3xl:px-22.5 4xl:px-40;
   }
 }
