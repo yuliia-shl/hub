@@ -1,7 +1,7 @@
 const Header = () => {
   return (
-    <header>
-      <div className="section flex 1xl:justify-between max-h-17 h-full max-w-full w-full items-center 1xl:mt-10.5 3xl:mt-18 4xl:mt-17 sticky top-10 z-50 border-boulder-dust border-2">
+    <header className="w-full 1xl:mt-10.5 3xl:mt-18 4xl:mt-17">
+      <div className="section flex gap-4 justify-between max-h-17 h-full items-center">
         <a href="/">
           <svg className="w-9.5 1xl:h-13 4xl:w-12 4xl:h-16.5 fill-tangerine">
             <use href="/images/svg/icons.svg#icon-logo" />
@@ -20,17 +20,18 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <div className="flex items-center justify-between 1xl:gap-x-10 4xl:gap-x-16 h-full w-full max-w-70 1xl:max-w-80 4xl:max-w-100">
+        <div className="flex items-center">
           <button
             type="button"
-            className="flex items-center justify-center-safe px-8 py-2.5 1xl:py-4 border-1 4xl:border-1.29 border-star-dust rounded-full max-w-70 max-h-10 4xl:max-w-80 w-full 1xl:max-h-12 text-lg/4.5 1xl:text-base/4 4xl:text-xl/5 1xl:font-semibold text-star-dust hover:border-tangerine transition-colors hover:text-tangerine hover:bg-fire hover:shadow-lg"
+            className="flex shrink-1 text-nowrap mr-5.5 items-center justify-center-safe px-8 py-2.5 1xl:py-4 border-1 4xl:border-1.29 border-star-dust rounded-full w-fit max-h-10 max-w-full 1xl:max-h-12 text-lg/4.5 1xl:text-base/4 4xl:text-xl/5 1xl:font-semibold text-star-dust hover:border-tangerine transition-colors hover:text-tangerine hover:bg-fire hover:shadow-lg"
             // onClick={() => setOpenLoginModal(true)}
           >
             Замовити консультацію
           </button>
+
           <label
             htmlFor="toggle"
-            className="flex flex-col items-center justify-center h-full w-full cursor-pointer transition-colors 1xl:hidden"
+            className="flex items-center justify-center h-full cursor-pointer transition-colors 1xl:hidden"
           >
             <input
               type="checkbox"
@@ -38,7 +39,7 @@ const Header = () => {
               id="toggle"
               className="hidden"
             />
-            <span className="relative flex w-12 h-0.75 bg-tangerine before:absolute before:top-3 before:w-full before:h-full before:bg-tangerine transition-transform duration-300 ease-in-out transform origin-center after:absolute after:-top-3 after:w-full after:h-full after:bg-tangerine"></span>
+            <span className="relative flex w-12 h-0.5 bg-tangerine before:absolute before:top-3 before:w-full before:h-full before:bg-tangerine transition-transform duration-300 ease-in-out transform origin-center after:absolute after:-top-3 after:w-full after:h-full after:bg-tangerine"></span>
           </label>
         </div>
       </div>

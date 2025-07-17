@@ -6,7 +6,6 @@ function App() {
   return (
     <>
       <Header />
-      <h1>Home page</h1>
       <Modules />
     </>
   );
