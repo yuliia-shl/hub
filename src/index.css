@@ -54,7 +54,30 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'NunitoSans';
+  src: local('NunitoSans-Bold'),
+    url('./assets/fonts/NunitoSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: local('NunitoSans-ExtraBold'),
+    url('./assets/fonts/NunitoSans-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
+  --font-primary: 'Nunito Sans', sans-serif;
+  --font-second: 'Unbounded', sans-serif;
+  --font-third: 'Inter', sans-serif;
+  --font-fourth: 'Sofia Sans', sans-serif;
+  --font-fifth: 'Manrope', sans-serif;
   --font-primary: 'Nunito Sans', sans-serif;
   --font-second: 'Unbounded', sans-serif;
   --font-third: 'Inter', sans-serif;
@@ -124,6 +147,6 @@ button {
 
 @layer components {
   .section {
-    @apply mx-auto xs:max-w-[568px] 1xl:max-w-[1440px] 2xl:max-w-[1920px] 4xl:max-w-[2560px] xs:px-6 1xl:px-10 3xl:px-22.5 4xl:px-40;
+    @apply mx-auto max-w-[568px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] px-6 1xl:px-10 3xl:px-22.5 4xl:px-40;
   }
 }
