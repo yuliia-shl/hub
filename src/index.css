@@ -130,6 +130,12 @@
 }
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
   html {
     @apply font-sans;
     scrollbar-gutter: stable;
