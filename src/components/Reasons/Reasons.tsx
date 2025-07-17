@@ -1,13 +1,13 @@
 const Reasons = () => {
   return (
-    <section className="section mb-[188px]">
-      <h2 className="mb-14.5 font-second text-[32px]/[110%] font-medium text-center">
-        Чому саме MVK MASH?
-      </h2>
-      <div>
-        <ul className="flex flex-col gap-21.5 mb-[108px]">
-          <li className="border-t border-t-tuatara/75 pt-4.5">
-            <div className="text-white/40 text-sm flex gap-1 mb-4.5">
+    <section className="section mb-[188px] flex flex-col 1xl:flex-row-reverse gap-[108px] 1xl:gap-4 3xl:gap-[122px] 4xl:gap-[108px]">
+      <div className="4xl:pt-13">
+        <h2 className="mb-14.5 1xl:mb-20 3xl:mb-17 4xl:mb-15 font-second text-[32px]/[110%] 1xl:text-[42px] 3xl:text-[54px] 4xl:text-[62px] font-medium text-center 1xl:text-left 1xl:ml-1 3xl:ml-0">
+          Чому саме MVK MASH?
+        </h2>
+        <ul className="grid grid-cols-1 1xl:grid-cols-2 gap-21.5 1xl:gap-x-6.5 4xl:gap-x-32.5 1xl:gap-y-23.5 3xl:gap-y-21.5">
+          <li className="border-t border-t-tuatara/75 pt-4.5 1xl:pt-10">
+            <div className="text-white/40 text-sm/2.5 flex gap-1 mb-4.5 1xl:mb-8.5">
               <p>Причина </p>
               <p>(01)</p>
             </div>
@@ -19,8 +19,8 @@ const Reasons = () => {
               масштабних рішень. Виготовлення та запуск торгових об’єктів.
             </p>
           </li>
-          <li className=" border-t border-t-tuatara/75 pt-4.5">
-            <div className="text-white/40 text-sm flex gap-1 mb-4.5">
+          <li className=" border-t border-t-tuatara/75 pt-4.5 1xl:pt-10">
+            <div className="text-white/40 text-sm/2.5 flex gap-1 mb-4.5 1xl:mb-8.5">
               <p>Причина </p>
               <p>(02)</p>
             </div>
@@ -31,8 +31,8 @@ const Reasons = () => {
               Наші технології вже працюють у всьому світі — від Європи до Азії.
             </p>
           </li>
-          <li className=" border-t border-t-tuatara/75 pt-4.5">
-            <div className="text-white/40 text-sm flex gap-1 mb-4.5">
+          <li className=" border-t border-t-tuatara/75 pt-4.5 1xl:pt-10">
+            <div className="text-white/40 text-sm/2.5 flex gap-1 mb-4.5 1xl:mb-8.5">
               <p>Причина </p>
               <p>(03)</p>
             </div>
@@ -45,9 +45,12 @@ const Reasons = () => {
             </p>
           </li>
         </ul>
-        <div>
-          <img />
-        </div>
+      </div>
+      <div className="1xl:w-[440px] 3xl:w-[460px] 4xl:w-[646px] 1xl:h-[660px] 3xl:h-[638px] 4xl:h-[710px] 1xl:pt-12.5 3xl:pt-0 4xl:pl-23 shrink-0">
+        <img
+          src="/images/png/smart-locker.png"
+          className="1xl:w-[308px] 3xl:w-[322px] 1xl:h-[354px] 3xl:h-[370px] rotate-[29deg]"
+        />
       </div>
     </section>
   );
