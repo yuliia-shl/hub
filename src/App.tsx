@@ -1,9 +1,10 @@
 import './App.css';
+import Partners from './components/Partners/Partners';
 
 function App() {
   return (
     <>
-      <h1>Home page</h1>
+      <Partners />
     </>
   );
 }
