@@ -8,7 +8,7 @@ const Header = () => {
           </svg>
         </a>
         <nav className="xs:hidden 1xl:block">
-          <ul className="flex 1xl:gap-x-31 items-center h-full">
+          <ul className="flex 1xl:gap-x-31 1xl:text-xl 3xl:gap-38 4xl:gap-52 4xl:text-2xl text-  items-center h-full">
             <li>
               <a href="#">Інвестору</a>
             </li>
