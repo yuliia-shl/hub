@@ -100,6 +100,7 @@
   --color-tangerine: #f08d34;
   --color-chilean-fire: #f1770a;
   --color-persian-red: #d12d2d;
+  --color-gray: #7f7f7f;
 
   /* --color-menu: rgba(117, 117, 117, 0.77);
   --color-reason: rgba(255, 255, 255, 0.4);
@@ -124,6 +125,6 @@ button {
 
 @layer components {
   .section {
-    @apply mx-auto xs:max-w-[568px] 1xl:max-w-[1440px] 2xl:max-w-[1920px] 4xl:max-w-[2560px] xs:px-6 1xl:px-10 3xl:px-22.5 4xl:px-40;
+    @apply mx-auto max-w-[568px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] px-6 1xl:px-10 3xl:px-22.5 4xl:px-40;
   }
 }
