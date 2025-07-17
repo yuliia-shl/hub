@@ -1,9 +1,9 @@
 const Header = () => {
   return (
     <header className="w-full 1xl:mt-10.5 3xl:mt-18 4xl:mt-17">
-      <div className="section flex gap-4 justify-between max-h-17 h-full items-center">
+      <div className="section flex gap-4 justify-between max-h-17 1xl:max-h-14 4xl:max-h-16 h-full items-center">
         <a href="/">
-          <svg className="w-9.5 1xl:h-13 4xl:w-12 4xl:h-16.5 fill-tangerine">
+          <svg className="w-9.5 h-12.5 1xl:h-13 4xl:w-12 4xl:h-16.5 fill-tangerine">
             <use href="/images/svg/icons.svg#icon-logo" />
           </svg>
         </a>
