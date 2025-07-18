@@ -1,4 +1,4 @@
-/*FLEX*/
+import AskUsButton from './AskUsButton';
 
 const faqItems = [
   {
@@ -24,18 +24,13 @@ const FAQ = () => {
   return (
     <section className="section pt-[35px] pb-[30px] mb-[254px] 1xl:mb-[227px]">
       <div className="flex flex-col 1xl:flex-row 1xl:justify-between 1xl:items-start 1xl:gap-[95px] 3xl:gap-[97px] 4xl:[219px]">
-        {/*Left: h2 + button */}
+        {/* Left: h2 + desktop-only button */}
         <div className="flex flex-col 1xl:items-start 1xl:w-[362px] 3xl:w-[487px] 4xl:w-[534px] 1xl:gap-[34px] 3xl:gap-[58px] 4xl:gap-[43px] 4xl:pt-[10px]">
-          <h2 className="text-[32px] 1xl:text-[42px] 3xl:text-5xl font-second font-medium text-center 1xl:text-left leading-[110%] tracking-[-0.02em] mb-[49px] 1xl:mb-0">
+          <h2 className="text-[32px] 1xl:text-[42px] 3xl:text-5xl 4xl:text-[62px] font-second font-medium text-center 1xl:text-left leading-[110%] tracking-[-0.02em] mb-[49px] 1xl:mb-0">
             Часті питання
-          </h2>
-          <div className="flex items-center justify-center gap-[11px] 1xl:gap-3">
-            <button className="flex items-center justify-center py-6 1xl:py-[26px] px-[57px] max-w-[280px] max-h-[76px] rounded-[45px] border border-tangerine 1xl:border-gray text-tangerine 1xl:text-gray text-[24px] whitespace-nowrap font-second font-semibold tracking-[-0.02em] leading-[100%] hover:bg-tangerine hover:text-black transition 1xl:hover:bg-transparent 1xl:hover:border-tangerine 1xl:hover:text-tangerine focus:outline-none focus-visible:ring-2 focus-visible:ring-tangerine">
-              Запитати в нас{' '}
-            </button>
-            <svg className="w-[37px] h-[41px] stroke-[2px] stroke-tangerine 1xl:stroke-gray">
-              <use href="/images/svg/icons.svg#icon-arrow-down-to-the-left" />
-            </svg>
+          </h2>{' '}
+          <div className="hidden 1xl:flex">
+            <AskUsButton />
           </div>
         </div>
         {/*Right: list */}
@@ -53,6 +48,10 @@ const FAQ = () => {
             </li>
           ))}
         </ul>
+        {/* Mobile-only button под списком */}
+        <div className="flex items-center justify-center gap-[11px] mt-10 1xl:hidden">
+          <AskUsButton />
+        </div>
       </div>
     </section>
   );
