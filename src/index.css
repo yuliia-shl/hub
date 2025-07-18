@@ -133,7 +133,7 @@
   *,
   *::before,
   *::after {
-    @apply transition-all duration-300 ease-in-out;
+    @apply transition-[width,height,transform] duration-300 ease-in-out;
   }
 
   html {
