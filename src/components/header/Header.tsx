@@ -7,7 +7,7 @@ const Header = () => {
             <use href="/images/svg/icons.svg#icon-logo" />
           </svg>
         </a>
-        <nav className="hidden 1xl:block  1xl:px-15 4xl:px-14 1xl:border-1 4xl:border-1.29 border-star-dust rounded-full bg-woodsmoke-black/50 backdrop-blur-[4px] max-h-full h-full items-stretch">
+        <nav className="hidden 1xl:block  1xl:px-15 4xl:px-14 1xl:border-1 4xl:border-1.29 border-woodsmoke-black rounded-full bg-woodsmoke-black/50 backdrop-blur-[4px] max-h-full h-full items-stretch">
           <ul className="flex 1xl:gap-x-31 1xl:text-xl/5 3xl:gap-38 4xl:gap-52 4xl:text-2xl/6 text-boulder-dust/77 font-bold items-center h-full tracking-[-0.02em]">
             <li className="hover:text-gallery-white hover:text-exstrabold transition-colors">
               <a href="#" className="py-3">
