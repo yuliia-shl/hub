@@ -21,7 +21,7 @@ const VideoPlayer = () => {
       {/* Контент поверх відео */}
 
       <div className="hidden 1xl:flex flex-col justify-center items-center  h-full">
-        <HiroTitle className="1xl:flex flex-col items-center" />
+        <HiroTitle className="1xl:flex flex-col items-center 1xl:mb-8 4xl:mb-8.5" />
         <SmartButton
           label="Рішення для бізнесу"
           icon="/images/svg/icons.svg#icon-arrow-up-right"
