@@ -1,5 +1,5 @@
 import './App.css';
-import FAQ from './components/FAQ';
+import FAQ from './components/FAQ/FAQ';
 import Header from './components/header/Header';
 import Modules from './components/Modules/Modules';
 
