@@ -1,4 +1,4 @@
-import AskUsButton from './AskUsButton';
+import AskUsButton from '../AskUsButton/AskUsButton';
 
 const faqItems = [
   {
