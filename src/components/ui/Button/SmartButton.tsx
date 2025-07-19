@@ -30,7 +30,7 @@ export default function SmartButton({
   variant = 'primary',
 }: SmartButtonProps) {
   const baseClasses =
-    'font-semibold py-2 px-4 rounded-full transition-colors border-1 inline-flex items-center justify-center gap-2';
+    'font-semibold py-2 px-4 rounded-full border-star-dust-400 text-star-dust-400 hover:text-tangerine hover:border-tangerine transition-colors border-1 inline-flex items-center justify-center gap-2 focus:outline-white py-4 4xl:py-[21px] px-6 4xl:px-6 rounded-full transition-colors duration-300 w-fit';
 
   const variantClasses = {
     primary:
