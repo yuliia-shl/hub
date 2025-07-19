@@ -3,7 +3,7 @@ import SmartButton from '../ui/Button/SmartButton';
 
 const VideoPlayer = () => {
   return (
-    <div className="relative  w-full h-[300px] 1xl:h-screen overflow-hidden bg-woodsmoke-black/60">
+    <div className="relative  w-full h-70 1xl:h-screen overflow-hidden bg-woodsmoke-black/60">
       <video
         className="absolute top-0 left-0 z-[-1] w-full h-full object-cover"
         autoPlay
@@ -14,7 +14,7 @@ const VideoPlayer = () => {
         style={{ pointerEvents: 'none' }}
         poster="/path/to/poster-image.jpg"
       >
-        <source src="/video/111.mp4" type="video/mp4" />
+        <source src="/video/heroVideo.mp4" type="video/mp4" />
         Ваш браузер не підтримує тег video.
       </video>
 
