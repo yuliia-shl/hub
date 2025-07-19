@@ -13,7 +13,10 @@ const Hero = () => {
         </p>
         <SmartButton
           label="Рішення для бізнесу"
+          className="border-tangerine text-tangerine hover:bg-chilean-fire focus:bg-chilean-fire 1xl:w-[280px] 3xl:w-[358px] 4xl:w-[400px] py-4 4xl:py-[21px] px-6 4xl:px-6 rounded-[45px] transition-colors duration-300"
           icon="/images/svg/icons.svg#icon-arrow-up-right"
+          iconClassName="w-4.5 h-4.5 ml-16"
+          iconStroke="currentColor"
           iconPosition="right"
         />
       </div>

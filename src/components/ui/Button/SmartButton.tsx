@@ -1,11 +1,18 @@
-type SmartButtonProps = {
+export type SmartButtonProps = {
   label: string;
-  icon?: string; // Назва іконки в спрайті
+
+  // SVG icon support
+  icon?: string; // Шлях до символу, напр. "/icons.svg#icon-name"
   iconPosition?: 'left' | 'right';
+  iconFill?: string; // напр. "currentColor", "none", "#fff"
+  iconStroke?: string; // напр. "currentColor", "none", "#000"
+  iconClassName?: string; // Tailwind класи для svg
+  // Стилі та функціональність
   className?: string;
   onClick?: () => void;
   disabled?: boolean;
   loading?: boolean;
+  iconGap?: number;
   variant?: 'primary' | 'secondary' | 'danger';
 };
 
@@ -13,6 +20,9 @@ export default function SmartButton({
   label,
   icon,
   iconPosition = 'left',
+  iconFill,
+  iconStroke,
+  iconClassName = '',
   className = '',
   onClick,
   disabled = false,
@@ -37,8 +47,13 @@ export default function SmartButton({
 
   const Icon = () =>
     icon ? (
-      <svg className="w-6 h-6 fill-star-dust-400" aria-hidden="true">
-        <use href={`#${icon}`} />
+      <svg
+        className={iconClassName}
+        aria-hidden="true"
+        fill={iconFill}
+        stroke={iconStroke}
+      >
+        <use href={`${icon}`} />
       </svg>
     ) : null;
 
