@@ -1,11 +1,11 @@
 const Partners = () => {
   return (
-    <section className="section mb-[228px] 1xl:mb-[250px] 3xl:mb-[337px] 4xl:mb-[370px]">
-      <div className="pt-7.5 1xl:pt-0">
+    <section className="mb-[228px] 1xl:mb-[250px] 3xl:mb-[337px] 4xl:mb-[370px]">
+      <div className="section pt-7.5 1xl:pt-0">
         <h2 className="mb-10.5 1xl:mb-12 3xl:mb-14.5 4xl:mb-15 text-mercury-white text-[34px]/[110%] 1xl:text-[54px] 4xl:text-[62px] tracking-[-0.02em] font-second text-center 1xl:text-left">
           Наші партнери
         </h2>
-        <ul className="grid grid-cols-2 1xl:grid-cols-3 3xl:grid-cols-4 gap-x-2 1xl:gap-3 3xl:gap-x-3.5 4xl:gap-x-2 gap-y-2.5 3xl:gap-y-4.5 4xl:gap-y-4.5">
+        <ul className="grid grid-cols-2 1xl:grid-cols-3 3xl:grid-cols-4 gap-2 1xl:gap-3 3xl:gap-3.5 4xl:gap-4">
           <li className="group flex items-center justify-center bg-cod-dark rounded-lg h-[108px] 1xl:h-[132px] 4xl:h-[172px]">
             <svg className="w-[162px] 1xl:w-[272px] h-4 1xl:h-7 fill-silver-chalice group-hover:fill-tangerine transition-colors duration-300">
               <use href="/images/svg/icons.svg#icon-unmoment" />
