@@ -1,9 +1,9 @@
-import HiroTitle from '../Hero/HeroTitle';
+import HiroTitle from '../HeroTitle/HeroTitle';
 import SmartButton from '../ui/Button/SmartButton';
 
 const VideoPlayer = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-woodsmoke-black/60">
+    <div className="relative  w-full h-[300px] 1xl:h-screen overflow-hidden bg-woodsmoke-black/60">
       <video
         className="absolute top-0 left-0 z-[-1] w-full h-full object-cover"
         autoPlay

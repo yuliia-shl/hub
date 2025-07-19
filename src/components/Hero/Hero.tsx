@@ -1,6 +1,6 @@
 import SmartButton from '../ui/Button/SmartButton';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
-import HiroTitle from './HeroTitle';
+import HiroTitle from '../HeroTitle/HeroTitle';
 
 const Hero = () => {
   return (
