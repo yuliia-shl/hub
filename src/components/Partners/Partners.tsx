@@ -1,6 +1,6 @@
 const Partners = () => {
   return (
-    <section className="mb-[228px] 1xl:mb-[250px] 3xl:mb-[337px] 4xl:mb-[370px]">
+    <section className="pb-[160px] 1xl:pb-[220px] 3xl:pb-[240px] 4xl:pb-[280px]">
       <div className="section pt-7.5 1xl:pt-0">
         <h2 className="mb-10.5 1xl:mb-12 3xl:mb-14.5 4xl:mb-15 text-mercury-white text-[34px]/[110%] 1xl:text-[54px] 4xl:text-[62px] tracking-[-0.02em] font-second text-center 1xl:text-left">
           Наші партнери
