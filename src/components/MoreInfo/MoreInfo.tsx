@@ -6,9 +6,9 @@ const MoreInfo = () => {
       id="more-info-section"
       className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70"
     >
-      <div className="section pt-10.5 pb-14 px-6 1xl:py-12.5 1xl:px-12 3xl:pr-25 3xl:pl-19 4xl:px-30 bg-cod-dark rounded-[26px] gap-18 1xl:gap-0 3xl:gap-x-75 4xl:gap-x-81 flex flex-col 1xl:flex-row">
+      <div className="section pt-10.5 pb-14 px-6 1xl:py-12.5 1xl:px-12 3xl:pr-25 3xl:pl-19 4xl:px-30 4xl:py-28.5 bg-cod-dark rounded-[26px] gap-18 1xl:gap-0 3xl:gap-x-75 4xl:gap-x-81 flex flex-col 1xl:flex-row">
         {/* Ліва колонка: заголовок + опис */}
-        <div className="flex flex-col 1xl:flex-1 1xl:pt-[34px] 4xl:pt-30 justify-start gap-y-3.5 1xl:gap-y-7 3xl:gap-y-11">
+        <div className="flex flex-col 1xl:flex-1 1xl:pt-[34px] 4xl:pt-[6px] justify-start gap-y-3.5 1xl:gap-y-7 3xl:gap-y-11">
           <h2 className="text-[32px]/[119%] 1xl:text-[42px]/[110%] 3xl:text-5xl tracking-[-0.02em] font-medium font-second">
             Потрібно більше <span className="block">інформації?</span>
           </h2>
@@ -22,7 +22,7 @@ const MoreInfo = () => {
 
         {/* Права колонка: форма */}
 
-        <form className="flex flex-col 1xl:flex-1 gap-18 1xl:gap-12.5 4xl:pt-28.5">
+        <form className="flex flex-col 1xl:flex-1 gap-18 1xl:gap-12.5">
           <div className="flex flex-col gap-7 3xl:gap-5">
             <input
               id="name"

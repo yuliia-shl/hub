@@ -3,7 +3,7 @@ import FAQ from './components/FAQ/FAQ';
 import Header from './components/header/Header';
 import Partners from './components/Partners/Partners';
 import Modules from './components/Modules/Modules';
-import MoreInfoRequest from './components/MoreInfo/MoreInfo';
+import MoreInfo from './components/MoreInfo/MoreInfo';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       <Partners />
       <Modules />
       <FAQ />
+      <MoreInfo />
     </>
   );
 }
