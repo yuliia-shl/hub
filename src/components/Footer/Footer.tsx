@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="w-full pb-[7px]">
       <div className="section pb-17">
-        <div className="flex flex-row justify-between mb-15">
+        <div className="flex flex-row justify-between 1xl:justify-none mb-15">
           <div className="flex flex-row items-start gap-[6px]">
             <svg className="w-[36px] h-[50px] fill-tangerine group-hover:fill-tangerine transition-colors duration-300">
               <use href="/images/svg/icons.svg#icon-logo" />
@@ -19,7 +19,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 1xl:w-1/2">
             <a
               href="#"
               target="_blank"
@@ -72,6 +72,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
         <div className="flex flex-row 1xl:flex-col mb-9.5">
           <a
             href="#"
