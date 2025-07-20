@@ -1,0 +1,66 @@
+const MoreInfo = () => {
+  const inputClass =
+    'w-full bg-transparent border-b-[2px] border-mine-shaft pt-[30px] pb-3 focus:outline-none focus:border-boulder-light text-xl/[100%] peer caret-tuatara pl-2';
+  return (
+    <section
+      id="more-info-section"
+      className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70"
+    >
+      <div className="section pt-10.5 pb-14 px-6 1xl:py-12.5 1xl:px-12 3xl:pr-25 3xl:pl-19 4xl:py-28.5 4xl:px-30 bg-cod-dark rounded-[26px] gap-18 1xl:gap-0 3xl:gap-x-75 4xl:gap-x-81 flex flex-col 1xl:flex-row">
+        {/* Ліва колонка: заголовок + опис */}
+        <div className="flex flex-col 1xl:flex-1 justify-start pt-[34px] gap-y-3.5 1xl:gap-y-7 3xl:gap-y-11">
+          <h2 className="text-[32px]/[119%] 1xl:text-[42px]/[110%] 3xl:text-5xl tracking-[-0.02em] font-medium font-second">
+            Потрібно більше <span className="block">інформації?</span>
+          </h2>
+          <p className="text-lg/[133%] 1xl:text-xl/[120%] text-boulder-dust">
+            Отримайте детальну презентацію{' '}
+            <span className="block">
+              про компанію та 40+ реалізованих проєктів
+            </span>
+          </p>
+        </div>
+
+        {/* Права колонка: форма */}
+
+        <form className="flex flex-col 1xl:flex-1 gap-18 1xl:gap-12.5">
+          <div className="flex flex-col gap-7 3xl:gap-5">
+            <input
+              id="name"
+              name="name"
+              type="text"
+              className={inputClass}
+              placeholder="Ім’я"
+            />
+
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              className={inputClass}
+              placeholder="Телефон"
+            />
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              className={inputClass}
+              placeholder="Email"
+            />
+          </div>
+
+          {/* Кнопка: ліворуч на моб, праворуч на десктопі */}
+
+          <button
+            type="submit"
+            className="self-center 1xl:self-end px-15.5 py-5.5 rounded-[45px] max-w-[280px] bg-tangerine text-cod-gray text-2xl/[100%] tracking-[-0.02em] whitespace-nowrap font-bold 1xl:hover:bg-chilean-fire 1xl:focus:bg-chilean-fire 1xl:focus:outline-none 1xl:focus-visible:ring-2 1xl:focus-visible:ring-chilean-fire transition-colors duration-300 "
+          >
+            Напишіть нам
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+};
+
+export default MoreInfo;

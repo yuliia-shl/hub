@@ -123,10 +123,10 @@
   --color-tangerine: #f08d34;
   --color-chilean-fire: #f1770a;
   --color-persian-red: #d12d2d;
-
+  --color-form: rgba(230, 230, 230, 0.5);
   /* --color-menu: rgba(117, 117, 117, 0.77);
   --color-reason: rgba(255, 255, 255, 0.4);
-  --color-form: rgba(230, 230, 230, 0.5); */
+  */
 }
 
 @layer base {
