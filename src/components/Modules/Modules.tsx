@@ -23,7 +23,7 @@ const Modules = () => {
   };
 
   return (
-    <section className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
+    <section id="modules" className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
       <div className="section 3xl:px-23 4xl:px-40">
         <h2 className="hidden">
           Модульні шафи самообслуговування для магазинів, аеропортів, тощо
