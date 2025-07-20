@@ -4,7 +4,7 @@ import HiroTitle from '../HeroTitle/HeroTitle';
 
 const Hero = () => {
   return (
-    <section className="w-full pt-3.5 pb-40">
+    <section className="w-full pt-3.5 pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
       <div className="flex justify-between gap-5.5 flex-col items-start 1xl:items-center 1xl:justify-center-safe max-h-full h-full">
         <HiroTitle className="1xl:hidden pl-6" />
         <VideoPlayer />
