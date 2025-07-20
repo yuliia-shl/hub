@@ -12,8 +12,9 @@ const VideoPlayer = () => {
         playsInline
         preload="metadata"
         style={{ pointerEvents: 'none' }}
-        poster="/path/to/poster-image.jpg"
+        poster="/images/webp/AleksGolub-06543-2.webp"
       >
+        <source src="/video/heroVideo.webm" type="video/webm" />
         <source src="/video/heroVideo.mp4" type="video/mp4" />
         Ваш браузер не підтримує тег video.
       </video>
