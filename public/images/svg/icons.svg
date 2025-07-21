@@ -89,7 +89,7 @@
       <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.1429" d="M25.714 0v17.143h-19.429M6.286 17.143l5.714 5.714M6.286 17.143l5.714-5.714"></path>
     </symbol>
         <symbol id="icon-arrow-up-right" viewBox="0 0 32 32">
-      <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.2" d="M1.6 1.6h28.8M30.4 1.6v28.8M30.4 1.6l-28.8 28.8"></path>
+      <path stroke="currentColor" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.2" d="M1.6 1.6h28.8M30.4 1.6v28.8M30.4 1.6l-28.8 28.8"></path>
     </symbol>
     <symbol id="icon-dream" viewBox="0 0 89 32">
       <path fill="currentColor" d="M31.79 24.083c0 3.634-2.596 5.191-5.321 5.191h-7.268v-10.383h7.268c2.855 0.13 5.321 1.557 5.321 5.191zM28.026 24.083c0-1.817-1.557-1.947-2.596-1.947h-2.206v3.894h2.206c0.909 0 2.596 0 2.596-1.947z"></path>
