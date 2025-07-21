@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Footer = () => {
   return (
     <footer className="w-full pb-[7px] 1xl:pb-14.5 4xl:pb-17">
