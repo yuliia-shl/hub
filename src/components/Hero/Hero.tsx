@@ -14,7 +14,7 @@ const Hero = () => {
           iconClassName="w-4.5 h-4.5"
           iconStroke="currentColor"
           iconPosition="right"
-          className="ml-auto 1xl:hidden gap-17 border-tangerine text-tangerine mr-6"
+          className="ml-auto 1xl:hidden gap-17 mr-6"
         />
       </div>
     </section>
