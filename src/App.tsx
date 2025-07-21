@@ -1,16 +1,19 @@
 import './App.css';
-import FAQ from './components/FAQ/FAQ';
-import Header from './components/header/Header';
+import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
 import Partners from './components/Partners/Partners';
 import Modules from './components/Modules/Modules';
-import MoreInfo from './components/MoreInfo/MoreInfo';
+import Reasons from './components/Reasons/Reasons';
+import FAQ from './components/FAQ/FAQ';
 
 function App() {
   return (
     <>
       <Header />
+      <Hero />
       <Partners />
       <Modules />
+      <Reasons />
       <FAQ />
       <MoreInfo />
     </>
