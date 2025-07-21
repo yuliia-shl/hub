@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       <Header />
-      <Provides />
       <Hero />
+      <Provides />
       <Partners />
       <Modules />
       <Reasons />
