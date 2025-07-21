@@ -4,6 +4,7 @@ import Partners from './components/Partners/Partners';
 import Modules from './components/Modules/Modules';
 import Reasons from './components/Reasons/Reasons';
 import FAQ from './components/FAQ/FAQ';
+import GallerySwiper from './components/GallerySwiper/GallerySwiper';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Partners />
       <Modules />
       <Reasons />
+      <GallerySwiper />
       <FAQ />
     </>
   );
