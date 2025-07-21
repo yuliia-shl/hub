@@ -29,8 +29,8 @@ const Modules = () => {
           Модульні шафи самообслуговування для магазинів, аеропортів, тощо
         </h2>
         <div className="1xl:pt-14.5 4xl:pt-6.5 1xl:pb-4.5 3xl:p-y-4.5 4xl:pb-4.5 1xl:px-4.5 4xl:px-6.5 1xl:bg-cod-dark">
-          <div className="mb-5.5 1xl:mb-4 3xl:mb-1.5 flex flex-col 1xl:flex-row-reverse items-center 3xl:items-start gap-9.5 1xl:gap-15.5 4xl:gap-[158px] 1xl:justify-center 3xl:justify-left">
-            <div className="pt-3 1xl:pt-0 3xl:pt-15.5 4xl:pt-13.5 1xl:max-w-[606px] 3xl:max-w-[522px] 4xl:min-w-[735px]">
+          <div className="mb-5.5 1xl:mb-4 3xl:mb-1.5 flex flex-col 1xl:flex-row-reverse items-center 3xl:items-start gap-9.5 1xl:gap-15.5 4xl:gap-[158px] 1xl:justify-center 3xl:justify-end">
+            <div className="pt-3 1xl:pt-0 3xl:pt-15.5 4xl:pt-13.5 1xl:max-w-[606px] 3xl:max-w-[522px] 4xl:max-w-[735px] w-full">
               <div className="mb-9.5 1xl:mb-[71px] 3xl:mb-[92px] 4xl:mb-[58px] 4xl:max-w-[522px]">
                 <div className="mb-13.5 4xl:mb-14">
                   <h3 className="font-second capitalize text-[28px] 1xl:text-[40px]/[110%] 3xl:leading-[75%] tracking-[-0.02em] mb-3 1xl:mb-4.5">
@@ -108,7 +108,7 @@ const Modules = () => {
             </picture>
           </div>
 
-          <ul className="flex flex-wrap gap-1.5 4xl:gap-x-3 1xl:justify-center">
+          <ul className="flex flex-wrap gap-1.5 4xl:gap-x-3 1xl:justify-center 3xl:justify-between">
             {modules.map((module, index) => {
               const isActive = index === activeIndex;
 
@@ -121,7 +121,7 @@ const Modules = () => {
                   ${getButtonWidth(
                     index,
                     activeIndex
-                  )} 1xl:w-[326.5px] 3xl:w-[420.5px] 4xl:w-[538px]
+                  )} 1xl:w-[326.5px] 3xl:w-[410px] 4xl:w-[522px]
                   ${isActive ? 'bg-woodsmoke-black' : 'bg-cod-dark'}`}
                   >
                     <svg
