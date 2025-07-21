@@ -123,6 +123,7 @@
   --color-tangerine: #f08d34;
   --color-chilean-fire: #f1770a;
   --color-persian-red: #d12d2d;
+  --color-gray: #7f7f7f;
 
   /* --color-menu: rgba(117, 117, 117, 0.77);
   --color-reason: rgba(255, 255, 255, 0.4);
@@ -130,6 +131,12 @@
 }
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    @apply transition-[width,height,transform] duration-300 ease-in-out;
+  }
+
   html {
     @apply font-sans;
     scrollbar-gutter: stable;
