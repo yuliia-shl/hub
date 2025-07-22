@@ -31,7 +31,7 @@ export default function SmartButton({
   variant = 'primary',
 }: SmartButtonProps) {
   const baseClasses =
-    'font-semibold py-4 px-6 rounded-full transition-colors inline-flex items-center justify-center 4xl:py-[21px] duration-300 w-fit text-base/1 tracking-[-0.02em]';
+    'font-semibold py-4 px-6 rounded-full transition-colors inline-flex items-center justify-center 4xl:py-5.5 duration-300 w-fit text-base/[100%] tracking-[-0.02em] 4xl:text-[20px]';
 
   const variantClasses = {
     primary:

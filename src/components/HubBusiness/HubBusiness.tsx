@@ -14,12 +14,12 @@ const HubBusiness = () => {
   return (
     <section className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
       <div className="section">
-        <h2 className="text-[34px]/[110%] tracking-[-0.02em] font-second text-center text-mercury-white mb-8 1xl:text-[42px] 1xl:text-left 1xl:mb-20 3xl:text-[54px] 4xl:text-[62px]">
+        <h2 className="text-[34px]/[110%] tracking-[-0.02em] font-second text-center text-mercury-white mb-8 1xl:text-[42px] 1xl:text-left 1xl:mb-20 3xl:text-[54px] 3xl:mb-22 4xl:text-[62px] 4xl:font-medium 4xl:mb-15">
           Ваш бізнес з HUB
         </h2>
 
-        <div className="flex flex-col gap-1 1xl:gap-2.5">
-          <ul className="flex gap-1.5 1xl:gap-2.5">
+        <div className="flex flex-col gap-1 1xl:gap-2.5 3xl:gap-3 4xl:gap-4">
+          <ul className="flex gap-1.5 1xl:gap-2.5 3xl:gap-3 4xl:gap-4">
             {business.map((business, index) => {
               const isActive = index === activeIndex;
 
@@ -32,7 +32,7 @@ const HubBusiness = () => {
                       ${getButtonWidth(
                         index,
                         activeIndex
-                      )} 1xl:w-full 1xl:min-h-32
+                      )} 1xl:w-full 1xl:min-h-32 4xl:min-h-41
                      ${
                        isActive
                          ? 'bg-woodsmoke-black text-tangerine'
@@ -40,7 +40,7 @@ const HubBusiness = () => {
                      }`}
                   >
                     <span
-                      className={`font-second tracking-[-0.02em] text-[26px]/[110%] capitalize 
+                      className={`font-second tracking-[-0.02em] text-[26px]/[110%] capitalize 4xl:text-4xl
                       ${!isActive ? 'hidden 1xl:block' : ''}`}
                     >
                       {business.role}
@@ -59,7 +59,7 @@ const HubBusiness = () => {
             })}
           </ul>
 
-          <div className="flex flex-col gap-14 px-6.5 py-3 bg-cod-dark rounded-lg 1xl:flex-row 1xl:gap-25 1xl:px-11 1xl:py-10 1xl:justify-between 1xl:min-h-[542px]">
+          <div className="flex flex-col gap-14 px-6.5 py-3 bg-cod-dark rounded-lg 1xl:flex-row 1xl:gap-25 1xl:px-11 1xl:py-10 1xl:justify-between 1xl:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
             <ul className="flex flex-col gap-7 1xl:gap-10 1xl:justify-around">
               {advantages.map((advantage, index) => {
                 return (
@@ -67,13 +67,13 @@ const HubBusiness = () => {
                     key={index}
                     className="grid grid-rows-2 grid-cols-12 gap-x-3 items-center 1xl:gap-y-1"
                   >
-                    <span className="col-span-1 text-4xl/[183%] font-extralight text-masala-gray 1xl:text-[64px]/[103%] 1xl:col-span-1 1xl:row-span-2">
+                    <span className="col-span-1 text-4xl/[183%] font-extralight text-masala-gray 1xl:text-[64px]/[103%] 1xl:col-span-1 1xl:row-span-2 4xl:text-[86px]/[77%]">
                       {index + 1}
                     </span>
-                    <span className="col-span-11 text-[32px]/[87%] 1xl:col-span-11">
+                    <span className="col-span-11 text-2xl/[117%] 1xl:text-[32px]/[87%] 1xl:col-span-11 font-semibold 3xl:min-w-[854px] 4xl:text-[34px]/[82%] 4xl:min-w-[910px]">
                       {advantage.title}
                     </span>
-                    <span className="text-base/[137%] text-boulder-dust col-span-12 1xl:col-span-11 1xl:text-lg/[122%] 1xl:max-w-[670px]">
+                    <span className="text-base/[137%] text-boulder-dust col-span-12 1xl:col-span-11 1xl:text-lg/[122%] 1xl:max-w-[670px] 4xl:text-xl/[110%] 4xl:max-w-[890px]">
                       {advantage.description}
                     </span>
                   </li>
@@ -81,8 +81,8 @@ const HubBusiness = () => {
               })}
             </ul>
 
-            <div className="1xl:max-w-[280px]">
-              <div className="text-base/[137%] font-medium text-silver mb-21 1xl:text-lg/[122%]">
+            <div className="1xl:max-w-[280px] 4xl:max-w-[364px]">
+              <div className="text-base/[137%] font-medium text-silver mb-21 1xl:text-lg/[122%] 4xl:text-[22px]/[100%]">
                 <p className="mb-5">
                   Ми завжди раді надати консультацію нашим майбутнім інвесторам
                   і відповісти на всі Ваші питання!
@@ -93,13 +93,13 @@ const HubBusiness = () => {
                 </p>
               </div>
 
-              <div className="flex gap-3 1xl:flex-col 1xl:gap-4">
+              <div className="flex gap-3 1xl:flex-col 1xl:gap-4 4xl:gap-5">
                 <a
                   href="#"
                   download="Презентація інвесторам.pdf"
-                  className="group flex p-4 border-1 rounded-full border-tangerine 1xl:py-4.5 1xl:px-6 1xl:justify-between hover:border-chilean-fire focus:outline-chilean-fire focus:outline-2 transition-colors duration-300"
+                  className="group flex p-4 border-1 rounded-full border-tangerine 1xl:py-4.5 1xl:px-6 1xl:justify-between hover:border-chilean-fire focus:outline-chilean-fire focus:outline-2 transition-colors duration-300 4xl:py-5.5"
                 >
-                  <span className="hidden 1xl:block text-tangerine group-hover:text-chilean-fire group-focus:text-chilean-fire transition-colors duration-300">
+                  <span className="hidden 1xl:block text-tangerine group-hover:text-chilean-fire group-focus:text-chilean-fire transition-colors duration-300 text-base/[100%] 4xl:text-[20px]">
                     Презентація інвесторам
                   </span>
                   <svg className="w-5 h-5 fill-tangerine group-hover:fill-chilean-fire transition-colors duration-300">
