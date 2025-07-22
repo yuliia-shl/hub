@@ -166,3 +166,13 @@ button {
     @apply mx-auto max-w-[568px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] px-6 1xl:px-10 3xl:px-22.5 4xl:px-40;
   }
 }
+
+input.form-book:-webkit-autofill {
+  box-shadow: 0 0 0 1000px var(--color-woodsmoke-black) inset !important;
+  -webkit-text-fill-color: var(--color-mercury-white) !important;
+}
+
+input.form-write-us:-webkit-autofill {
+  box-shadow: 0 0 0 1000px var(--color-cod-dark) inset !important;
+  -webkit-text-fill-color: var(--color-mercury-white) !important;
+}
