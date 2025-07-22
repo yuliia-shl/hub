@@ -50,7 +50,7 @@ const Modal = ({ isOpen, onClose, children, className = '' }: ModalProps) => {
     >
       <div
         className={twMerge(
-          'relative bg-woodsmoke-black rounded-lg w-[502px] p-8.5 pt-19.5 transition-all duration-500 transform',
+          'relative bg-woodsmoke-black rounded-lg w-[502px] p-8.5 pt-19.5 transition-all duration-500 transform 1xl:w-[1076px] 1xl:px-13.5 1xl:py-11.5 3xl:py-14 4xl:w-[1488px] 4xl:px-[192px] 4xl:py-19',
           isOpen
             ? 'opacity-100 scale-100 translate-y-0'
             : 'opacity-0 scale-95 -translate-y-4',
@@ -59,7 +59,7 @@ const Modal = ({ isOpen, onClose, children, className = '' }: ModalProps) => {
         onClick={e => e.stopPropagation()}
       >
         <button
-          className="group flex justify-center items-center absolute right-4 top-4 w-10 h-10 rounded-full hover:text-mercury-white transition-colors duration-300"
+          className="group flex justify-center items-center absolute right-4 top-4 w-10 h-10 rounded-full hover:text-mercury-white transition-colors duration-300 4xl:right-6 4xl:top-6"
           onClick={onClose}
         >
           <svg className="w-7 h-7 stroke-storm-dust group-hover:stroke-mercury-white group-focus:stroke-mercury-white transition-colors duration-300">
