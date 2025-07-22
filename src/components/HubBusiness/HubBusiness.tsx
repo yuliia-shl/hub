@@ -5,10 +5,11 @@ import SmartButton from '../ui/Button/SmartButton';
 const HubBusiness = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { advantages } = business[activeIndex];
+
   const getButtonWidth = (index: number, activeIndex: number): string => {
     const isActive = index === activeIndex;
-    if (isActive) return 'w-[372px]';
-    return 'w-[68px]';
+    if (isActive) return 'xs:w-[372px]';
+    return 'w-full xs:w-[68px]';
   };
 
   return (
@@ -24,7 +25,7 @@ const HubBusiness = () => {
               const isActive = index === activeIndex;
 
               return (
-                <li key={index} className="1xl:w-full">
+                <li key={index} className="w-full">
                   <button
                     type="button"
                     onClick={() => setActiveIndex(index)}
@@ -59,13 +60,13 @@ const HubBusiness = () => {
             })}
           </ul>
 
-          <div className="flex flex-col gap-14 px-6.5 py-3 bg-cod-dark rounded-lg 1xl:flex-row 1xl:gap-24 1xl:px-11 1xl:py-10 1xl:justify-between 1xl:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
+          <div className="flex flex-col gap-14 p-7 pt-3 bg-cod-dark rounded-lg 1xl:flex-row 1xl:gap-24 1xl:px-11 1xl:py-10 1xl:justify-between 1xl:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
             <ul className="flex flex-col gap-7 1xl:gap-10 1xl:justify-around">
               {advantages.map((advantage, index) => {
                 return (
                   <li
                     key={index}
-                    className="grid grid-rows-2 grid-cols-16 items-center 1xl:gap-y-1"
+                    className="grid grid-rows-2 gap-x-2 grid-cols-16 items-center 1xl:gap-y-1"
                   >
                     <span className="col-span-1 text-4xl/[183%] font-extralight text-masala-gray 1xl:text-[64px]/[103%] 1xl:col-span-1 1xl:row-span-2 4xl:text-[86px]/[77%]">
                       {index + 1}
