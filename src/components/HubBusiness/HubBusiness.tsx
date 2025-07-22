@@ -59,21 +59,21 @@ const HubBusiness = () => {
             })}
           </ul>
 
-          <div className="flex flex-col gap-14 px-6.5 py-3 bg-cod-dark rounded-lg 1xl:flex-row 1xl:gap-25 1xl:px-11 1xl:py-10 1xl:justify-between 1xl:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
+          <div className="flex flex-col gap-14 px-6.5 py-3 bg-cod-dark rounded-lg 1xl:flex-row 1xl:gap-24 1xl:px-11 1xl:py-10 1xl:justify-between 1xl:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
             <ul className="flex flex-col gap-7 1xl:gap-10 1xl:justify-around">
               {advantages.map((advantage, index) => {
                 return (
                   <li
                     key={index}
-                    className="grid grid-rows-2 grid-cols-12 gap-x-3 items-center 1xl:gap-y-1"
+                    className="grid grid-rows-2 grid-cols-16 items-center 1xl:gap-y-1"
                   >
                     <span className="col-span-1 text-4xl/[183%] font-extralight text-masala-gray 1xl:text-[64px]/[103%] 1xl:col-span-1 1xl:row-span-2 4xl:text-[86px]/[77%]">
                       {index + 1}
                     </span>
-                    <span className="col-span-11 text-2xl/[117%] 1xl:text-[32px]/[87%] 1xl:col-span-11 font-semibold 3xl:min-w-[854px] 4xl:text-[34px]/[82%] 4xl:min-w-[910px]">
+                    <span className="col-span-15 text-2xl/[117%] font-semibold tracking-[-0.02em] 3xl:tracking-normal 1xl:text-[32px]/[87%] 1xl:col-span-15 1xl:min-w-[824px] 3xl:min-w-[854px] 4xl:text-[34px]/[82%] 4xl:min-w-[910px]">
                       {advantage.title}
                     </span>
-                    <span className="text-base/[137%] text-boulder-dust col-span-12 1xl:col-span-11 1xl:text-lg/[122%] 1xl:max-w-[670px] 4xl:text-xl/[110%] 4xl:max-w-[890px]">
+                    <span className="text-base/[137%] text-boulder-dust col-span-16 1xl:col-span-15 1xl:text-lg/[122%] 1xl:max-w-[670px] 4xl:text-xl/[110%] 4xl:max-w-[890px]">
                       {advantage.description}
                     </span>
                   </li>
@@ -81,8 +81,8 @@ const HubBusiness = () => {
               })}
             </ul>
 
-            <div className="1xl:max-w-[280px] 4xl:max-w-[364px]">
-              <div className="text-base/[137%] font-medium text-silver mb-21 1xl:text-lg/[122%] 4xl:text-[22px]/[100%]">
+            <div className="flex flex-col 1xl:justify-around 1xl:max-w-[280px] 4xl:max-w-[364px]">
+              <div className="text-base/[137%] font-medium text-silver mb-21 1xl:mb-0 1xl:text-lg/[122%] 4xl:text-[22px]/[100%]">
                 <p className="mb-5">
                   Ми завжди раді надати консультацію нашим майбутнім інвесторам
                   і відповісти на всі Ваші питання!
