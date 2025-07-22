@@ -1,3 +1,4 @@
+import { twMerge } from 'tailwind-merge';
 export type SmartButtonProps = {
   label: string;
 
@@ -30,19 +31,23 @@ export default function SmartButton({
   variant = 'primary',
 }: SmartButtonProps) {
   const baseClasses =
-    'font-semibold py-4 px-6 rounded-full border-star-dust-400 text-star-dust-400 hover:text-tangerine hover:border-tangerine transition-colors border-1 inline-flex items-center justify-center focus:outline-tangerine focus:outline-2 focus:text-tangerine 4xl:py-[21px] duration-300 w-fit';
+    'font-semibold py-4 px-6 rounded-full transition-colors inline-flex items-center justify-center 4xl:py-[21px] duration-300 w-fit text-base/1 tracking-[-0.02em]';
 
   const variantClasses = {
     primary:
-      'bg-cod-gray 1xl:bg-woodsmoke-dimmed border-tangerine 1xl:border-star-dust-400 text-tangerine 1xl:text-star-dust-400',
-    secondary: 'bg-transparent hover:text-white',
+      'bg-cod-gray 1xl:bg-woodsmoke-dimmed border-tangerine 1xl:border-star-dust-400 text-tangerine 1xl:text-star-dust-400 border-1 hover:text-tangerine hover:border-tangerine focus:outline-tangerine focus:outline-2 focus:text-tangerine',
+    secondary:
+      'text-cod-gray bg-tangerine hover:bg-chilean-fire focus:bg-chilean-fire focus:outline-chilean-fire focus:outline-2',
     danger:
       'bg-red-100 text-red-700 border-red-300 hover:bg-red-500 hover:text-white',
   };
 
-  const finalClassName = `${baseClasses} ${variantClasses[variant]} ${
-    disabled || loading ? 'opacity-50 cursor-not-allowed' : ''
-  } ${className}`;
+  const finalClassName = twMerge(
+    baseClasses,
+    variantClasses[variant],
+    disabled || loading ? 'opacity-50 cursor-not-allowed' : '',
+    className
+  );
 
   const Icon = () =>
     icon ? (
