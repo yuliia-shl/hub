@@ -12,7 +12,7 @@ const HubBusiness = () => {
   };
 
   return (
-    <section className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
+    <section id="business" className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
       <div className="section">
         <h2 className="text-[34px]/[110%] tracking-[-0.02em] font-second text-center text-mercury-white mb-8 1xl:text-[42px] 1xl:text-left 1xl:mb-20 3xl:text-[54px] 3xl:mb-22 4xl:text-[62px] 4xl:font-medium 4xl:mb-15">
           Ваш бізнес з HUB
