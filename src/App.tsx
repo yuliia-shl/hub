@@ -4,6 +4,7 @@ import Hero from './components/Hero/Hero';
 import HubBusiness from './components/HubBusiness/HubBusiness';
 import Partners from './components/Partners/Partners';
 import Modules from './components/Modules/Modules';
+import Provides from './components/Provides/Provides';
 import Reasons from './components/Reasons/Reasons';
 import FAQ from './components/FAQ/FAQ';
 import MoreInfo from './components/MoreInfo/MoreInfo';
@@ -14,6 +15,7 @@ function App() {
     <>
       <Header />
       <Hero />
+      <Provides />
       <HubBusiness />
       <Partners />
       <Modules />
