@@ -7,12 +7,14 @@ import Modules from './components/Modules/Modules';
 import Reasons from './components/Reasons/Reasons';
 import FAQ from './components/FAQ/FAQ';
 import MoreInfo from './components/MoreInfo/MoreInfo';
+import Product from './components/Product/Product';
 
 function App() {
   return (
     <>
       <Header />
       <Hero />
+      <Product />
       <HubBusiness />
       <Partners />
       <Modules />
