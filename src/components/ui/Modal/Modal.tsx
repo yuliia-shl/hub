@@ -7,9 +7,20 @@ type ModalProps = {
   onClose: () => void;
   children?: React.ReactNode;
   className?: string;
+  modalBaseClasses?: string;
+  closeBtnClasses?: string;
+  btnIconClasses?: string;
 };
 
-const Modal = ({ isOpen, onClose, children, className = '' }: ModalProps) => {
+const Modal = ({
+  isOpen,
+  onClose,
+  children,
+  className = '',
+  modalBaseClasses,
+  closeBtnClasses,
+  btnIconClasses,
+}: ModalProps) => {
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -43,7 +54,8 @@ const Modal = ({ isOpen, onClose, children, className = '' }: ModalProps) => {
         'fixed inset-0 z-100 flex justify-center backdrop-blur-xs items-center bg-black/60 transition-opacity duration-800 ease-in-out',
         isOpen
           ? 'opacity-100 pointer-events-auto'
-          : 'opacity-0 pointer-events-none'
+          : 'opacity-0 pointer-events-none',
+        modalBaseClasses
       )}
       // TODO - to check if close modal on backdrop click needed
       onClick={onClose}
@@ -59,10 +71,18 @@ const Modal = ({ isOpen, onClose, children, className = '' }: ModalProps) => {
         onClick={e => e.stopPropagation()}
       >
         <button
-          className="group flex justify-center items-center absolute right-4 top-4 w-10 h-10 rounded-full hover:text-mercury-white transition-colors duration-300 4xl:right-6 4xl:top-6"
+          className={twMerge(
+            'group flex justify-center items-center absolute right-4 top-4 w-10 h-10 rounded-full hover:text-mercury-white transition-colors duration-300 4xl:right-6 4xl:top-6',
+            closeBtnClasses
+          )}
           onClick={onClose}
         >
-          <svg className="w-7 h-7 stroke-storm-dust group-hover:stroke-mercury-white group-focus:stroke-mercury-white transition-colors duration-300">
+          <svg
+            className={twMerge(
+              'w-7 h-7 stroke-storm-dust group-hover:stroke-mercury-white group-focus:stroke-mercury-white transition-colors duration-300',
+              btnIconClasses
+            )}
+          >
             <use href="/images/svg/icons.svg#icon-close" />
           </svg>
         </button>
