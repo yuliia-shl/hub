@@ -24,6 +24,12 @@ const OurHubsGallery = () => {
       aria-labelledby="gallery-title"
     >
       <div className="section px-0">
+        <h2
+          id="gallery-title"
+          className=" inset-0 z-20 flex items-center justify-center text-dust-white text-[32px]/[110%] 1xl:text-[42px]/[110%] 3xl:text-[54px]/[110%] 4xl:text-[62px]/[110%] tracking-[-0.02em] font-second 4xl:font-medium"
+        >
+          Наші HUBи
+        </h2>
         <div className="pt-43 pb-15 3xl:pt-[116px] 3xl:pb-0">
           {/* 1) Container */}
           <div className="relative mx-auto">
@@ -50,13 +56,6 @@ const OurHubsGallery = () => {
                   <use href="/images/svg/icons.svg#icon-Ellipse-46-2560-top" />
                 </svg>
               </div>
-
-              <h2
-                id="gallery-title"
-                className="absolute inset-0 z-20 flex items-center justify-center text-dust-white text-[32px]/[110%] 1xl:text-[42px]/[110%] 3xl:text-[54px]/[110%] 4xl:text-[62px]/[110%] tracking-[-0.02em] font-second 4xl:font-medium"
-              >
-                Наші HUBи
-              </h2>
             </div>
 
             {/* 3) Slider */}
