@@ -3,7 +3,7 @@ import SmartButton from '../ui/Button/SmartButton';
 export default function Product() {
   return (
     <section className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
-      <div className="section bg-alto-white flex flex-col 1xl:flex-row-reverse 1xl:justify-end">
+      <div className="section flex flex-col 1xl:flex-row-reverse 1xl:justify-end">
         <h2 className="font-semibold font-second text-[32px]/[110%] text-mercury-white hidden">
           Product Page
         </h2>
