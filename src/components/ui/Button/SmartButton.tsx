@@ -1,6 +1,7 @@
 import { twMerge } from 'tailwind-merge';
 export type SmartButtonProps = {
   label: string;
+  type?: 'button' | 'submit' | 'reset';
 
   // SVG icon support
   icon?: string; // Шлях до символу, напр. "/icons.svg#icon-name"
@@ -19,6 +20,7 @@ export type SmartButtonProps = {
 
 export default function SmartButton({
   label,
+  type = 'button',
   icon,
   iconPosition = 'left',
   iconFill,
@@ -63,6 +65,7 @@ export default function SmartButton({
 
   return (
     <button
+      type={type}
       className={finalClassName}
       onClick={onClick}
       disabled={disabled || loading}
