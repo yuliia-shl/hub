@@ -29,6 +29,15 @@
 
 @font-face {
   font-family: 'NunitoSans';
+  src: local('NunitoSans-ExtraLight'),
+    url('./assets/fonts/NunitoSans-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
   src: local('NunitoSans-Light'),
     url('./assets/fonts/NunitoSans-Light.woff2') format('woff2');
   font-weight: 400;
@@ -124,10 +133,10 @@
   --color-chilean-fire: #f1770a;
   --color-persian-red: #d12d2d;
   --color-gray: #7f7f7f;
-
+  --color-form: rgba(230, 230, 230, 0.5);
   /* --color-menu: rgba(117, 117, 117, 0.77);
   --color-reason: rgba(255, 255, 255, 0.4);
-  --color-form: rgba(230, 230, 230, 0.5); */
+  */
 }
 
 @layer base {
