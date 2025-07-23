@@ -1,8 +1,36 @@
+import { useForm } from 'react-hook-form';
 import SmartButton from '../ui/Button/SmartButton';
+import {
+  writeUsSchema,
+  type WriteUsSchemaType,
+} from '../../validation/validation';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 const MoreInfo = () => {
   const inputClass =
     'form-write-us w-full bg-transparent border-b-[2px] border-mine-shaft pt-[30px] pb-3 focus:outline-none focus:border-boulder-light text-xl/[100%] peer caret-tuatara';
+  const errorClass =
+    'text-persian-red text-sm/[100%] tracking-[-0.02em] font-medium mt-2';
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<WriteUsSchemaType>({
+    resolver: zodResolver(writeUsSchema),
+    mode: 'onChange',
+  });
+
+  const onSubmit = (data: WriteUsSchemaType) => {
+    const finalData = {
+      ...data,
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+    };
+
+    console.log('Sending data:', finalData);
+  };
 
   return (
     <section id="more-info" className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
@@ -23,31 +51,68 @@ const MoreInfo = () => {
 
           {/* Права колонка: форма */}
 
-          <form className="flex flex-col 1xl:flex-1 3xl:max-w-[764px] 4xl:max-w-[996px] gap-18 1xl:gap-12.5">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+            className="flex flex-col 1xl:flex-1 3xl:max-w-[764px] 4xl:max-w-[996px] gap-18 1xl:gap-12.5"
+          >
             <div className="flex flex-col gap-7 1xl:gap-5">
-              <input
-                id="name"
-                name="name"
-                type="text"
-                className={inputClass}
-                placeholder="Ім’я"
-              />
+              <div>
+                <label htmlFor="name" className="sr-only">
+                  Ім’я
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  className={inputClass}
+                  placeholder="Ім’я"
+                  autoComplete="given-name"
+                  {...register('name')}
+                />
+                {errors.name && (
+                  <p role="alert" className={errorClass}>
+                    *{errors.name.message}
+                  </p>
+                )}
+              </div>
 
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                className={inputClass}
-                placeholder="Телефон"
-              />
+              <div>
+                <label htmlFor="phone" className="sr-only">
+                  Телефон
+                </label>
+                <input
+                  id="phone"
+                  type="tel"
+                  className={inputClass}
+                  placeholder="Телефон"
+                  autoComplete="tel"
+                  {...register('phone')}
+                />
+                {errors.phone && (
+                  <p role="alert" className={errorClass}>
+                    *{errors.phone.message}
+                  </p>
+                )}
+              </div>
 
-              <input
-                id="email"
-                name="email"
-                type="email"
-                className={inputClass}
-                placeholder="Email"
-              />
+              <div>
+                <label htmlFor="email" className="sr-only">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  className={inputClass}
+                  placeholder="Email"
+                  autoComplete="email"
+                  {...register('email')}
+                />
+                {errors.email && (
+                  <p role="alert" className={errorClass}>
+                    *{errors.email.message}
+                  </p>
+                )}
+              </div>
             </div>
 
             {/* Кнопка: ліворуч на моб, праворуч на десктопі */}

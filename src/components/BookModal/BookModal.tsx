@@ -102,7 +102,9 @@ const BookModal = () => {
                 {...register('name')}
               />
               {errors.name && (
-                <p className={errorClass}>*{errors.name.message}</p>
+                <p role="alert" className={errorClass}>
+                  *{errors.name.message}
+                </p>
               )}
             </div>
 
@@ -112,14 +114,16 @@ const BookModal = () => {
               </label>
               <input
                 id="phone"
-                autoComplete="phone"
+                autoComplete="tel"
                 type="tel"
                 className={inputClass}
                 placeholder="Телефон"
                 {...register('phone')}
               />
               {errors.phone && (
-                <p className={errorClass}>{errors.phone.message}</p>
+                <p role="alert" className={errorClass}>
+                  {errors.phone.message}
+                </p>
               )}
             </div>
 
@@ -136,7 +140,9 @@ const BookModal = () => {
                 {...register('email')}
               />
               {errors.email && (
-                <p className={errorClass}>{errors.email.message}</p>
+                <p role="alert" className={errorClass}>
+                  {errors.email.message}
+                </p>
               )}
             </div>
           </div>
@@ -152,7 +158,9 @@ const BookModal = () => {
                 {...register('question')}
               />
               {errors.question && (
-                <p className={errorClass}>{errors.question.message}</p>
+                <p role="alert" className={errorClass}>
+                  {errors.question.message}
+                </p>
               )}
             </div>
           </div>
