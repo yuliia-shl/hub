@@ -1,3 +1,5 @@
+import SmartButton from '../ui/Button/SmartButton';
+
 const MoreInfo = () => {
   const inputClass =
     'form-write-us w-full bg-transparent border-b-[2px] border-mine-shaft pt-[30px] pb-3 focus:outline-none focus:border-boulder-light text-xl/[100%] peer caret-tuatara';
@@ -49,13 +51,12 @@ const MoreInfo = () => {
             </div>
 
             {/* Кнопка: ліворуч на моб, праворуч на десктопі */}
-
-            <button
+            <SmartButton
+              label="Напишіть нам"
               type="submit"
-              className="self-center 1xl:self-end p-5.5 rounded-[45px] min-w-[280px] bg-tangerine text-cod-gray text-2xl/[100%] tracking-[-0.02em] whitespace-nowrap font-bold 1xl:hover:bg-chilean-fire 1xl:focus:bg-chilean-fire 1xl:focus:outline-none 1xl:focus-visible:ring-2 1xl:focus-visible:ring-chilean-fire transition-colors duration-300 "
-            >
-              Напишіть нам
-            </button>
+              variant="secondary"
+              className="self-center 1xl:self-end p-5.5 min-w-[280px] text-2xl/[100%] font-bold"
+            />
           </form>
         </div>
       </div>
