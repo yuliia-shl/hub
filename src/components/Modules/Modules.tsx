@@ -70,6 +70,7 @@ const Modules = () => {
               </div>
               <a
                 href="#more-info"
+                aria-label="Перейти до форми замовлення"
                 className="flex items-center justify-between ml-auto min-w-[280px] 4xl:min-w-[358px] 4xl:text-xl font-extrabold bg-tangerine text-cod-gray leading-none tracking-[-0.02em] py-4 4xl:py-5.5 px-6 4xl:px-6 rounded-[45px] hover:bg-chilean-fire focus:bg-chilean-fire transition-colors duration-300"
               >
                 <span>Хочу замовити!</span>
@@ -82,25 +83,25 @@ const Modules = () => {
             <picture>
               <source
                 srcSet={`
-                /images/webp/hub-modules/desktop/${pictureShort}-1x.webp 1x,
-                /images/webp/hub-modules/desktop/${pictureShort}-2x.webp 2x,
-                /images/webp/hub-modules/desktop/${pictureShort}-4x.webp 4x
+                /images/modules-desktop/${pictureShort}-1x.webp 1x,
+                /images/modules-desktop/${pictureShort}-2x.webp 2x,
+                /images/modules-desktop/${pictureShort}-4x.webp 4x
               `}
                 media="(min-width: 1440px)"
                 type="image/webp"
               />
               <source
                 srcSet={`
-            /images/webp/hub-modules/mob/${pictureShort}-1x.webp 1x,
-            /images/webp/hub-modules/mob/${pictureShort}-2x.webp 2x,
-            /images/webp/hub-modules/mob/${pictureShort}-4x.webp 4x
+            /images/modules-mobile/${pictureShort}-1x.webp 1x,
+            /images/modules-mobile/${pictureShort}-2x.webp 2x,
+            /images/modules-mobile/${pictureShort}-4x.webp 4x
            `}
                 media="(min-width: 375px)"
                 type="image/webp"
               />
               <img
-                src={`/images/webp/hub-modules/mob/${pictureShort}-1x.webp`}
-                srcSet={`/images/webp/hub-modules/mob/${pictureShort}-2x.webp 2x, /images/webp/hub-modules/mob/${pictureShort}-4x.webp 4x`}
+                src={`/images/modules-mobile/${pictureShort}-1x.webp`}
+                srcSet={`/images/modules-mobile/${pictureShort}-2x.webp 2x, /images/modules-mobile/${pictureShort}-4x.webp 4x`}
                 alt={title}
                 className="w-[520px] 1xl:w-[656px] 3xl:w-[844px] 4xl:w-[945px] h-[362px] 1xl:h-[452px] 3xl:h-[582px] 4xl:h-[558px]"
               />
