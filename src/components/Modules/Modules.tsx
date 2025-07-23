@@ -30,8 +30,8 @@ const Modules = () => {
         </h2>
         <div className="1xl:pt-14.5 4xl:pt-6.5 1xl:pb-4.5 3xl:py-4.5 4xl:pb-4.5 1xl:px-4.5 4xl:px-6.5 1xl:bg-cod-dark">
           <div className="mb-5.5 1xl:mb-4 3xl:mb-1.5 flex flex-col 1xl:flex-row-reverse items-center 3xl:items-start gap-9.5 1xl:gap-15.5 4xl:gap-[158px] 1xl:justify-center 3xl:justify-end">
-            <div className="pt-3 1xl:pt-0 3xl:pt-15.5 4xl:pt-13.5 1xl:max-w-[606px] 3xl:max-w-[522px] 4xl:max-w-[735px] w-full">
-              <div className="mb-9.5 1xl:mb-[71px] 3xl:mb-[92px] 4xl:mb-[58px] 4xl:max-w-[522px]">
+            <div className="flex flex-col gap-9.5 1xl:gap-[71px] 3xl:gap-[92px] 4xl:gap-[58px] pt-3 1xl:pt-0 3xl:pt-15.5 4xl:pt-13.5 1xl:max-w-[606px] 3xl:max-w-[522px] 4xl:max-w-[735px] w-full">
+              <div className="4xl:max-w-[522px]">
                 <div className="mb-13.5 4xl:mb-14">
                   <h3 className="font-second capitalize text-[28px] 1xl:text-[40px]/[110%] 3xl:leading-[75%] tracking-[-0.02em] mb-3 1xl:mb-4.5">
                     {title}
@@ -42,25 +42,25 @@ const Modules = () => {
                 </div>
 
                 <ul className="flex flex-wrap gap-x-3 gap-y-8">
-                  <li className="flex flex-col gap-1.5 w-[230px]">
+                  <li className="flex flex-col gap-1.5 min-w-[230px]">
                     <p className="text-lg/[122%] font-medium text-chicago-gray">
                       Розмір:
                     </p>
                     <p className="text-[22px]/[127%]">{size}</p>
                   </li>
-                  <li className="flex flex-col gap-1.5 w-[230px]">
+                  <li className="flex flex-col gap-1.5 min-w-[230px]">
                     <p className="text-lg/[122%] font-medium text-chicago-gray">
                       Напруга живлення:
                     </p>
                     <p className="text-[22px]/[127%]">{voltage}</p>
                   </li>
-                  <li className="flex flex-col gap-1.5 w-[230px]">
+                  <li className="flex flex-col gap-1.5 min-w-[230px]">
                     <p className="text-lg/[122%] font-medium text-chicago-gray">
                       Характеристика:
                     </p>
                     <p className="text-[22px]/[127%]">{characteristic}</p>
                   </li>
-                  <li className="flex flex-col gap-1.5 w-[230px]">
+                  <li className="flex flex-col gap-1.5 min-w-[230px]">
                     <p className="text-lg/[122%] font-medium text-chicago-gray">
                       Вага:
                     </p>
@@ -68,16 +68,15 @@ const Modules = () => {
                   </li>
                 </ul>
               </div>
-
-              <button
-                type="button"
-                className="flex items-center justify-between ml-auto min-w-[280px] 4xl:min-w-[358px] 4xl:text-xl font-extrabold bg-tangerine text-cod-gray leading-none tracking-[-0.02em] py-4 4xl:py-[21px] px-6 4xl:px-6 rounded-[45px] hover:bg-chilean-fire focus:bg-chilean-fire transition-colors duration-300"
+              <a
+                href="#more-info"
+                className="flex items-center justify-between ml-auto min-w-[280px] 4xl:min-w-[358px] 4xl:text-xl font-extrabold bg-tangerine text-cod-gray leading-none tracking-[-0.02em] py-4 4xl:py-5.5 px-6 4xl:px-6 rounded-[45px] hover:bg-chilean-fire focus:bg-chilean-fire transition-colors duration-300"
               >
                 <span>Хочу замовити!</span>
                 <svg className="w-4.5 h-4.5 stroke-cod-gray">
                   <use href={`/images/svg/icons.svg#icon-arrow-up-right`}></use>
                 </svg>
-              </button>
+              </a>
             </div>
 
             <picture>

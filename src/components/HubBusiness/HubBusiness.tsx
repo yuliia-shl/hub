@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { business } from '../../data/hub-business';
-import SmartButton from '../ui/Button/SmartButton';
 
 const HubBusiness = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const { advantages } = business[activeIndex];
+  const { advantages, buttonLabel } = business[activeIndex];
 
   const getButtonWidth = (index: number, activeIndex: number): string => {
     const isActive = index === activeIndex;
@@ -102,21 +101,33 @@ const HubBusiness = () => {
                   download="Презентація інвесторам.pdf"
                   className="group flex p-4 border-1 rounded-full border-tangerine 1xl:py-4.5 1xl:px-6 1xl:justify-between hover:border-chilean-fire focus:outline-chilean-fire focus:outline-2 transition-colors duration-300 4xl:py-5.5"
                 >
-                  <span className="hidden 1xl:block text-tangerine group-hover:text-chilean-fire group-focus:text-chilean-fire transition-colors duration-300 text-base/[100%] 4xl:text-[20px]">
+                  <span className="hidden 1xl:block text-tangerine group-hover:text-chilean-fire group-focus:text-chilean-fire transition-colors duration-300 text-base/[100%] 4xl:text-xl">
                     Презентація інвесторам
                   </span>
                   <svg className="w-5 h-5 fill-tangerine group-hover:fill-chilean-fire transition-colors duration-300">
                     <use href="/images/svg/icons.svg#icon-pdf" />
                   </svg>
                 </a>
-                <SmartButton
-                  label="Інвестувати"
+
+                <a
+                  href="#more-info"
+                  className="flex items-center justify-between w-full font-bold px-6 py-4.5 rounded-[45px] text-base/[100%] 4xl:text-xl text-cod-gray bg-tangerine hover:bg-chilean-fire focus:bg-chilean-fire transition-colors duration-300"
+                >
+                  <span className="text-base/[100%] 4xl:text-xl">
+                    {buttonLabel}
+                  </span>
+                  <svg className="w-4.5 h-4.5 stroke-cod-gray">
+                    <use href="/images/svg/icons.svg#icon-arrow-up-right" />
+                  </svg>
+                </a>
+                {/* <SmartButton
+                  label={buttonLabel}
                   variant="secondary"
                   icon="/images/svg/icons.svg#icon-arrow-up-right"
                   iconClassName="w-4.5 h-4.5 stroke-cod-gray"
                   iconPosition="right"
                   className="flex justify-between w-full font-bold py-4.5"
-                />
+                /> */}
               </div>
             </div>
           </div>
