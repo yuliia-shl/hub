@@ -8,7 +8,6 @@ import Partners from './components/Partners/Partners';
 import Modules from './components/Modules/Modules';
 import Reasons from './components/Reasons/Reasons';
 import FAQ from './components/FAQ/FAQ';
-import OurHubsGallery from './components/OurHubsGallery/OurHubsGallery';
 import MoreInfo from './components/MoreInfo/MoreInfo';
 import Footer from './components/Footer/Footer';
 
@@ -24,7 +23,6 @@ function App() {
         <Partners />
         <Modules />
         <Reasons />
-        <OurHubsGallery />
         <FAQ />
         <MoreInfo />
       </main>
