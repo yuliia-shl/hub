@@ -1,25 +1,6 @@
 import { useState } from 'react';
 import SmartButton from '../ui/Button/SmartButton';
-
-type BusinessRole = {
-  role: 'Інвестор' | 'Партнер' | 'Локації';
-  icon: string;
-};
-
-export const business: BusinessRole[] = [
-  {
-    role: 'Інвестор',
-    icon: 'money',
-  },
-  {
-    role: 'Партнер',
-    icon: 'partner',
-  },
-  {
-    role: 'Локації',
-    icon: 'location',
-  },
-];
+import { businessForModal } from '../../data/bookModal';
 
 const BookModal = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -29,7 +10,7 @@ const BookModal = () => {
   return (
     <div>
       <ul className="mx-auto flex border border-masala-light rounded-full bg-cod-gray mb-5 1xl:max-w-[600px]">
-        {business.map((business, index) => {
+        {businessForModal.map((business, index) => {
           const isActive = index === activeIndex;
 
           return (
