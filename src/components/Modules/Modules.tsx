@@ -139,7 +139,7 @@ const Modules = () => {
                       className={`uppercase font-semibold text-base/[200%] 1xl:text-lg/[178%] 4xl:text-[22px]/[145%] ${
                         isActive
                           ? 'text-tangerine'
-                          : 'sr-only 1xl:block text-boulder-gray'
+                          : 'sr-only 1xl:not-sr-only text-boulder-gray'
                       }`}
                     >
                       {module.title}

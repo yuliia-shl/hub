@@ -43,7 +43,7 @@ const HubBusiness = () => {
                   >
                     <span
                       className={`font-second tracking-[-0.02em] text-[26px]/[110%] capitalize 4xl:text-4xl
-                      ${!isActive ? 'sr-only 1xl:block' : ''}`}
+                      ${!isActive ? 'sr-only 1xl:not-sr-only' : ''}`}
                     >
                       {business.role}
                     </span>

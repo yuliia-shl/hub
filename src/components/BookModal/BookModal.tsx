@@ -71,7 +71,7 @@ const BookModal = () => {
               >
                 <span
                   className={`font-second tracking-[-0.02em] text-base/[100%] capitalize 
-                      ${!isActive ? 'sr-only 1xl:block' : ''}`}
+                      ${!isActive ? 'sr-only 1xl:not-sr-only' : ''}`}
                   {...register('role')}
                 >
                   {business.role}
