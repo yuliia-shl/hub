@@ -7,6 +7,7 @@ import Modules from './components/Modules/Modules';
 import Reasons from './components/Reasons/Reasons';
 import FAQ from './components/FAQ/FAQ';
 import MoreInfo from './components/MoreInfo/MoreInfo';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Reasons />
       <FAQ />
       <MoreInfo />
+      <Footer />
     </>
   );
 }
