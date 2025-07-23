@@ -46,10 +46,10 @@ export default function Product() {
               </svg>
             </span>
             <SmartButton
-              className="bg-tangerine 1xl:bg-tangerine text-cod-gray 1xl:text-cod-gray 1xl:max-w-70 4xl:max-w-90 4xl:max-h-16 1xl:w-full grow-1 1xl:grow-0"
+              className="1xl:max-w-70 4xl:max-w-90 4xl:max-h-16 1xl:w-full grow-1 1xl:grow-0 font-extrabold"
               label="Дізнатись більше"
               // href="/product"
-              variant="primary"
+              variant="secondary"
             />
             <span className="flex justify-center items-center w-13 h-13 4xl:w-16 4xl:h-16 bg-cod-gray rounded-full border-tangerine border">
               <svg className="w-6 h-6 4xl:w-8 4xl:h-8 stroke-tangerine">
