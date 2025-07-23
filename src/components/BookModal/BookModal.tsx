@@ -44,7 +44,11 @@ const BookModal = () => {
 
   return (
     <div>
-      <ul className="mx-auto flex border border-masala-light rounded-full bg-cod-gray mb-5 1xl:max-w-[600px]">
+      <ul
+        role="radiogroup"
+        aria-label="Оберіть роль"
+        className="mx-auto flex border border-masala-light rounded-full bg-cod-gray mb-5 1xl:max-w-[600px]"
+      >
         {businessForModal.map((business, index) => {
           const isActive = index === activeIndex;
 
@@ -52,6 +56,8 @@ const BookModal = () => {
             <li key={index} className="w-full">
               <button
                 type="button"
+                role="radio"
+                aria-checked={isActive}
                 onClick={() => {
                   setActiveIndex(index);
                   setValue('role', business.role, { shouldValidate: true });
@@ -65,12 +71,13 @@ const BookModal = () => {
               >
                 <span
                   className={`font-second tracking-[-0.02em] text-base/[100%] capitalize 
-                      ${!isActive ? 'hidden 1xl:block' : ''}`}
+                      ${!isActive ? 'sr-only 1xl:block' : ''}`}
                   {...register('role')}
                 >
                   {business.role}
                 </span>
                 <svg
+                  aria-hidden="true"
                   className={`w-8.5 h-8.5 fill-boulder-gray 1xl:hidden 
                       ${isActive ? 'hidden' : ''}`}
                 >
@@ -95,14 +102,15 @@ const BookModal = () => {
               </label>
               <input
                 id="name"
-                autoComplete="given-name"
                 type="text"
                 className={inputClass}
                 placeholder="Ім’я"
+                autoComplete="given-name"
+                aria-describedby={errors.name ? 'name-error' : undefined}
                 {...register('name')}
               />
               {errors.name && (
-                <p role="alert" className={errorClass}>
+                <p id="name-error" role="alert" className={errorClass}>
                   *{errors.name.message}
                 </p>
               )}
@@ -114,14 +122,15 @@ const BookModal = () => {
               </label>
               <input
                 id="phone"
-                autoComplete="tel"
                 type="tel"
                 className={inputClass}
                 placeholder="Телефон"
+                autoComplete="tel"
+                aria-describedby={errors.phone ? 'phone-error' : undefined}
                 {...register('phone')}
               />
               {errors.phone && (
-                <p role="alert" className={errorClass}>
+                <p id="phone-error" role="alert" className={errorClass}>
                   {errors.phone.message}
                 </p>
               )}
@@ -133,14 +142,15 @@ const BookModal = () => {
               </label>
               <input
                 id="email"
-                autoComplete="email"
                 type="email"
                 className={inputClass}
                 placeholder="Email"
+                autoComplete="email"
+                aria-describedby={errors.email ? 'email-error' : undefined}
                 {...register('email')}
               />
               {errors.email && (
-                <p role="alert" className={errorClass}>
+                <p id="email-error" role="alert" className={errorClass}>
                   {errors.email.message}
                 </p>
               )}
@@ -155,10 +165,13 @@ const BookModal = () => {
               <textarea
                 id="question"
                 className="w-full border-[2px] border-mine-shaft bg-woodsmoke-bright rounded-md py-3 px-3.5 min-h-[166px] focus:outline-none focus:border-boulder-light peer caret-tuatara resize-none 4xl:min-h-[244px]"
+                aria-describedby={
+                  errors.question ? 'question-error' : undefined
+                }
                 {...register('question')}
               />
               {errors.question && (
-                <p role="alert" className={errorClass}>
+                <p id="question-error" role="alert" className={errorClass}>
                   {errors.question.message}
                 </p>
               )}

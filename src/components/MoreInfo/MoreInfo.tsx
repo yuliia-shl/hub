@@ -67,10 +67,11 @@ const MoreInfo = () => {
                   className={inputClass}
                   placeholder="Ім’я"
                   autoComplete="given-name"
+                  aria-describedby={errors.name ? 'name-error' : undefined}
                   {...register('name')}
                 />
                 {errors.name && (
-                  <p role="alert" className={errorClass}>
+                  <p id="name-error" role="alert" className={errorClass}>
                     *{errors.name.message}
                   </p>
                 )}
@@ -86,10 +87,11 @@ const MoreInfo = () => {
                   className={inputClass}
                   placeholder="Телефон"
                   autoComplete="tel"
+                  aria-describedby={errors.phone ? 'phone-error' : undefined}
                   {...register('phone')}
                 />
                 {errors.phone && (
-                  <p role="alert" className={errorClass}>
+                  <p id="phone-error" role="alert" className={errorClass}>
                     *{errors.phone.message}
                   </p>
                 )}
@@ -105,10 +107,11 @@ const MoreInfo = () => {
                   className={inputClass}
                   placeholder="Email"
                   autoComplete="email"
+                  aria-describedby={errors.email ? 'email-error' : undefined}
                   {...register('email')}
                 />
                 {errors.email && (
-                  <p role="alert" className={errorClass}>
+                  <p id="email-error" role="alert" className={errorClass}>
                     *{errors.email.message}
                   </p>
                 )}

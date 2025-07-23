@@ -116,6 +116,7 @@ const Modules = () => {
                 <li key={index}>
                   <button
                     type="button"
+                    aria-pressed={isActive}
                     onClick={() => setActiveIndex(index)}
                     className={`flex items-center justify-center 1xl:justify-normal gap-4 p-4 xs:p-3.5 1xl:py-7 1xl:px-8 rounded-lg transition-colors duration-300 
                   ${getButtonWidth(
@@ -128,6 +129,7 @@ const Modules = () => {
                       className={`w-8.5 h-8.5  ${
                         isActive ? 'fill-tangerine' : 'fill-boulder-gray'
                       }`}
+                      aria-hidden="true"
                     >
                       <use
                         href={`/images/svg/icons.svg#icon-${module.iconNumber}`}
@@ -137,7 +139,7 @@ const Modules = () => {
                       className={`uppercase font-semibold text-base/[200%] 1xl:text-lg/[178%] 4xl:text-[22px]/[145%] ${
                         isActive
                           ? 'text-tangerine'
-                          : 'hidden 1xl:block text-boulder-gray'
+                          : 'sr-only 1xl:block text-boulder-gray'
                       }`}
                     >
                       {module.title}

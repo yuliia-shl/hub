@@ -28,6 +28,7 @@ const HubBusiness = () => {
                 <li key={index} className="w-full">
                   <button
                     type="button"
+                    aria-pressed={isActive}
                     onClick={() => setActiveIndex(index)}
                     className={`flex items-center rounded-lg justify-center px-4 min-h-16 transition-colors duration-300
                       ${getButtonWidth(
@@ -42,13 +43,14 @@ const HubBusiness = () => {
                   >
                     <span
                       className={`font-second tracking-[-0.02em] text-[26px]/[110%] capitalize 4xl:text-4xl
-                      ${!isActive ? 'hidden 1xl:block' : ''}`}
+                      ${!isActive ? 'sr-only 1xl:block' : ''}`}
                     >
                       {business.role}
                     </span>
                     <svg
                       className={`w-8.5 h-8.5 fill-boulder-gray 1xl:hidden 
                       ${isActive ? 'hidden' : ''}`}
+                      aria-hidden="true"
                     >
                       <use
                         href={`/images/svg/icons.svg#icon-${business.icon}`}
