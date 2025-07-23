@@ -12,21 +12,22 @@ import OurHubsGallery from './components/OurHubsGallery/OurHubsGallery';
 import MoreInfo from './components/MoreInfo/MoreInfo';
 import Footer from './components/Footer/Footer';
 
-
 function App() {
   return (
     <>
       <Header />
-      <Hero />
-      <Provides />
-      <Product />
-      <HubBusiness />
-      <Partners />
-      <Modules />
-      <Reasons />
-      <OurHubsGallery />
-      <FAQ />
-      <MoreInfo />
+      <main>
+        <Hero />
+        <Provides />
+        <Product />
+        <HubBusiness />
+        <Partners />
+        <Modules />
+        <Reasons />
+        <OurHubsGallery />
+        <FAQ />
+        <MoreInfo />
+      </main>
       <Footer />
     </>
   );

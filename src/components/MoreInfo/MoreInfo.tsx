@@ -1,11 +1,9 @@
 const MoreInfo = () => {
   const inputClass =
-    'w-full bg-transparent border-b-[2px] border-mine-shaft pt-[30px] pb-3 focus:outline-none focus:border-boulder-light text-xl/[100%] peer caret-tuatara';
+    'form-write-us w-full bg-transparent border-b-[2px] border-mine-shaft pt-[30px] pb-3 focus:outline-none focus:border-boulder-light text-xl/[100%] peer caret-tuatara';
+
   return (
-    <section
-      id="more-info-section"
-      className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70"
-    >
+    <section id="more-info" className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
       <div className="section">
         <div className="pt-10.5 pb-14 px-6 1xl:py-12.5 1xl:px-12 3xl:pr-25 3xl:pl-19 4xl:px-30 4xl:py-28.5 bg-cod-dark rounded-[26px] gap-18 1xl:gap-0 3xl:gap-x-75 4xl:gap-x-81 flex flex-col 1xl:flex-row">
           {/* Ліва колонка: заголовок + опис */}

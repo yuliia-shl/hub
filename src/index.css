@@ -108,6 +108,7 @@
   --color-woodsmoke-dust: #141414;
   --color-woodsmoke-black: #1a1a1a;
   --color-woodsmoke-light: #1c1c1c;
+  --color-woodsmoke-bright: #1d1d1d;
   --color-woodsmoke-dimmed: #191919;
   --color-mine-shaft: #303030;
   --color-tuatara: #393939;
@@ -167,4 +168,26 @@ button {
   .section {
     @apply mx-auto max-w-[568px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] px-6 1xl:px-10 3xl:px-22.5 4xl:px-40;
   }
+}
+
+input.form-book:-webkit-autofill,
+input.form-book:-webkit-autofill:focus,
+input.form-book:-webkit-autofill:hover {
+  box-shadow: 0 0 0 1000px var(--color-woodsmoke-black) inset !important;
+  -webkit-text-fill-color: var(--color-mercury-white) !important;
+  outline: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  transition: background-color 9999s ease-in-out 0s !important;
+}
+
+input.form-write-us:-webkit-autofill,
+input.form-write-us:-webkit-autofill:focus,
+input.form-write-us:-webkit-autofill:hover {
+  box-shadow: 0 0 0 1000px var(--color-cod-dark) inset !important;
+  -webkit-text-fill-color: var(--color-mercury-white) !important;
+  outline: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  transition: background-color 9999s ease-in-out 0s !important;
 }
