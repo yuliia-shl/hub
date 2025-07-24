@@ -67,15 +67,15 @@ const HubBusiness = () => {
                 return (
                   <li
                     key={index}
-                    className="grid grid-rows-2 gap-x-2 grid-cols-16 items-center 1xl:gap-y-1"
+                    className="grid grid-rows-2 gap-x-2 grid-cols-10 xs:grid-cols-16 items-center 1xl:gap-y-1"
                   >
-                    <span className="col-span-1 text-4xl/[183%] font-extralight text-masala-gray 1xl:text-[64px]/[103%] 1xl:col-span-1 1xl:row-span-2 4xl:text-[86px]/[77%]">
+                    <span className="col-span-1 text-4xl/[145%] xs:text-4xl/[183%] font-extralight text-masala-gray 1xl:text-[64px]/[103%] 1xl:col-span-1 1xl:row-span-2 4xl:text-[86px]/[77%]">
                       {index + 1}
                     </span>
-                    <span className="col-span-15 text-2xl/[117%] font-semibold tracking-[-0.02em] 3xl:tracking-normal 1xl:text-[32px]/[87%] 1xl:col-span-15 1xl:min-w-[824px] 3xl:min-w-[854px] 4xl:text-[34px]/[82%] 4xl:min-w-[910px]">
+                    <span className="col-span-9 xs:col-span-15 text-xl xs:text-2xl/[117%] font-semibold tracking-[-0.02em] 3xl:tracking-normal 1xl:text-[32px]/[87%] 1xl:col-span-15 1xl:min-w-[824px] 3xl:min-w-[854px] 4xl:text-[34px]/[82%] 4xl:min-w-[910px]">
                       {advantage.title}
                     </span>
-                    <span className="text-base/[137%] text-boulder-dust col-span-16 1xl:col-span-15 1xl:text-lg/[122%] 1xl:max-w-[670px] 4xl:text-xl/[110%] 4xl:max-w-[890px]">
+                    <span className="text-base/[137%] text-boulder-dust col-span-10 xs:col-span-16 1xl:col-span-15 1xl:text-lg/[122%] 1xl:max-w-[670px] 4xl:text-xl/[110%] 4xl:max-w-[890px]">
                       {advantage.description}
                     </span>
                   </li>
