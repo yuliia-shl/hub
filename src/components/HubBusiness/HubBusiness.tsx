@@ -126,7 +126,7 @@ const HubBusiness = () => {
                   icon="/images/svg/icons.svg#icon-arrow-up-right"
                   iconClassName="w-4.5 h-4.5 stroke-cod-gray"
                   iconPosition="right"
-                  className="flex justify-between w-full font-bold py-4.5"
+                  className="flex justify-between w-full py-4.5"
                 /> */}
               </div>
             </div>
