@@ -103,6 +103,7 @@ const Modules = () => {
                 src={`/images/modules-mobile/${pictureShort}-1x.webp`}
                 srcSet={`/images/modules-mobile/${pictureShort}-2x.webp 2x, /images/modules-mobile/${pictureShort}-4x.webp 4x`}
                 alt={title}
+                loading="lazy"
                 className="w-[520px] 1xl:w-[656px] 3xl:w-[844px] 4xl:w-[945px] h-[362px] 1xl:h-[452px] 3xl:h-[582px] 4xl:h-[558px]"
               />
             </picture>
