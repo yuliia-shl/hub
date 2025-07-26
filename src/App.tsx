@@ -11,6 +11,9 @@ import FAQ from './components/FAQ/FAQ';
 import OurHubsGallery from './components/OurHubsGallery/OurHubsGallery';
 import MoreInfo from './components/MoreInfo/MoreInfo';
 import Footer from './components/Footer/Footer';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 function App() {
   return (
