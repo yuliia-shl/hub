@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { business } from '../../data/hub-business';
-import SmartButton from '../ui/Button/SmartButton';
 
 const HubBusiness = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const { advantages } = business[activeIndex];
+  const { advantages, buttonLabel } = business[activeIndex];
 
   const getButtonWidth = (index: number, activeIndex: number): string => {
     const isActive = index === activeIndex;
@@ -28,6 +27,7 @@ const HubBusiness = () => {
                 <li key={index} className="w-full">
                   <button
                     type="button"
+                    aria-pressed={isActive}
                     onClick={() => setActiveIndex(index)}
                     className={`flex items-center rounded-lg justify-center px-4 min-h-16 transition-colors duration-300
                       ${getButtonWidth(
@@ -42,13 +42,14 @@ const HubBusiness = () => {
                   >
                     <span
                       className={`font-second tracking-[-0.02em] text-[26px]/[110%] capitalize 4xl:text-4xl
-                      ${!isActive ? 'hidden 1xl:block' : ''}`}
+                      ${!isActive ? 'sr-only 1xl:not-sr-only' : ''}`}
                     >
                       {business.role}
                     </span>
                     <svg
                       className={`w-8.5 h-8.5 fill-boulder-gray 1xl:hidden 
                       ${isActive ? 'hidden' : ''}`}
+                      aria-hidden="true"
                     >
                       <use
                         href={`/images/svg/icons.svg#icon-${business.icon}`}
@@ -66,15 +67,15 @@ const HubBusiness = () => {
                 return (
                   <li
                     key={index}
-                    className="grid grid-rows-2 gap-x-2 grid-cols-16 items-center 1xl:gap-y-1"
+                    className="grid grid-rows-2 gap-x-2 grid-cols-10 xs:grid-cols-16 items-center 1xl:gap-y-1"
                   >
-                    <span className="col-span-1 text-4xl/[183%] font-extralight text-masala-gray 1xl:text-[64px]/[103%] 1xl:col-span-1 1xl:row-span-2 4xl:text-[86px]/[77%]">
+                    <span className="col-span-1 text-4xl/[145%] xs:text-4xl/[183%] font-extralight text-masala-gray 1xl:text-[64px]/[103%] 1xl:col-span-1 1xl:row-span-2 4xl:text-[86px]/[77%]">
                       {index + 1}
                     </span>
-                    <span className="col-span-15 text-2xl/[117%] font-semibold tracking-[-0.02em] 3xl:tracking-normal 1xl:text-[32px]/[87%] 1xl:col-span-15 1xl:min-w-[824px] 3xl:min-w-[854px] 4xl:text-[34px]/[82%] 4xl:min-w-[910px]">
+                    <span className="col-span-9 xs:col-span-15 text-xl xs:text-2xl/[117%] font-semibold tracking-[-0.02em] 3xl:tracking-normal 1xl:text-[32px]/[87%] 1xl:col-span-15 1xl:min-w-[824px] 3xl:min-w-[854px] 4xl:text-[34px]/[82%] 4xl:min-w-[910px]">
                       {advantage.title}
                     </span>
-                    <span className="text-base/[137%] text-boulder-dust col-span-16 1xl:col-span-15 1xl:text-lg/[122%] 1xl:max-w-[670px] 4xl:text-xl/[110%] 4xl:max-w-[890px]">
+                    <span className="text-base/[137%] text-boulder-dust col-span-10 xs:col-span-16 1xl:col-span-15 1xl:text-lg/[122%] 1xl:max-w-[670px] 4xl:text-xl/[110%] 4xl:max-w-[890px]">
                       {advantage.description}
                     </span>
                   </li>
@@ -100,21 +101,33 @@ const HubBusiness = () => {
                   download="Презентація інвесторам.pdf"
                   className="group flex p-4 border-1 rounded-full border-tangerine 1xl:py-4.5 1xl:px-6 1xl:justify-between hover:border-chilean-fire focus:outline-chilean-fire focus:outline-2 transition-colors duration-300 4xl:py-5.5"
                 >
-                  <span className="hidden 1xl:block text-tangerine group-hover:text-chilean-fire group-focus:text-chilean-fire transition-colors duration-300 text-base/[100%] 4xl:text-[20px]">
+                  <span className="hidden 1xl:block text-tangerine group-hover:text-chilean-fire group-focus:text-chilean-fire transition-colors duration-300 text-base/[100%] 4xl:text-xl">
                     Презентація інвесторам
                   </span>
                   <svg className="w-5 h-5 fill-tangerine group-hover:fill-chilean-fire transition-colors duration-300">
                     <use href="/images/svg/icons.svg#icon-pdf" />
                   </svg>
                 </a>
-                <SmartButton
-                  label="Інвестувати"
+
+                <a
+                  href="#more-info"
+                  className="flex items-center justify-between w-full font-bold px-6 py-4.5 rounded-[45px] text-base/[100%] 4xl:text-xl text-cod-gray bg-tangerine hover:bg-chilean-fire focus:bg-chilean-fire transition-colors duration-300"
+                >
+                  <span className="text-base/[100%] 4xl:text-xl">
+                    {buttonLabel}
+                  </span>
+                  <svg className="w-4.5 h-4.5 stroke-cod-gray">
+                    <use href="/images/svg/icons.svg#icon-arrow-up-right" />
+                  </svg>
+                </a>
+                {/* <SmartButton
+                  label={buttonLabel}
                   variant="secondary"
                   icon="/images/svg/icons.svg#icon-arrow-up-right"
                   iconClassName="w-4.5 h-4.5 stroke-cod-gray"
                   iconPosition="right"
-                  className="flex justify-between w-full font-bold py-4.5"
-                />
+                  className="flex justify-between w-full py-4.5"
+                /> */}
               </div>
             </div>
           </div>

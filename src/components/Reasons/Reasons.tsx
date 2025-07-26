@@ -54,15 +54,17 @@ const Reasons = () => {
 
         <div className="relative max:w-[520px] 1xl:w-[440px] 3xl:w-[460px] 4xl:w-[646px] shrink-0">
           <img
-            src="/images/png/smart-locker.png"
-            className="absolute top-[-16px] 1xl:top-15 3xl:top-7 4xl:top-3.5 -left-4 xs:left-10 1xl:left-8 3xl:left-8.5 4xl:left-21.5 max-w-[286px] 1xl:w-[244px] 3xl:w-[254px] 4xl:w-[306px] xs:h-[330px] 1xl:h-[280px] 3xl:h-[294px] 4xl:h-[352px] rotate-[-6deg] opacity-[0.26]"
+            alt="Smart Locker HUB"
+            src="/images/smart-locker.png"
+            className="absolute top-[-8px] xs:top-[-16px] 1xl:top-15 3xl:top-7 4xl:top-3.5 left-1 xs:left-10 1xl:left-8 3xl:left-8.5 4xl:left-21.5 max-w-[240px] xs:max-w-[286px] 1xl:w-[244px] 3xl:w-[254px] 4xl:w-[306px] xs:h-[330px] 1xl:h-[280px] 3xl:h-[294px] 4xl:h-[352px] rotate-[-6deg] opacity-[0.26]"
           />
           <img
-            src="/images/png/smart-locker.png"
-            className="absolute top-[214px] xs:top-[206px] 1xl:top-[248px] 3xl:top-[226px] 4xl:top-[254px] left-10 xs:left-1/2 xs:-translate-x-1/2 max-w-[362px] 1xl:w-[308px] 3xl:w-[322px] 4xl:w-[386px] xs:h-[417px] 1xl:h-[354px] 3xl:h-[370px] 4xl:h-[445px] rotate-[29deg] z-2"
+            alt="Smart Locker HUB"
+            src="/images/smart-locker.png"
+            className="absolute top-[180px] xs:top-[206px] 1xl:top-[248px] 3xl:top-[226px] 4xl:top-[254px] left-10 xs:left-1/2 xs:-translate-x-1/2 max-w-[300px] xs:max-w-[362px] 1xl:w-[308px] 3xl:w-[322px] 4xl:w-[386px] xs:h-[417px] 1xl:h-[354px] 3xl:h-[370px] 4xl:h-[445px] rotate-[29deg] z-2"
           />
           {/* Spacer для забезпечення висоти секції */}
-          <div className="invisible w-full min-h-[596px] 1xl:h-[660px] 3xl:h-[638px] 4xl:h-[710px] 1xl:pt-12.5 3xl:pt-0 4xl:pl-23" />
+          <div className="invisible w-full min-h-[526px] xs:min-h-[596px] 1xl:h-[660px] 3xl:h-[638px] 4xl:h-[710px] 1xl:pt-12.5 3xl:pt-0 4xl:pl-23" />
         </div>
       </div>
     </section>
