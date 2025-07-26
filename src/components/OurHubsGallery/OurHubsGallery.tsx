@@ -231,26 +231,41 @@ const OurHubsGallery: React.FC = () => {
     >
       <div className="section px-0">
         <h2 className="sr-only">Наші HUBи</h2>
-        
+
         <div className="pt-43 pb-15 3xl:pt-[116px] 3xl:pb-0">
           <div className="relative mx-auto">
             {/* Top ellipses + title */}
-            <div className="absolute z-10 top-[-174px] 1xl:top-[-134px] 3xl:top-[-136px] 4xl:top-[-64px] w-screen transform -translate-x-1/2 pointer-events-none">
-              <div className="w-[568px] h-[200px] 1xl:w-[1825px] 3xl:w-[2141px] 4xl:w-[2300px]">
-                <svg className="block w-full h-full 1xl:hidden fill-cod-black" viewBox="0 0 91 32" aria-hidden="true">
-                  <use href="/images/svg/icons.svg#icon-Ellipse-mobile-top" />
-                </svg>
-                <svg className="hidden w-full h-full 1xl:block 3xl:hidden fill-cod-black" viewBox="0 0 327 32" aria-hidden="true">
-                  <use href="/images/svg/icons.svg#icon-Ellipse-1440-top" />
-                </svg>
-                <svg className="hidden w-full h-full 3xl:block 4xl:hidden fill-cod-black" viewBox="0 0 309 32" aria-hidden="true">
-                  <use href="/images/svg/icons.svg#icon-Ellipse-1920-top" />
-                </svg>
-                <svg className="hidden w-full h-full 4xl:block fill-cod-black" aria-hidden="true">
-                  <use href="/images/svg/icons.svg#icon-Ellipse-2560-top" />
-                </svg>
-              </div>
-              <h2 className="absolute inset-0 z-20 flex items-center justify-center 3xl:top-[-146px] 4xl:top-[-30px] text-dust-white text-[32px]/[110%] 1xl:text-[42px]/[110%] 3xl:text-[54px]/[110%] 4xl:text-[62px]/[110%] tracking-[-0.02em] font-second 4xl:font-medium">
+            <div className="absolute inset-x-0 z-10 top-[-174px] 1xl:top-[-134px] 3xl:top-[-136px] 4xl:top-[-64px] h-[200px] pointer-events-none">
+              <svg
+                className="block w-full h-full 1xl:hidden fill-cod-black"
+                viewBox="0 0 91 32"
+                aria-hidden="true"
+              >
+                <use href="/images/svg/icons.svg#icon-Ellipse-mobile-top" />
+              </svg>
+              <svg
+                className="hidden w-full h-full 1xl:block 3xl:hidden fill-cod-black"
+                style={{ transform: 'translateY(32px) scaleY(-1)' }}
+                viewBox="0 0 327 32"
+                aria-hidden="true"
+              >
+                <use href="/images/svg/icons.svg#icon-Ellipse-1440-top" />
+              </svg>
+              <svg
+                className="hidden w-full h-full 3xl:block 4xl:hidden fill-cod-black"
+                viewBox="0 0 309 32"
+                aria-hidden="true"
+              >
+                <use href="/images/svg/icons.svg#icon-Ellipse-1920-top" />
+              </svg>
+              <svg
+                className="hidden w-full h-full 4xl:block fill-cod-black"
+                aria-hidden="true"
+              >
+                <use href="/images/svg/icons.svg#icon-Ellipse-2560-top" />
+              </svg>
+
+              <h2 className="absolute inset-0 z-20 flex items-center justify-center 1xl:top-[-40px] 3xl:top-[-28px] 4xl:top-[-18px] text-dust-white text-[32px]/[110%] 1xl:text-[42px]/[110%] 3xl:text-[54px]/[110%] 4xl:text-[62px]/[110%] tracking-[-0.02em] font-second 4xl:font-medium">
                 Наші HUBи
               </h2>
             </div>
@@ -274,7 +289,8 @@ const OurHubsGallery: React.FC = () => {
                 className="hidden 3xl:block 4xl:hidden absolute left-0 inset-y-0 z-10 pointer-events-none"
                 style={{
                   width: peek,
-                  background: 'linear-gradient(270deg, #080808 0%, rgba(8, 8, 8, 0) 100%)',
+                  background:
+                    'linear-gradient(270deg, #080808 0%, rgba(8, 8, 8, 0) 100%)',
                   transform: 'rotate(-180deg)',
                 }}
               />
@@ -315,25 +331,32 @@ const OurHubsGallery: React.FC = () => {
                 className="hidden 3xl:block 4xl:hidden absolute right-0 inset-y-0 z-10 pointer-events-none"
                 style={{
                   width: peek,
-                  background: 'linear-gradient(90deg, #080808 0%, rgba(8, 8, 8, 0) 100%)',
+                  background:
+                    'linear-gradient(90deg, #080808 0%, rgba(8, 8, 8, 0) 100%)',
                   transform: 'rotate(180deg)',
                 }}
               />
             </div>
 
             {/* Bottom ellipses */}
-            <div className="absolute bottom-[-94px] 1xl:bottom-[-58px] 3xl:bottom-[-75px] 4xl:bottom-[-1px] z-10 left-1/2 transform -translate-x-1/2 pointer-events-none">
+            <div className="absolute bottom-[-94px] 1xl:bottom-[32px] 3xl:bottom-[-75px] 4xl:bottom-[-1px] z-10 left-1/2 transform -translate-x-1/2 pointer-events-none">
               <div className="w-[568px] h-[200px] 1xl:w-[1825px] 3xl:w-[2141px] 4xl:w-[2300px]" />
               <svg className="block 1xl:hidden w-[568px] fill-cod-black">
                 <use href="/images/svg/icons.svg#icon-Ellipse-mobile-bottom" />
               </svg>
-              <svg className="hidden 1xl:block 3xl:hidden fill-cod-black">
+              <svg className="hidden 1xl:block 3xl:hidden fill-white">
                 <use href="/images/svg/icons.svg#icon-Ellipse-1440-bottom" />
               </svg>
-              <svg viewBox="0 0 309 32" className="hidden 3xl:block 4xl:hidden fill-cod-black">
+              <svg
+                viewBox="0 0 309 32"
+                className="hidden 3xl:block 4xl:hidden fill-cod-black"
+              >
                 <use href="/images/svg/icons.svg#icon-Ellipse-1920-bottom" />
               </svg>
-              <svg viewBox="0 0 863 32" className="hidden 4xl:block fill-cod-black">
+              <svg
+                viewBox="0 0 863 32"
+                className="hidden 4xl:block fill-cod-black"
+              >
                 <use href="/images/svg/icons.svg#icon-Ellipse-2560-bottom" />
               </svg>
             </div>
@@ -348,7 +371,9 @@ const OurHubsGallery: React.FC = () => {
                     aria-label={`Перейти до слайду ${idx + 1}`}
                     aria-current={active === idx ? 'true' : undefined}
                     className={`h-2 rounded-[32px] transition-all ${
-                      active === idx ? 'w-17 bg-masala-light' : 'w-7.5 bg-woodsmoke-dust'
+                      active === idx
+                        ? 'w-17 bg-masala-light'
+                        : 'w-7.5 bg-woodsmoke-dust'
                     }`}
                   />
                 </li>
