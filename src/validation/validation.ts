@@ -5,9 +5,9 @@ export const nameField = z
   .string({
     error: 'Поле обов’язкове',
   })
-  .min(2, 'Має містити мінімум 2 символи')
-  .max(50, 'Не може перевищувати 50 символів')
-  .regex(nameRegex, 'Може містити тільки літери, апострофи та дефіси.');
+  .min(2, 'І’мя має містити мінімум 2 символи')
+  .max(50, 'І’мя не може перевищувати 50 символів')
+  .regex(nameRegex, 'Допустимі: літери, апострофи, дефіси');
 
 export const phoneField = z
   .string({
@@ -30,7 +30,7 @@ export const bookModalSchema = z.object({
   question: z
     .string()
     .min(10, 'Поле має містити мінімум 10 символів')
-    .max(100, 'Поле не може перевищувати 100 символів'),
+    .max(200, 'Поле не може перевищувати 200 символів'),
 });
 
 export type BookModalSchemaType = z.infer<typeof bookModalSchema>;

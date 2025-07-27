@@ -12,7 +12,7 @@ import { twMerge } from 'tailwind-merge';
 const BookModal = () => {
   const [activeIndex, setActiveIndex] = useState<number>(1);
   const inputClass =
-    'form-book w-full bg-transparent border-b-[2px] border-mine-shaft pt-6.5 pb-3 focus:outline-none focus:border-boulder-light text-xl/[100%] peer caret-tuatara';
+    'form-book w-full bg-transparent border-b-[2px] border-mine-shaft pt-6.5 pb-3 focus:outline-none focus:border-boulder-light text-xl/[100%] peer caret-boulder-dark';
   const errorClass =
     'text-persian-red text-sm/[100%] tracking-[-0.02em] font-medium mt-2';
 
@@ -32,13 +32,12 @@ const BookModal = () => {
   const onSubmit = (data: BookModalSchemaType) => {
     const finalData = {
       ...data,
-      role: data.role,
       name: data.name.replace(/\s+/g, ' ').trim(), //It replaces all sequences of whitespace characters (including spaces, tabs, newlines, etc.) with a single space.
-      phone: data.phone,
       email: data.email.toLowerCase(),
-      question: data.question.trim(),
+      question: data.question.replace(/\s+/g, ' ').trim(),
     };
 
+    // #TODO delete log
     console.log('Sending data:', finalData);
   };
 
@@ -103,6 +102,7 @@ const BookModal = () => {
               <input
                 id="name"
                 type="text"
+                maxLength={51}
                 className={inputClass}
                 placeholder="Ім’я"
                 autoComplete="given-name"
@@ -123,6 +123,7 @@ const BookModal = () => {
               <input
                 id="phone"
                 type="tel"
+                maxLength={17}
                 className={inputClass}
                 placeholder="Телефон"
                 autoComplete="tel"
@@ -143,6 +144,7 @@ const BookModal = () => {
               <input
                 id="email"
                 type="email"
+                maxLength={51}
                 className={inputClass}
                 placeholder="Email"
                 autoComplete="email"
@@ -164,7 +166,8 @@ const BookModal = () => {
             <div>
               <textarea
                 id="question"
-                className="w-full border-[2px] border-mine-shaft bg-woodsmoke-bright rounded-md py-3 px-3.5 min-h-[166px] focus:outline-none focus:border-boulder-light peer caret-tuatara resize-none 4xl:min-h-[244px]"
+                maxLength={201}
+                className="w-full border-[2px] border-mine-shaft bg-woodsmoke-bright rounded-md py-3 px-3.5 min-h-[130px] xs:min-h-[166px] focus:outline-none focus:border-boulder-light peer caret-tuatara resize-none 4xl:min-h-[244px]"
                 aria-describedby={
                   errors.question ? 'question-error' : undefined
                 }
