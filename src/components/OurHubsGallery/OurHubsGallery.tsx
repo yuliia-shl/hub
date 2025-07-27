@@ -1,3 +1,256 @@
+import React, { useState, useEffect, useRef, type KeyboardEvent } from 'react';
+import { galleryImages as images } from '../../data/gallery-image';
+
+const OurHubsGallery: React.FC = () => {
+  const [active, setActive] = useState(0);
+  const ulRef = useRef<HTMLUListElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const dragStartX = useRef(0);
+  const dragDelta = useRef(0);
+  const getSettings = () => {
+    const w = window.innerWidth;
+    let slideW = 568,
+      peek = 0;
+    if (w >= 2560) {
+      slideW = 1156;
+      peek = 421;
+    } else if (w >= 1920) {
+      slideW = 1156;
+      peek = 262;
+    } else if (w >= 1440) {
+      slideW = 1082;
+      peek = 40;
+    }
+    const styles = ulRef.current && window.getComputedStyle(ulRef.current);
+    const gap = styles
+      ? parseFloat(styles.getPropertyValue('column-gap')) || 0
+      : 0;
+    return { slideW, peek, gap };
+  };
+
+  const { peek } = getSettings();
+
+  const updatePosition = () => {
+    if (!ulRef.current || !containerRef.current) return;
+    const { slideW, peek, gap } = getSettings();
+    const cw = containerRef.current.clientWidth;
+    const containerCenter = cw / 2;
+    const slideCenter = peek + active * (slideW + gap) + slideW / 2;
+    const offset = containerCenter - slideCenter;
+    ulRef.current.style.transform = `translateX(${offset}px)`;
+  };
+
+  useEffect(() => {
+    updatePosition();
+    window.addEventListener('resize', updatePosition);
+    return () => window.removeEventListener('resize', updatePosition);
+  }, [active]);
+
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      // Якщо вертикальна прокрутка сильніша — блокуємо її і обробляємо як горизонтальну
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+
+        if (e.deltaY > 0 && active < images.length - 1) {
+          setActive(prev => prev + 1);
+        } else if (e.deltaY < 0 && active > 0) {
+          setActive(prev => prev - 1);
+        }
+      }
+    };
+
+    const container = containerRef.current;
+    if (container)
+      container.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      if (container) container.removeEventListener('wheel', handleWheel);
+    };
+  }, [active]);
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLElement>) => {
+    if (e.key === 'ArrowRight') {
+      setActive(i => Math.min(i + 1, images.length - 1));
+    }
+    if (e.key === 'ArrowLeft') {
+      setActive(i => Math.max(i - 1, 0));
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLUListElement>) => {
+    isDragging.current = true;
+    dragStartX.current = e.clientX;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLUListElement>) => {
+    if (!isDragging.current || !ulRef.current || !containerRef.current) return;
+    dragDelta.current = e.clientX - dragStartX.current;
+
+    const currentOffset = -active * (getSettings().slideW + getSettings().gap);
+    ulRef.current.style.transform = `translateX(${
+      currentOffset + dragDelta.current
+    }px)`;
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+
+    const { slideW } = getSettings();
+
+    if (Math.abs(dragDelta.current) > slideW / 3) {
+      if (dragDelta.current < 0 && active < images.length - 1) {
+        setActive(prev => prev + 1);
+      } else if (dragDelta.current > 0 && active > 0) {
+        setActive(prev => prev - 1);
+      } else {
+        updatePosition(); // повертаємо назад
+      }
+    } else {
+      updatePosition(); // занадто малий свайп — повертаємо назад
+    }
+
+    dragDelta.current = 0;
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging.current) {
+      isDragging.current = false;
+      updatePosition();
+    }
+  };
+
+  return (
+    <section
+      className="relative pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70 overflow-hidden"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Галерея наших HUBів"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+      aria-labelledby="gallery-title"
+    >
+      <div className="section overflow-hidden px-0">
+        <h2 className="sr-only">Наші HUBи</h2>
+
+        <div className="pt-43  3xl:pt-[116px] 3xl:pb-0">
+          <div className="relative mx-auto">
+            {/* Top ellipses + title */}
+            <div className="absolute inset-x-0 z-10 -top-25 1xl:-top-20 3xl:-top-20 4xl:-top-20 h-[200px] pointer-events-none">
+              <svg
+                className="w-full h-full max-w-[568px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cod-black"
+                aria-hidden="true"
+              >
+                <use href="/images/svg/icons.svg#icon-Ellipse-top" />
+              </svg>
+
+              <h2
+                className="absolute inset-0 z-20 flex 
+               items-center justify-center -top-10 1xl:top-[-40px] 3xl:top-[-28px] 4xl:top-[-18px] text-dust-white text-[32px]/[110%] 1xl:text-[42px]/[110%] 3xl:text-[54px]/[110%] 4xl:text-[62px]/[110%] tracking-[-0.02em] font-second 4xl:font-medium"
+              >
+                Наші HUBи
+              </h2>
+            </div>
+
+            {/* Slider container */}
+            <div
+              ref={containerRef}
+              className="relative overflow-hidden"
+              style={{ paddingLeft: peek, paddingRight: peek }}
+            >
+              <div
+                className="pointer-events-none absolute inset-0 z-20"
+                style={{
+                  background: `
+      linear-gradient(
+        to right,
+        rgba(8, 8, 8, 0.8) 0%,
+        rgba(8, 8, 8, 0.4) 10%,
+        rgba(8, 8, 8, 0) 25%,
+        rgba(8, 8, 8, 0) 75%,
+        rgba(8, 8, 8, 0.4) 90%,
+        rgba(8, 8, 8, 0.8) 100%
+      ),
+      
+      linear-gradient(
+        to left,
+        rgba(8, 8, 8, 0.8) 0%,
+        rgba(8, 8, 8, 0.4) 10%,
+        rgba(8, 8, 8, 0) 25%,
+        rgba(8, 8, 8, 0) 75%,
+        rgba(8, 8, 8, 0.4) 90%,
+        rgba(8, 8, 8, 0.8) 100%
+      )
+    `,
+                  backgroundBlendMode: 'multiply',
+                }}
+              />
+
+              <ul
+                ref={ulRef}
+                role="listbox"
+                aria-labelledby="gallery-title"
+                className="flex gap-x-4 1xl:gap-x-[112px] 3xl:gap-x-[120px] transition-transform duration-500"
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseLeave}
+              >
+                {images.map((fileName, idx) => (
+                  <li
+                    key={idx}
+                    role="option"
+                    aria-selected={active === idx}
+                    className="flex-shrink-0 w-[568px] 1xl:w-[1082px] 3xl:w-[1156px]"
+                  >
+                    <img
+                      src={`/images/webp/hub-gallery/${fileName}`}
+                      alt={`HUB ${idx + 1}`}
+                      loading="lazy"
+                      className="w-full  object-cover"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Bottom ellipses */}
+            <div className="absolute h-[200px] -bottom-20 1xl:-bottom-20 3xl:-bottom-10 4xl:bottom-[-1px] z-10 inset-x-0 pointer-events-none">
+              <svg className="w-full h-full max-w-[568px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cold-black">
+                <use href="/images/svg/icons.svg#icon-Ellipse-45-7" />
+              </svg>
+            </div>
+
+            {/* Indicators */}
+            <ul className="absolute bottom-[-17px] 3xl:bottom-[10px] 4xl:bottom-[30px] left-1/2 z-20 transform -translate-x-1/2 flex gap-2.5">
+              {images.map((_, idx) => (
+                <li key={idx}>
+                  <button
+                    type="button"
+                    onClick={() => setActive(idx)}
+                    aria-label={`Перейти до слайду ${idx + 1}`}
+                    aria-current={active === idx ? 'true' : undefined}
+                    className={`h-2 rounded-[32px] transition-all ${
+                      active === idx
+                        ? 'w-17 bg-masala-light'
+                        : 'w-7.5 bg-woodsmoke-dust'
+                    }`}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default OurHubsGallery; 
+
+
 // import React from 'react';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import {
@@ -12,7 +265,7 @@
 // import { galleryImages as images } from '../../data/gallery-image';
 
 // const OurHubsGallery: React.FC = () => {
- 
+
 //   return (
 //     <section
 //       className="relative pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70"
@@ -159,235 +412,3 @@
 // };
 
 // export default OurHubsGallery;
-
-
-
-
-import React, { useState, useEffect, useRef, type KeyboardEvent } from 'react';
-import { galleryImages as images } from '../../data/gallery-image';
-
-const OurHubsGallery: React.FC = () => {
-  const [active, setActive] = useState(0);
-  const ulRef = useRef<HTMLUListElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const getSettings = () => {
-    const w = window.innerWidth;
-    let slideW = 568,
-      peek = 0;
-    if (w >= 2560) {
-      slideW = 1156;
-      peek = 421;
-    } else if (w >= 1920) {
-      slideW = 1156;
-      peek = 262;
-    } else if (w >= 1440) {
-      slideW = 1082;
-      peek = 40;
-    }
-    const styles = ulRef.current && window.getComputedStyle(ulRef.current);
-    const gap = styles
-      ? parseFloat(styles.getPropertyValue('column-gap')) || 0
-      : 0;
-    return { slideW, peek, gap };
-  };
-
-  const updatePosition = () => {
-    if (!ulRef.current || !containerRef.current) return;
-    const { slideW, peek, gap } = getSettings();
-    const cw = containerRef.current.clientWidth;
-    const containerCenter = cw / 2;
-    const slideCenter = peek + active * (slideW + gap) + slideW / 2;
-    const offset = containerCenter - slideCenter;
-    ulRef.current.style.transform = `translateX(${offset}px)`;
-  };
-
-  useEffect(() => {
-    updatePosition();
-    window.addEventListener('resize', updatePosition);
-    return () => window.removeEventListener('resize', updatePosition);
-  }, [active]);
-
-  const handleKeyDown = (e: KeyboardEvent<HTMLElement>) => {
-    if (e.key === 'ArrowRight') {
-      setActive(i => Math.min(i + 1, images.length - 1));
-    }
-    if (e.key === 'ArrowLeft') {
-      setActive(i => Math.max(i - 1, 0));
-    }
-  };
-
-  const { peek } = getSettings();
-
-  return (
-    <section
-      className="relative pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70"
-      role="region"
-      aria-roledescription="carousel"
-      aria-label="Галерея наших HUBів"
-      tabIndex={0}
-      onKeyDown={handleKeyDown}
-      aria-labelledby="gallery-title"
-    >
-      <div className="section px-0">
-        <h2 className="sr-only">Наші HUBи</h2>
-
-        <div className="pt-43 pb-15 3xl:pt-[116px] 3xl:pb-0">
-          <div className="relative mx-auto">
-            {/* Top ellipses + title */}
-            <div className="absolute inset-x-0 z-10 top-[-174px] 1xl:top-[-134px] 3xl:top-[-136px] 4xl:top-[-64px] h-[200px] pointer-events-none">
-              <svg
-                className="block w-full h-full 1xl:hidden fill-cod-black"
-                viewBox="0 0 91 32"
-                aria-hidden="true"
-              >
-                <use href="/images/svg/icons.svg#icon-Ellipse-mobile-top" />
-              </svg>
-              <svg
-                className="hidden w-full h-full 1xl:block 3xl:hidden fill-cod-black"
-                style={{ transform: 'translateY(32px) scaleY(-1)' }}
-                viewBox="0 0 327 32"
-                aria-hidden="true"
-              >
-                <use href="/images/svg/icons.svg#icon-Ellipse-1440-top" />
-              </svg>
-              <svg
-                className="hidden w-full h-full 3xl:block 4xl:hidden fill-cod-black"
-                viewBox="0 0 309 32"
-                aria-hidden="true"
-              >
-                <use href="/images/svg/icons.svg#icon-Ellipse-1920-top" />
-              </svg>
-              <svg
-                className="hidden w-full h-full 4xl:block fill-cod-black"
-                aria-hidden="true"
-              >
-                <use href="/images/svg/icons.svg#icon-Ellipse-2560-top" />
-              </svg>
-
-              <h2 className="absolute inset-0 z-20 flex items-center justify-center 1xl:top-[-40px] 3xl:top-[-28px] 4xl:top-[-18px] text-dust-white text-[32px]/[110%] 1xl:text-[42px]/[110%] 3xl:text-[54px]/[110%] 4xl:text-[62px]/[110%] tracking-[-0.02em] font-second 4xl:font-medium">
-                Наші HUBи
-              </h2>
-            </div>
-
-            {/* Slider container */}
-            <div
-              ref={containerRef}
-              className="overflow-hidden relative"
-              style={{ paddingLeft: peek, paddingRight: peek }}
-            >
-              {/* Left gradients */}
-              <div
-                className="hidden 4xl:block absolute left-0 inset-y-0 z-10 pointer-events-none"
-                style={{
-                  width: peek,
-                  background:
-                    'linear-gradient(270deg, #080808 0%, rgba(8, 8, 8, 0.93) 17.91%, rgba(8, 8, 8, 0) 100%)',
-                }}
-              />
-              <div
-                className="hidden 3xl:block 4xl:hidden absolute left-0 inset-y-0 z-10 pointer-events-none"
-                style={{
-                  width: peek,
-                  background:
-                    'linear-gradient(270deg, #080808 0%, rgba(8, 8, 8, 0) 100%)',
-                  transform: 'rotate(-180deg)',
-                }}
-              />
-
-              <ul
-                ref={ulRef}
-                role="listbox"
-                aria-labelledby="gallery-title"
-                className="flex gap-x-4 1xl:gap-x-[112px] 3xl:gap-x-[120px] transition-transform duration-500"
-              >
-                {images.map((fileName, idx) => (
-                  <li
-                    key={idx}
-                    role="option"
-                    aria-selected={active === idx}
-                    className="flex-shrink-0 w-[568px] 1xl:w-[1082px] 3xl:w-[1156px] 4xl:w-[1156px]"
-                  >
-                    <img
-                      src={`/images/webp/hub-gallery/${fileName}`}
-                      alt={`HUB ${idx + 1}`}
-                      loading="lazy"
-                      className="w-full h-[654px] 1xl:h-[720px] 3xl:h-[769px] object-cover"
-                    />
-                  </li>
-                ))}
-              </ul>
-
-              {/* Right gradients */}
-              <div
-                className="hidden 4xl:block absolute right-0 inset-y-0 z-10 pointer-events-none"
-                style={{
-                  width: peek,
-                  background:
-                    'linear-gradient(90deg, #080808 0%, rgba(8, 8, 8, 0.93) 17.91%, rgba(8, 8, 8, 0) 100%)',
-                }}
-              />
-              <div
-                className="hidden 3xl:block 4xl:hidden absolute right-0 inset-y-0 z-10 pointer-events-none"
-                style={{
-                  width: peek,
-                  background:
-                    'linear-gradient(90deg, #080808 0%, rgba(8, 8, 8, 0) 100%)',
-                  transform: 'rotate(180deg)',
-                }}
-              />
-            </div>
-
-            {/* Bottom ellipses */}
-            <div className="absolute bottom-[-94px] 1xl:bottom-[32px] 3xl:bottom-[-75px] 4xl:bottom-[-1px] z-10 left-1/2 transform -translate-x-1/2 pointer-events-none">
-              <div className="w-[568px] h-[200px] 1xl:w-[1825px] 3xl:w-[2141px] 4xl:w-[2300px]" />
-              <svg className="block 1xl:hidden w-[568px] fill-cod-black">
-                <use href="/images/svg/icons.svg#icon-Ellipse-mobile-bottom" />
-              </svg>
-              <svg className="hidden 1xl:block 3xl:hidden fill-white">
-                <use href="/images/svg/icons.svg#icon-Ellipse-1440-bottom" />
-              </svg>
-              <svg
-                viewBox="0 0 309 32"
-                className="hidden 3xl:block 4xl:hidden fill-cod-black"
-              >
-                <use href="/images/svg/icons.svg#icon-Ellipse-1920-bottom" />
-              </svg>
-              <svg
-                viewBox="0 0 863 32"
-                className="hidden 4xl:block fill-cod-black"
-              >
-                <use href="/images/svg/icons.svg#icon-Ellipse-2560-bottom" />
-              </svg>
-            </div>
-
-            {/* Indicators */}
-            <ul className="absolute bottom-[-17px] 3xl:bottom-[10px] 4xl:bottom-[30px] left-1/2 z-20 transform -translate-x-1/2 flex gap-2.5">
-              {images.map((_, idx) => (
-                <li key={idx}>
-                  <button
-                    type="button"
-                    onClick={() => setActive(idx)}
-                    aria-label={`Перейти до слайду ${idx + 1}`}
-                    aria-current={active === idx ? 'true' : undefined}
-                    className={`h-2 rounded-[32px] transition-all ${
-                      active === idx
-                        ? 'w-17 bg-masala-light'
-                        : 'w-7.5 bg-woodsmoke-dust'
-                    }`}
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default OurHubsGallery;
-
-
-
-
