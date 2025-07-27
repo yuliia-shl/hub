@@ -163,11 +163,14 @@ const BookModal = () => {
             <label htmlFor="question" className="text-mercury-white/50">
               Ваше питання
             </label>
-            <div>
+            <div className="h-full">
               <textarea
                 id="question"
                 maxLength={201}
-                className="w-full border-[2px] border-mine-shaft bg-woodsmoke-bright rounded-md py-3 px-3.5 min-h-[130px] xs:min-h-[166px] focus:outline-none focus:border-boulder-light peer caret-tuatara resize-none 4xl:min-h-[244px]"
+                className={twMerge(
+                  inputClass,
+                  'border-[2px] bg-woodsmoke-bright rounded-md py-3 px-3.5 h-full min-h-[130px] xs:min-h-[166px] resize-none 4xl:min-h-[244px]'
+                )}
                 aria-describedby={
                   errors.question ? 'question-error' : undefined
                 }
