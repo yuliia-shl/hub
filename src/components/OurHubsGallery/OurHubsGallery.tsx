@@ -97,12 +97,31 @@ const OurHubsGallery = () => {
                 const slideW = getSlideConfig().width;
                 return (
                   <SwiperSlide key={idx} style={{ width: slideW }}>
-                    <img
-                      src={`/images/webp/hub-gallery/${fileName}`}
-                      alt={`HUB ${idx + 1}`}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+                    <picture>
+                      {/* WebP 2x */}
+                      <source
+                        srcSet={`/images/webp/hub-gallery/${fileName.replace(
+                          '.webp',
+                          '-2x.webp'
+                        )}`}
+                        type="image/webp"
+                        media="(min-resolution: 192dpi)"
+                      />
+
+                      {/* Звичайний WebP */}
+                      <source
+                        srcSet={`/images/webp/hub-gallery/${fileName}`}
+                        type="image/webp"
+                      />
+
+                      {/* Fallback PNG or JPEG if needed */}
+                      <img
+                        src={`/images/webp/hub-gallery/${fileName}`}
+                        alt={`HUB ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </picture>
                   </SwiperSlide>
                 );
               })}
