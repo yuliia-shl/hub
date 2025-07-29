@@ -1,8 +1,8 @@
 import { twMerge } from 'tailwind-merge';
+
 export type SmartButtonProps = {
   label: string;
   type?: 'button' | 'submit' | 'reset';
-
   // SVG icon support
   icon?: string; // Шлях до символу, напр. "/icons.svg#icon-name"
   iconPosition?: 'left' | 'right';
@@ -11,10 +11,13 @@ export type SmartButtonProps = {
   iconClassName?: string; // Tailwind класи для svg
   // Стилі та функціональність
   className?: string;
-  onClick?: () => void;
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => void; // Змінено тип події
   disabled?: boolean;
   loading?: boolean;
-  iconGap?: number;
+  iconGap?: number; // Це не використовується в коді, можна видалити або додати стилі
+  href?: string; // Додано для підтримки посилань
   variant?: 'primary' | 'secondary' | 'danger';
 };
 
@@ -31,6 +34,7 @@ export default function SmartButton({
   disabled = false,
   loading = false,
   variant = 'primary',
+  href, // Отримуємо href з пропсів
 }: SmartButtonProps) {
   const baseClasses =
     'font-semibold py-4 px-6 rounded-full transition-colors inline-flex items-center justify-center 4xl:py-5.5 duration-300 w-fit text-base/[100%] tracking-[-0.02em] 4xl:text-[20px]';
@@ -48,7 +52,10 @@ export default function SmartButton({
     baseClasses,
     variantClasses[variant],
     disabled || loading ? 'opacity-50 cursor-not-allowed' : '',
-    className
+    className,
+    // Додаємо стилі для gap між іконкою та текстом
+    icon && iconPosition === 'left' ? 'flex-row-reverse' : '', // Якщо іконка справа, текст йде спочатку
+    icon && (iconPosition === 'left' || iconPosition === 'right') ? 'gap-2' : '' // Додаємо відступ, якщо є іконка (можна додати prop iconGap)
   );
 
   const Icon = () =>
@@ -63,6 +70,33 @@ export default function SmartButton({
       </svg>
     ) : null;
 
+  // Функція для рендерингу вмісту кнопки/посилання
+  const renderContent = () =>
+    loading ? (
+      'Loading...'
+    ) : (
+      <>
+        {icon && iconPosition === 'left' && <Icon />}
+        <span>{label}</span>
+        {icon && iconPosition === 'right' && <Icon />}
+      </>
+    );
+
+  // Умовний рендеринг: якщо є href, рендеримо <a>, інакше <button>
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={finalClassName}
+        onClick={onClick} // onClick буде працювати і для <a>
+        aria-disabled={disabled || loading} // aria-disabled для семантики
+      >
+        {renderContent()}
+      </a>
+    );
+  }
+
+  // Якщо href немає, рендеримо <button>
   return (
     <button
       type={type}
@@ -70,21 +104,7 @@ export default function SmartButton({
       onClick={onClick}
       disabled={disabled || loading}
     >
-      {loading ? (
-        'Loading...'
-      ) : icon && iconPosition === 'left' ? (
-        <>
-          <Icon />
-          <span>{label}</span>
-        </>
-      ) : icon && iconPosition === 'right' ? (
-        <>
-          <span>{label}</span>
-          <Icon />
-        </>
-      ) : (
-        label
-      )}
+      {renderContent()}
     </button>
   );
 }

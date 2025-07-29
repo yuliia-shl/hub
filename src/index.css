@@ -156,7 +156,7 @@
   }
 
   body {
-    @apply font-primary text-mercury-white bg-cod-black text-base leading-[1.37];
+    @apply font-primary text-mercury-white bg-cod-black text-base leading-[1.37] h-full;
     scrollbar-gutter: stable;
   }
 }
@@ -167,7 +167,7 @@ button {
 
 @layer components {
   .section {
-    @apply mx-auto max-w-[568px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] px-6 1xl:px-10 3xl:px-22.5 4xl:px-40;
+    @apply mx-auto max-w-[768px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] px-6 1xl:px-10 3xl:px-22.5 4xl:px-40;
   }
 }
 
