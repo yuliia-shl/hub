@@ -29,6 +29,7 @@ const VideoPlayer = () => {
           iconClassName="w-4.5 h-4.5 ml-16"
           iconStroke="currentColor"
           iconPosition="right"
+          href="#more-info"
           className="1xl:inline-flex ml-auto 1xl:ml-0 4xl:text-[20px]/[1]"
         />
       </div>
