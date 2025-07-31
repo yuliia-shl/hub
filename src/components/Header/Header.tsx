@@ -16,8 +16,8 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
 
   return (
     <>
-      <header className="relative z-100 w-full mt-3.5 mxl:mt-9 1xl:mt-10.5 3xl:mt-18 4xl:mt-17 mb-15">
-        <div className="section flex gap-4 max-h-17 1xl:h-14 4xl:h-16 h-full items-center">
+      <header className="relative z-100 w-full  1xl:mt-10.5 3xl:mt-18 4xl:mt-17">
+        <div className="section flex gap-4 py-3.5 1xl:py-0 bg-cod-gray/60 1xl:bg-transparent max-h-17 1xl:h-14 4xl:h-16 h-full items-center justify-between 1xl:justify-center-safe">
           <a href="/" className="w-1/3">
             <svg className="w-9.5 h-12.5 1xl:h-13 4xl:w-12 4xl:h-16.5 fill-tangerine">
               <use href="/images/svg/icons.svg#icon-logo" />
