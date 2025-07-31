@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Provides from './components/Provides/Provides';
@@ -13,14 +14,19 @@ import MoreInfo from './components/MoreInfo/MoreInfo';
 import Footer from './components/Footer/Footer';
 
 function App() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <>
-      <Header />
+      <Header setActiveIndex={setActiveIndex} />
       <main>
         <Hero />
         <Provides />
         <Product />
-        <HubBusiness />
+        <HubBusiness
+          activeIndex={activeIndex}
+          setActiveIndex={setActiveIndex}
+        />
         <Partners />
         <Modules />
         <Reasons />

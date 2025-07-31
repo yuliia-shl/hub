@@ -4,8 +4,13 @@ import BookModal from '../BookModal/BookModal';
 import BurgerToggle from '../BurgerToggle/BurgerToggle';
 import SmartButton from '../ui/Button/SmartButton';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import HeaderNav from '../HeaderNav/HeaderNav';
 
-const Header = () => {
+type HeaderProps = {
+  setActiveIndex: (index: number) => void;
+};
+
+const Header = ({ setActiveIndex }: HeaderProps) => {
   const [openBookModal, setOpenBookModal] = useState(false);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
 
@@ -18,25 +23,7 @@ const Header = () => {
               <use href="/images/svg/icons.svg#icon-logo" />
             </svg>
           </a>
-          <nav className="hidden 1xl:block  1xl:px-15 4xl:px-14 1xl:border-1 4xl:border-1.29 border-woodsmoke-black rounded-full bg-woodsmoke-black/50 backdrop-blur-[4px] max-h-full h-full items-stretch">
-            <ul className="flex 1xl:gap-x-31 1xl:text-xl/5 3xl:gap-38 4xl:gap-52 4xl:text-2xl/6 text-boulder-dust/77 font-bold items-center h-full tracking-[-0.02em]">
-              <li className="hover:text-gallery-white transition-colors">
-                <a href="#" className="py-3">
-                  Інвестору
-                </a>
-              </li>
-              <li className="hover:text-gallery-white transition-colors">
-                <a href="#about" className="py-3">
-                  Партнеру
-                </a>
-              </li>
-              <li className="hover:text-gallery-white transition-colors">
-                <a href="#contact" className="py-3">
-                  Локації
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <HeaderNav setActiveIndex={setActiveIndex} />
           <div className="flex items-center gap-5.5">
             {/* Умовний рендеринг SmartButton */}
             {!isBurgerMenuOpen && ( // Показуємо кнопку, тільки якщо меню не відкрито

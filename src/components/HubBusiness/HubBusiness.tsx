@@ -1,8 +1,12 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { business } from '../../data/hub-business';
 
-const HubBusiness = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+type HubBusinessProps = {
+  activeIndex: number;
+  setActiveIndex: (index: number) => void;
+};
+
+const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
   const { advantages, buttonLabel } = business[activeIndex];
 
   const getButtonWidth = (index: number, activeIndex: number): string => {

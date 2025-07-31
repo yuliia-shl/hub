@@ -77,7 +77,7 @@ export default function SmartButton({
     ) : (
       <>
         {icon && iconPosition === 'left' && <Icon />}
-        <span>{label}</span>
+        <span className="shrink-0">{label}</span>
         {icon && iconPosition === 'right' && <Icon />}
       </>
     );
