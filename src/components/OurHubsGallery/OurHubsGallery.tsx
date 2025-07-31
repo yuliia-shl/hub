@@ -1,17 +1,22 @@
-import { useState, type KeyboardEvent } from 'react';
+import { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Mousewheel } from 'swiper/modules';
+import 'swiper/css';
 import { galleryImages as images } from '../../data/gallery-image';
 
 const OurHubsGallery = () => {
   const [active, setActive] = useState(0);
+  const swiperRef = useRef<any>(null);
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLElement>) => {
-    if (e.key === 'ArrowRight') {
-      setActive(prev => (prev + 1) % images.length);
-    }
-    if (e.key === 'ArrowLeft') {
-      setActive(prev => (prev - 1 + images.length) % images.length);
-    }
+  const getSlideConfig = () => {
+    const w = window.innerWidth;
+    if (w >= 2560) return { width: 1156, height: 769, peek: 421, gap: 120 };
+    if (w >= 1920) return { width: 1156, height: 769, peek: 262, gap: 120 };
+    if (w >= 1440) return { width: 1082, height: 720, peek: 40, gap: 112 };
+    return { width: 568, height: 654, peek: 0, gap: 16 };
   };
+
+  const { peek, gap } = getSlideConfig();
 
   return (
     <section
@@ -20,118 +25,125 @@ const OurHubsGallery = () => {
       aria-roledescription="carousel"
       aria-label="Галерея наших HUBів"
       tabIndex={0}
-      onKeyDown={handleKeyDown}
       aria-labelledby="gallery-title"
     >
-      <div className="section px-0">
-        <h2
-          id="gallery-title"
-          className=" inset-0 z-20 flex items-center justify-center text-dust-white text-[32px]/[110%] 1xl:text-[42px]/[110%] 3xl:text-[54px]/[110%] 4xl:text-[62px]/[110%] tracking-[-0.02em] font-second 4xl:font-medium"
-        >
-          Наші HUBи
-        </h2>
-        <div className="pt-43 pb-15 3xl:pt-[116px] 3xl:pb-0">
-          {/* 1) Container */}
-          <div className="relative mx-auto">
-            {/* 2) Top ellipses + title */}
-            <div className="absolute z-10 top-[-172px] 1xl:top-[-83px] 3xl:top-[-83px] left-1/2 transform -translate-x-1/2 pointer-events-none">
-              <div className="w-[568px] h-[200px] 1xl:w-[1825px] 3xl:w-[2141px] 4xl:w-[2300px]">
-                {/* mobile-top */}
-                <svg className="block w-full h-full 1xl:hidden  fill-cod-black">
-                  <use href="/images/svg/icons.svg#icon-Ellipse-47-mobile-top" />
-                </svg>
+      <div className="section overflow-hidden px-0">
+        <h2 className="sr-only">Наші HUBи</h2>
+        {/* Верхній еліпс + заголовок */}
+        <div className="relative mx-auto pt-43 3xl:pt-[116px] 3xl:pb-0">
+          <div className="absolute inset-x-0 z-10 top-18 1xl:top-20 3xl:-top-1 4xl:-top-10 h-[200px] pointer-events-none">
+            <svg
+              className="w-full h-full max-w-[568px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cod-black"
+              aria-hidden="true"
+            >
+              <use href="/images/svg/icons.svg#icon-Ellipse-top" />
+            </svg>
+            <h2
+              id="gallery-title"
+              className="absolute inset-0 z-20 flex items-center justify-center -top-50 1xl:-top-20 3xl:-top-28 4xl:-top-18 text-dust-white text-[32px]/[110%] 1xl:text-[42px] 3xl:text-[54px] 4xl:text-[62px] tracking-[-0.02em] font-second 4xl:font-medium"
+            >
+              Наші HUBи
+            </h2>
+          </div>
 
-                {/* 1440px+ top */}
-                <svg className="hidden w-full h-full 1xl:block 3xl:hidden  fill-cod-black">
-                  <use href="/images/svg/icons.svg#icon-Ellipse-1440-top" />
-                </svg>
+          {/* Слайдер */}
+          <div
+            className="relative overflow-hidden"
+            style={{ paddingLeft: peek, paddingRight: peek }}
+          >
+            {/* Градієнти */}
+            <div
+              className="hidden 3xl:block  pointer-events-none absolute inset-0 z-20 -left-[100px] -right-[100px]"
+              style={{
+                background: `
+                  linear-gradient(
+                    to right,
+                    rgba(8, 8, 8, 0.8) 0%,
+                    rgba(8, 8, 8, 0.4) 10%,
+                    rgba(8, 8, 8, 0) 25%,
+                    rgba(8, 8, 8, 0) 75%,
+                    rgba(8, 8, 8, 0.4) 90%,
+                    rgba(8, 8, 8, 0.8) 100%
+                  ),
+                  linear-gradient(
+                    to left,
+                    rgba(8, 8, 8, 0.8) 0%,
+                    rgba(8, 8, 8, 0.4) 10%,
+                    rgba(8, 8, 8, 0) 25%,
+                    rgba(8, 8, 8, 0) 75%,
+                    rgba(8, 8, 8, 0.4) 90%,
+                    rgba(8, 8, 8, 0.8) 100%
+                  )
+                `,
+                backgroundBlendMode: 'multiply',
+              }}
+            />
 
-                {/* 1920px+ top */}
-                <svg className="hidden 3xl:block 4xl:hidden w-[2141px] h-[32px] fill-cod-black">
-                  <use href="/images/svg/icons.svg#icon-Ellipse-45-1920-top" />
-                </svg>
+            <Swiper
+              modules={[Mousewheel]}
+              slidesPerView="auto"
+              centeredSlides
+              loop={true}
+              spaceBetween={gap}
+              mousewheel={{
+                forceToAxis: true,
+                sensitivity: 1,
+              }}
+              onSwiper={swiper => (swiperRef.current = swiper)}
+              onSlideChange={swiper => setActive(swiper.realIndex)}
+              
+            >
+              {images.map((fileName, idx) => {
+                const slideW = getSlideConfig().width;
+                return (
+                  <SwiperSlide key={idx} style={{ width: slideW }}>
+                    <picture>
+                      {/* WebP 2x */}
+                      <source
+                        srcSet={`/images/webp/hub-gallery/${fileName.replace(
+                          '.webp',
+                          '-2x.webp'
+                        )}`}
+                        type="image/webp"
+                        media="(min-resolution: 192dpi)"
+                      />
 
-                {/* 2560px+ top */}
-                <svg className="hidden 4xl:block w-[2300px] fill-cod-black">
-                  <use href="/images/svg/icons.svg#icon-Ellipse-46-2560-top" />
-                </svg>
-              </div>
+                      {/* Звичайний WebP */}
+                      <source
+                        srcSet={`/images/webp/hub-gallery/${fileName}`}
+                        type="image/webp"
+                      />
+
+                      {/* Fallback PNG or JPEG if needed */}
+                      <img
+                        src={`/images/webp/hub-gallery/${fileName}`}
+                        alt={`HUB ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+
+            {/* Нижній еліпс */}
+            <div className="absolute h-[200px] -bottom-20 1xl:-bottom-20 3xl:-bottom-10 4xl:bottom-[-1px] z-10 inset-x-0 pointer-events-none">
+              <svg className="w-full h-full max-w-[568px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cod-black">
+                <use href="/images/svg/icons.svg#icon-Ellipse-45-7" />
+              </svg>
             </div>
 
-            {/* 3) Slider */}
-            <div className="overflow-x-auto snap-x snap-mandatory">
-              <ul
-                role="listbox"
-                aria-labelledby="gallery-title"
-                className="flex 1xl:py-6 transition-transform duration-300 px-2 1xl:px-[calc((100vw-1082px)/2)] 3xl:px-[calc((100vw-1156px)/2)] 4xl:px-[calc((100vw-1156px)/2)]"
-                style={{
-                  transform: `translateX(calc(-${active * 100}% + 90vw - 50%))`,
-                }}
-              >
-                {images.map((src, idx) => (
-                  <li
-                    key={idx}
-                    role="option"
-                    aria-selected={active === idx}
-                    className={`flex-shrink-0 w-[568px] 1xl:w-[1082px] 3xl:w-[1156px] 4xl:w-[1156px] mr-4 1xl:mr-[139px] 3xl:mr-[120px] 4xl:mr-[120px] last:mr-0 snap-start snap-always not-[]:transition-opacity duration-300 ${
-                      active === idx ? 'opacity-100' : 'opacity-50'
-                    }`}
-                  >
-                    <img
-                      src={src}
-                      alt={`HUB ${idx + 1}`}
-                      loading="lazy"
-                      className="w-full h-[360px] 1xl:h-[720px] 3xl:h-[769px] 4xl:h-[769px] object-cover"
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* 4) Bottom ellipses */}
-            <div className="absolute bottom-[-109px] 1xl:bottom-[-58px] z-10 left-1/2 transform -translate-x-1/2 pointer-events-none">
-              <div className="w-[568px] h-[200px] 1xl:w-[1825px] 3xl:w-[2141px] 4xl:w-[2300px]"></div>
-              {/* mobile-bottom */}
-              <svg className="block 1xl:hidden w-[568px]  fill-cod-black">
-                <use href="/images/svg/icons.svg#icon-Ellipse-46-mobile-bottom" />
-              </svg>
-
-              {/* 1440px+ bottom */}
-              <svg className="hidden 1xl:block 3xl:hidden w-[1825px] fill-cod-black">
-                <use href="/images/svg/icons.svg#icon-Ellipse-1440-bottom" />
-              </svg>
-
-              {/* 1920px+ bottom */}
-              <svg
-                width="309"
-                height="32"
-                viewBox="0 0 309 32"
-                className="hidden 3xl:block 4xl:hidden  fill-cod-black"
-              >
-                <use href="/images/svg/icons.svg#icon-Ellipse-46-1920-bottom" />
-              </svg>
-
-              {/* 2560px+ bottom */}
-              <svg
-                width="863"
-                height="32"
-                viewBox="0 0 863 32"
-                className="hidden 4xl:block fill-cod-black"
-              >
-                <use href="/images/svg/icons.svg#icon-Ellipse-45-2560-bottom" />
-              </svg>
-            </div>
-
-            {/* 5) Indicators */}
-            <ul className="absolute bottom-[-17px] 1xl:bottom-[px] left-1/2 z-20 transform -translate-x-1/2 flex gap-2.5">
+            {/* Індикатори */}
+            <ul className="absolute -bottom-2 1xl:-bottom-1 3xl:bottom-10 4xl:bottom-20 left-1/2 z-20 transform -translate-x-1/2 flex gap-2.5">
               {images.map((_, idx) => (
                 <li key={idx}>
                   <button
                     type="button"
-                    onClick={() => setActive(idx)}
+                    onClick={() => swiperRef.current?.slideTo(idx)}
                     aria-label={`Перейти до слайду ${idx + 1}`}
                     aria-current={active === idx ? 'true' : undefined}
-                    className={`h-2 rounded-[32px] transition-all ${
+                    className={`h-2 rounded-4xl transition-all ${
                       active === idx
                         ? 'w-17 bg-masala-light'
                         : 'w-7.5 bg-woodsmoke-dust'
@@ -148,3 +160,5 @@ const OurHubsGallery = () => {
 };
 
 export default OurHubsGallery;
+
+

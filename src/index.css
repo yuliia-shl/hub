@@ -192,3 +192,14 @@ input.form-write-us:-webkit-autofill:hover {
   background-color: transparent !important;
   transition: background-color 9999s ease-in-out 0s !important;
 }
+
+
+.swiper-slide-prev,
+.swiper-slide-next {
+  transform: scale(0.8);
+  opacity: 0.5;
+}
+.swiper-slide-active {
+  transform: scale(1);
+  opacity: 1;
+}
