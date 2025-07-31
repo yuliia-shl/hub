@@ -106,7 +106,7 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
                 <a
                   href="#"
                   download="Презентація інвесторам.pdf"
-                  className="group flex p-4 border-1 rounded-full border-tangerine 1xl:py-4.5 1xl:px-6 1xl:justify-between hover:border-chilean-fire focus:outline-chilean-fire focus:outline-2 transition-colors duration-300 4xl:py-5.5"
+                  className="group flex p-4 border-1 rounded-full border-tangerine 1xl:py-4.5 1xl:px-6 items-center 1xl:justify-between hover:border-chilean-fire focus:outline-chilean-fire focus:outline-2 transition-colors duration-300 4xl:py-5.5"
                 >
                   <span className="hidden 1xl:block text-tangerine group-hover:text-chilean-fire group-focus:text-chilean-fire transition-colors duration-300 text-base/[100%] 4xl:text-xl">
                     Презентація інвесторам
