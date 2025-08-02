@@ -12,7 +12,6 @@ import FAQ from './components/FAQ/FAQ';
 import OurHubsGallery from './components/OurHubsGallery/OurHubsGallery';
 import MoreInfo from './components/MoreInfo/MoreInfo';
 import Footer from './components/Footer/Footer';
-import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
