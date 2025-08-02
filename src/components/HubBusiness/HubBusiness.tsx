@@ -7,7 +7,7 @@ type HubBusinessProps = {
 };
 
 const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
-  const { advantages, buttonLabel } = business[activeIndex];
+  const { advantages, buttonLabel, helpText } = business[activeIndex];
 
   const getButtonWidth = (index: number, activeIndex: number): string => {
     const isActive = index === activeIndex;
@@ -92,10 +92,7 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
 
             <div className="flex flex-col 1xl:justify-around 1xl:max-w-[280px] 4xl:max-w-[364px]">
               <div className="text-base/[137%] font-medium text-silver mb-21 1xl:mb-0 1xl:text-lg/[122%] 4xl:text-[22px]/[100%]">
-                <p className="mb-5">
-                  Ми завжди раді надати консультацію нашим майбутнім інвесторам
-                  і відповісти на всі Ваші питання!
-                </p>
+                <p className="mb-5">{helpText}</p>
                 <p className="">
                   Також ви можете ознайомитись з нашими пропозиціями в
                   презентації.

@@ -62,7 +62,7 @@ const Modal = ({
     >
       <div
         className={twMerge(
-          'relative bg-woodsmoke-black rounded-lg w-[502px] p-8.5 pt-19.5 transition-all duration-500 transform 1xl:w-[1076px] 1xl:px-13.5 1xl:py-11.5 3xl:py-14 4xl:w-[1488px] 4xl:px-[192px] 4xl:py-19',
+          'relative bg-woodsmoke-black rounded-lg w-full xs:w-[502px] p-8.5 pt-19.5 transition-all duration-500 transform 1xl:w-[1076px] 1xl:px-13.5 1xl:py-11.5 3xl:py-14 4xl:w-[1488px] 4xl:px-[192px] 4xl:py-19',
           isOpen
             ? 'opacity-100 scale-100 translate-y-0'
             : 'opacity-0 scale-95 -translate-y-4',
