@@ -3,7 +3,6 @@ import Modal from '../ui/Modal/Modal';
 import BookModal from '../BookModal/BookModal';
 import BurgerToggle from '../BurgerToggle/BurgerToggle';
 import SmartButton from '../ui/Button/SmartButton';
-import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import HeaderNav from '../HeaderNav/HeaderNav';
 
 type HeaderProps = {
@@ -16,8 +15,8 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
 
   return (
     <>
-      <header className="relative z-100 w-full mt-3.5 mxl:mt-9 1xl:mt-10.5 3xl:mt-18 4xl:mt-17 mb-15">
-        <div className="section flex gap-4 max-h-17 1xl:h-14 4xl:h-16 h-full items-center">
+      <header className="relative z-100 w-full mt-3.5 1xl:mt-10.5 3xl:mt-18 4xl:mt-17 mb-15">
+        <div className="section flex gap-4 justify-between max-h-17 1xl:h-14 4xl:h-16 h-full items-center">
           <a href="/" className="w-1/3">
             <svg className="w-9.5 h-12.5 1xl:h-13 4xl:w-12 4xl:h-16.5 fill-tangerine">
               <use href="/images/svg/icons.svg#icon-logo" />
@@ -33,7 +32,7 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
               <SmartButton
                 type="button"
                 onClick={() => setOpenBookModal(true)}
-                label="Замовити консультацію"
+                label="Отримати консультацію"
                 variant="primary"
                 className="hidden [@media(min-width:480px)]:flex text-star-dust border-star-dust text-[18px]/[1] font-normal px-3 py-3 w-xl:text-[18px]"
               />
@@ -42,14 +41,11 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
             <BurgerToggle
               isOpen={isBurgerMenuOpen}
               setIsOpen={setIsBurgerMenuOpen}
+              setActiveIndex={setActiveIndex}
             />
           </div>
         </div>
       </header>
-
-      {isBurgerMenuOpen && (
-        <BurgerMenu isOpen={isBurgerMenuOpen} setIsOpen={setIsBurgerMenuOpen} />
-      )}
 
       <Modal isOpen={openBookModal} onClose={() => setOpenBookModal(false)}>
         <BookModal />
