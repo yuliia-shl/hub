@@ -7,6 +7,7 @@ type Business = {
   role: 'Інвестору' | 'Партнеру' | 'Локаціям';
   icon: string;
   buttonLabel: string;
+  helpText: string;
   advantages: Advantage[];
 };
 
@@ -15,6 +16,8 @@ export const business: Business[] = [
     role: 'Інвестору',
     icon: 'money',
     buttonLabel: 'Інвестувати',
+    helpText:
+      'Ми завжди раді надати консультацію нашим майбутнім інвесторам і відповісти на всі Ваші питання!',
     advantages: [
       {
         title: 'Малий поріг входу',
@@ -37,6 +40,8 @@ export const business: Business[] = [
     role: 'Партнеру',
     icon: 'partner',
     buttonLabel: 'Стати партнером',
+    helpText:
+      'Ми завжди раді надати консультацію нашим майбутнім партнерам і відповісти на всі Ваші питання!',
     advantages: [
       {
         title: 'Розширення та масштабування',
@@ -62,6 +67,8 @@ export const business: Business[] = [
     role: 'Локаціям',
     icon: 'location',
     buttonLabel: 'Пропоную місце',
+    helpText:
+      'Ми завжди раді надати консультацію власникам наших майбутніх локацій і відповісти на всі Ваші питання!',
     advantages: [
       {
         title: 'Цілий комплекс послуг',

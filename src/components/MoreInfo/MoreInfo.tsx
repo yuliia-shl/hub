@@ -8,7 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 const MoreInfo = () => {
   const inputClass =
-    'form-write-us w-full bg-transparent border-b-[2px] border-mine-shaft pt-[30px] pb-3 focus:outline-none focus:border-boulder-light text-xl/[100%] peer caret-tuatara';
+    'form-write-us w-full bg-transparent border-b-[2px] border-mine-shaft pt-[30px] pb-3 focus:outline-none focus:border-boulder-light text-xl/[100%] peer caret-boulder-dark';
   const errorClass =
     'text-persian-red text-sm/[100%] tracking-[-0.02em] font-medium mt-2';
 
