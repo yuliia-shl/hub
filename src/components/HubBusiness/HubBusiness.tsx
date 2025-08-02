@@ -1,8 +1,12 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { business } from '../../data/hub-business';
 
-const HubBusiness = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+type HubBusinessProps = {
+  activeIndex: number;
+  setActiveIndex: (index: number) => void;
+};
+
+const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
   const { advantages, buttonLabel, helpText } = business[activeIndex];
 
   const getButtonWidth = (index: number, activeIndex: number): string => {
@@ -12,13 +16,16 @@ const HubBusiness = () => {
   };
 
   return (
-    <section id="business" className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
+    <section className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
       <div className="section">
         <h2 className="text-[34px]/[110%] tracking-[-0.02em] font-second text-center text-mercury-white mb-8 1xl:text-[42px] 1xl:text-left 1xl:mb-20 3xl:text-[54px] 3xl:mb-22 4xl:text-[62px] 4xl:font-medium 4xl:mb-15">
           Ваш бізнес з HUB
         </h2>
 
-        <div className="flex flex-col gap-1 1xl:gap-2.5 3xl:gap-3 4xl:gap-4">
+        <div
+          id="business"
+          className="flex flex-col gap-1 1xl:gap-2.5 3xl:gap-3 4xl:gap-4"
+        >
           <ul className="flex gap-1.5 1xl:gap-2.5 3xl:gap-3 4xl:gap-4">
             {business.map((business, index) => {
               const isActive = index === activeIndex;
@@ -96,7 +103,7 @@ const HubBusiness = () => {
                 <a
                   href="#"
                   download="Презентація інвесторам.pdf"
-                  className="group flex p-4 border-1 rounded-full border-tangerine 1xl:py-4.5 1xl:px-6 1xl:justify-between hover:border-chilean-fire focus:outline-chilean-fire focus:outline-2 transition-colors duration-300 4xl:py-5.5"
+                  className="group flex p-4 border-1 rounded-full border-tangerine 1xl:py-4.5 1xl:px-6 items-center 1xl:justify-between hover:border-chilean-fire focus:outline-chilean-fire focus:outline-2 transition-colors duration-300 4xl:py-5.5"
                 >
                   <span className="hidden 1xl:block text-tangerine group-hover:text-chilean-fire group-focus:text-chilean-fire transition-colors duration-300 text-base/[100%] 4xl:text-xl">
                     Презентація інвесторам
