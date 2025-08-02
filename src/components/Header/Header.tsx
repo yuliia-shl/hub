@@ -3,7 +3,6 @@ import Modal from '../ui/Modal/Modal';
 import BookModal from '../BookModal/BookModal';
 import BurgerToggle from '../BurgerToggle/BurgerToggle';
 import SmartButton from '../ui/Button/SmartButton';
-import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import HeaderNav from '../HeaderNav/HeaderNav';
 
 type HeaderProps = {
@@ -33,7 +32,7 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
               <SmartButton
                 type="button"
                 onClick={() => setOpenBookModal(true)}
-                label="Замовити консультацію"
+                label="Отримати консультацію"
                 variant="primary"
                 className="hidden [@media(min-width:480px)]:flex text-star-dust border-star-dust text-[18px]/[1] font-normal px-3 py-3 w-xl:text-[18px]"
               />
@@ -42,14 +41,11 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
             <BurgerToggle
               isOpen={isBurgerMenuOpen}
               setIsOpen={setIsBurgerMenuOpen}
+              setActiveIndex={setActiveIndex}
             />
           </div>
         </div>
       </header>
-
-      {isBurgerMenuOpen && (
-        <BurgerMenu isOpen={isBurgerMenuOpen} setIsOpen={setIsBurgerMenuOpen} />
-      )}
 
       <Modal isOpen={openBookModal} onClose={() => setOpenBookModal(false)}>
         <BookModal />
