@@ -35,13 +35,13 @@ const MoreInfo = () => {
   return (
     <section id="more-info" className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
       <div className="section">
-        <div className="pt-10.5 pb-14 px-6 1xl:py-12.5 1xl:px-12 3xl:pr-25 3xl:pl-19 4xl:px-30 4xl:py-28.5 bg-cod-dark rounded-[26px] gap-18 1xl:gap-0 3xl:gap-x-75 4xl:gap-x-81 flex flex-col 1xl:flex-row">
+        <div className="pt-10.5 pb-14 px-6 lg:pt-16 lg:pb-9 lg:px-15.5 1xl:py-12.5 1xl:px-12 3xl:pr-25 3xl:pl-19 4xl:px-30 4xl:py-28.5 bg-cod-dark rounded-[26px] gap-18 lg:gap-0 3xl:gap-x-75 4xl:gap-x-81 flex flex-col 1xl:flex-row">
           {/* Ліва колонка: заголовок + опис */}
-          <div className="flex flex-col 1xl:flex-1 3xl:max-w-[498px] 4xl:max-w-[680px] 1xl:pt-[34px] 4xl:pt-[6px] justify-start gap-y-3.5 1xl:gap-y-7 3xl:gap-y-11">
-            <h2 className="text-[32px]/[119%] 1xl:text-[42px]/[110%] 3xl:text-5xl tracking-[-0.02em] font-medium font-second">
-              Потрібно більше <span className="block">інформації?</span>
+          <div className="flex flex-col lg:mb-9.5 1xl:flex-1 3xl:max-w-[498px] 4xl:max-w-[680px] 1xl:pt-[34px] 4xl:pt-[6px] justify-start gap-y-3.5 lg:gap-y-4.5 1xl:gap-y-7 3xl:gap-y-11">
+            <h2 className="text-[32px]/[119%] lg:text-[42px]/[110%] 3xl:text-5xl tracking-[-0.02em] font-medium font-second">
+              Потрібно більше інформації? 
             </h2>
-            <p className="text-lg/[133%] 1xl:text-xl/[120%] text-boulder-dust">
+            <p className="text-lg/[133%] lg:text-xl/[120%] 1xl:text-xl/[120%] text-boulder-dust">
               Отримайте детальну презентацію{' '}
               <span className="block">
                 про компанію та 40+ реалізованих проєктів
@@ -54,9 +54,9 @@ const MoreInfo = () => {
           <form
             onSubmit={handleSubmit(onSubmit)}
             noValidate
-            className="flex flex-col 1xl:flex-1 3xl:max-w-[764px] 4xl:max-w-[996px] gap-18 1xl:gap-12.5"
+            className="flex flex-col 1xl:flex-1 3xl:max-w-[764px] 4xl:max-w-[996px] gap-18 lg:gap-15 1xl:gap-12.5"
           >
-            <div className="flex flex-col gap-7 1xl:gap-5">
+            <div className="flex flex-col gap-7 lg:gap-5">
               <div>
                 <label htmlFor="name" className="sr-only">
                   Ім’я
@@ -123,7 +123,7 @@ const MoreInfo = () => {
               label="Напишіть нам"
               type="submit"
               variant="secondary"
-              className="self-center 1xl:self-end p-5.5 min-w-[280px] text-2xl/[100%] font-bold"
+              className="self-center 1xl:self-end p-5.5 min-w-[280px] lg:min-w-[300px] 1xl:min-w-[280px] text-2xl/[100%] font-bold"
             />
           </form>
         </div>
