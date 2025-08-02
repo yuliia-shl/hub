@@ -1,12 +1,18 @@
 import { useEffect } from 'react';
 import SmartButton from '../ui/Button/SmartButton';
+import HeaderNav from '../HeaderNav/HeaderNav';
 
 type BurgerMenuProps = {
   isOpen: boolean;
+  setActiveIndex: (index: number) => void;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function BurgerMenu({ isOpen, setIsOpen }: BurgerMenuProps) {
+export default function BurgerMenu({
+  isOpen,
+  setIsOpen,
+  setActiveIndex,
+}: BurgerMenuProps) {
   //   const [isOpen, setIsOpen] = useState(false);
 
   // Блокуємо scroll при відкритому меню
@@ -19,7 +25,7 @@ export default function BurgerMenu({ isOpen, setIsOpen }: BurgerMenuProps) {
   return (
     <div className="fixed inset-0 -z-1 section bg-cod-black/90 flex flex-col  gap-13 text-4xl/[1] text-boulder-dust 1xl:hidden">
       <div className="flex flex-col items-center h-full mt-[35%] gap-[25%]">
-        <div className="flex flex-col gap-13 text-center">
+        {/* <div className="flex flex-col gap-13 text-center">
           <a
             href="#"
             onClick={() => setIsOpen(false)}
@@ -41,7 +47,8 @@ export default function BurgerMenu({ isOpen, setIsOpen }: BurgerMenuProps) {
           >
             Локації
           </a>
-        </div>
+        </div> */}
+        <HeaderNav setActiveIndex={setActiveIndex} className="w-1/3 mx-auto" />
         <SmartButton
           onClick={() => setIsOpen(false)}
           label="Замовити консультацію"

@@ -48,7 +48,11 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
       </header>
 
       {isBurgerMenuOpen && (
-        <BurgerMenu isOpen={isBurgerMenuOpen} setIsOpen={setIsBurgerMenuOpen} />
+        <BurgerMenu
+          isOpen={isBurgerMenuOpen}
+          setIsOpen={setIsBurgerMenuOpen}
+          setActiveIndex={setActiveIndex}
+        />
       )}
 
       <Modal isOpen={openBookModal} onClose={() => setOpenBookModal(false)}>
