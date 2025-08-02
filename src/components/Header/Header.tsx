@@ -3,7 +3,6 @@ import Modal from '../ui/Modal/Modal';
 import BookModal from '../BookModal/BookModal';
 import BurgerToggle from '../BurgerToggle/BurgerToggle';
 import SmartButton from '../ui/Button/SmartButton';
-import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import HeaderNav from '../HeaderNav/HeaderNav';
 
 type HeaderProps = {
@@ -42,18 +41,11 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
             <BurgerToggle
               isOpen={isBurgerMenuOpen}
               setIsOpen={setIsBurgerMenuOpen}
+              setActiveIndex={setActiveIndex}
             />
           </div>
         </div>
       </header>
-
-      {isBurgerMenuOpen && (
-        <BurgerMenu
-          isOpen={isBurgerMenuOpen}
-          setIsOpen={setIsBurgerMenuOpen}
-          setActiveIndex={setActiveIndex}
-        />
-      )}
 
       <Modal isOpen={openBookModal} onClose={() => setOpenBookModal(false)}>
         <BookModal />
