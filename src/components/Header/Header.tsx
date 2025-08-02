@@ -15,8 +15,8 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
 
   return (
     <>
-      <header className="relative z-100 w-full mt-3.5 1xl:mt-10.5 3xl:mt-18 4xl:mt-17 mb-15">
-        <div className="section flex gap-4 justify-between max-h-17 1xl:h-14 4xl:h-16 h-full items-center">
+      <header className="bg-cod-gray 1xl:bg-transparent relative z-100 w-full  1xl:mt-10.5 3xl:mt-18 4xl:mt-17">
+        <div className="section flex gap-4 py-3.5 1xl:py-0 bg-cod-gray/60 1xl:bg-transparent max-h-17 1xl:h-14 4xl:h-16 h-full items-center justify-between 1xl:justify-center-safe">
           <a href="/" className="w-1/3">
             <svg className="w-9.5 h-12.5 1xl:h-13 4xl:w-12 4xl:h-16.5 fill-tangerine">
               <use href="/images/svg/icons.svg#icon-logo" />
@@ -26,7 +26,7 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
             setActiveIndex={setActiveIndex}
             className="w-1/3 mx-auto"
           />
-          <div className="flex items-center gap-5.5 1xl:w-1/3 justify-end-safe">
+          <div className="flex items-center gap-5.5 1xl:w-1/3 justify-between 1xl:justify-end-safe">
             {/* Умовний рендеринг SmartButton */}
             {!isBurgerMenuOpen && ( // Показуємо кнопку, тільки якщо меню не відкрито
               <SmartButton
@@ -34,7 +34,7 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
                 onClick={() => setOpenBookModal(true)}
                 label="Отримати консультацію"
                 variant="primary"
-                className="hidden [@media(min-width:440px)]:flex text-star-dust border-star-dust text-[18px]/[1] font-normal px-3 py-3 w-xl:text-[18px]"
+                className="hidden [@media(min-width:480px)]:flex text-star-dust border-star-dust text-[18px]/[1] font-normal px-3 py-3 w-xl:text-[18px]"
               />
             )}
             {/* Передаємо стан та функцію для зміни стану в BurgerToggle */}
