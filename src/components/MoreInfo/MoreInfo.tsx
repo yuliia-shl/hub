@@ -37,7 +37,7 @@ const MoreInfo = () => {
       <div className="section">
         <div className="pt-10.5 pb-14 px-6 lg:pt-16 lg:pb-9 lg:px-15.5 1xl:py-12.5 1xl:px-12 3xl:pr-25 3xl:pl-19 4xl:px-30 4xl:py-28.5 bg-cod-dark rounded-[26px] gap-18 lg:gap-0 3xl:gap-x-75 4xl:gap-x-81 flex flex-col 1xl:flex-row">
           {/* Ліва колонка: заголовок + опис */}
-          <div className="flex flex-col lg:mb-9.5 1xl:flex-1 3xl:max-w-[498px] 4xl:max-w-[680px] 1xl:pt-[34px] 4xl:pt-[6px] justify-start gap-y-3.5 lg:gap-y-4.5 1xl:gap-y-7 3xl:gap-y-11">
+          <div className="flex flex-col lg:mb-9.5 1xl:max-w-[626px] 3xl:max-w-[498px] 4xl:max-w-[680px] 1xl:pt-[34px] 4xl:pt-[6px] justify-start gap-y-3.5 lg:gap-y-4.5 1xl:gap-y-7 3xl:gap-y-11">
             <h2 className="text-[32px]/[119%] lg:text-[42px]/[110%] 3xl:text-5xl tracking-[-0.02em] font-medium font-second">
               Потрібно більше інформації? 
             </h2>
