@@ -27,12 +27,12 @@ function App() {
     setShowPolicy(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
- 
 
   return (
     <>
       <Header
         setActiveIndex={setActiveIndex}
+        hideNav={showPolicy}
       />
 
       {showPolicy ? (
@@ -57,7 +57,6 @@ function App() {
 
       <Footer
         onPolicyClick={openPolicy}
-       
       />
     </>
   );

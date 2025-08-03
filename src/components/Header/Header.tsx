@@ -7,11 +7,13 @@ import HeaderNav from '../HeaderNav/HeaderNav';
 
 type HeaderProps = {
   setActiveIndex: (index: number) => void;
+  hideNav?: boolean;
 };
 
-const Header = ({ setActiveIndex }: HeaderProps) => {
+const Header = ({ setActiveIndex, hideNav = false, }: HeaderProps) => {
   const [openBookModal, setOpenBookModal] = useState(false);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+
 
   return (
     <>
@@ -22,10 +24,13 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
               <use href="/images/svg/icons.svg#icon-logo" />
             </svg>
           </a>
-          <HeaderNav
+          {/* Покажемо навігацію лише якщо hideNav === false */}
+          { !hideNav && (
+            <HeaderNav
             setActiveIndex={setActiveIndex}
             className="w-1/3 mx-auto"
           />
+          )}
           <div className="flex items-center gap-5.5 1xl:w-1/3 justify-between 1xl:justify-end-safe">
             {/* Умовний рендеринг SmartButton */}
             {!isBurgerMenuOpen && ( // Показуємо кнопку, тільки якщо меню не відкрито
