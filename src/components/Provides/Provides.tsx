@@ -16,7 +16,8 @@ export default function Provides() {
           </li>
           <li className="tracking-[0.02em] 3xl:tracking-[0.07em] 1xl:tracking-normal 1xl:max-w-[440px] 3xl:max-w-[544px] 4xl:max-w-[732px]">
             В одному місці, користувач отримує комплекс товарів та послуг від
-            провідних торгових марок в автоматичному режимі 24 на 7. 
+            провідних торгових марок в автоматичному режимі ⦁ 24 години, 7 днів
+            на тиждень. 
           </li>
         </ul>
         <ul className="flex flex-col gap-y-10.5 1xl:gap-x-4 text-lg/[156%] text-mercury-white font-semibold 1xl:font-bold 1xl:text-[22px]/[127%] 1xl:flex-row 1xl:flex-wrap 1xl:max-w-[904px] 1xl:ml-auto 3xl:gap-x-13 4xl:gap-x-18 3xl:max-w-[1142px] 4xl:max-w-[1540px] 4xl:text-[28px]/[136%]">
@@ -50,7 +51,7 @@ export default function Provides() {
                 <use href="/images/svg/icons.svg#icon-6"></use>
               </svg>
             </span>
-            <p>Логістика: прийом та передача посилок</p>
+            <p>Логістика: пункт передачі посилок</p>
           </li>
           <li className="flex gap-6 h-16 items-center 1xl:max-w-[444px] 3xl:max-w-[544px] 4xl:max-w-[732px] 1xl:w-full">
             <span className="flex justify-center items-center w-16 h-16 rounded-full bg-woodsmoke-dark shrink-0">
@@ -66,7 +67,7 @@ export default function Provides() {
                 <use href="/images/svg/icons.svg#icon-10"></use>
               </svg>
             </span>
-            <p>Автоматична камера зберігання</p>
+            <p>Автоматична камера зберігання речей</p>
           </li>
           <li className="flex gap-6 h-16 items-center 1xl:max-w-[444px] 3xl:max-w-[544px] 4xl:max-w-[732px]">
             <span className="flex justify-center items-center w-16 h-16 rounded-full bg-woodsmoke-dark shrink-0">

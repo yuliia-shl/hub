@@ -35,7 +35,7 @@ export default function Product() {
                 Склад:
               </h4>
               <p className="font-semibold text-xl/[140%] 1xl:text-[26px]/[108%] 4xl:text-[34px]/[108%] text-mercury-white">
-                БУ, Флоромат, Хімчистка, Ячейки з підігрівом
+                БК, Флоромат, Хімчистка, Ячейки з підігрівом
               </p>
             </li>
           </ul>
