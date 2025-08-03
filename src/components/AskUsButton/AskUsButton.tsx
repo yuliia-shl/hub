@@ -20,11 +20,11 @@ const AskUsButton = ({ targetId, className = '' }: AskUsButtonProps) => {
         type="button"
         onClick={handleClick}
         className="flex items-center justify-center py-6.5 px-14
-        max-w-[280px] max-h-[76px]
+        max-w-[280px] max-h-[76px] lg:max-w-[258px] lg:max-h-[60px] 1xl:max-w-[280px] 1xl:max-h-[60px]
         rounded-[45px] bg-cod-gray
-        border border-tangerine 1xl:border-gray
-        text-tangerine 1xl:text-gray
-        text-2xl/[100%] whitespace-nowrap font-semibold tracking-[-0.02em]
+        border border-tangerine lg:border-gray
+        text-tangerine lg:text-gray
+        text-2xl/[100%] lg:text-xl/[100%] 1xl:text-2xl/[100%] not-first-of-type:whitespace-nowrap font-semibold tracking-[-0.02em]
         1xl:hover:bg-transparent 1xl:hover:border-tangerine 1xl:hover:text-tangerine
         focus:outline-none focus-visible:ring-2 focus-visible:ring-tangerine
       "
@@ -32,7 +32,7 @@ const AskUsButton = ({ targetId, className = '' }: AskUsButtonProps) => {
         Запитати в нас
       </button>
       <svg
-        className="w-14 h-14 stroke-[2px]  stroke-tangerine 1xl:stroke-gray"
+        className="w-14 h-14 stroke-[2px]  stroke-tangerine lg:stroke-gray"
         aria-hidden="true"
         focusable="false"
       >
