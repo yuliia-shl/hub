@@ -1,7 +1,6 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="pb-40">
-    <div className="section flex flex-col gap-10 py-10">
+    <div className="section flex flex-col gap-10 py-40">
       <h2 className="text-5xl">Політика щодо обробки персональних даних</h2>
 
       <h3 className="font-semibold text-tangerine">1. Загальні положення</h3>
@@ -573,7 +572,6 @@ export default function PrivacyPolicy() {
           Інтернеті за адресою https://mvk-mash.com/uk/privacy/.
         </li>
       </ul>
-    </div>
     </div>
   );
 }
