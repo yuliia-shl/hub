@@ -4,16 +4,16 @@ import AskUsButton from '../AskUsButton/AskUsButton';
 const FAQ = () => {
   return (
     <section className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
-      <div className="section lg:px-0">
+      <div className="section">
         <div className="pt-8.75 pb-7.5 lg:pt-4.5 lg:pb-17 lg:px-0 1xl:pt-0 4xl:pt-2.5">
-        <div className="flex flex-col 1xl:flex-row lg:justify-between 1xl:items-start 1xl:gap-24 4xl:gap-55">
+        <div className="flex flex-col 1xl:flex-row 1xl:justify-start 1xl:gap-24 4xl:gap-55">
         {/* Left: h2 + desktop-only button */}
-        <div className="flex flex-col lg:flex-row lg:justify-between 1xl:items-start 1xl:w-[362px] 3xl:w-[488px] 4xl:w-[534px] 1xl:gap-8.5 3xl:gap-12.5 4xl:gap-10.5 4xl:pt-2.5 mb-12 lg:mb-26.5 1xl:mb-0">
-          <h2 className="leading-[110%] text-[32px] lg:text-[40px] 1xl:text-[42px] 3xl:text-5xl 4xl:text-[62px] font-second font-medium text-center 1xl:text-left tracking-[-0.02em]">
+        <div className="flex flex-col lg:flex-row  lg:justify-between 1xl:flex-col 1xl:items-start 1xl:w-[362px] 3xl:w-[488px] 4xl:w-[534px] 1xl:gap-8.5 3xl:gap-12.5 4xl:gap-10.5 4xl:pt-2.5 mb-12 lg:mb-26.5 1xl:mb-0">
+          <h2 className="leading-[110%] text-[32px] lg:text-[40px] 1xl:text-[42px] 3xl:text-5xl 4xl:text-[62px] font-second font-medium text-center 1xl:text-left tracking-[-0.02em] whitespace-nowrap">
             Часті питання
           </h2>
           <AskUsButton
-            targetId="more-info-section"
+            targetId="more-info"
             className="hidden lg:flex"
           />
         </div>

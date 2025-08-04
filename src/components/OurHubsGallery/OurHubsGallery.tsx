@@ -30,17 +30,17 @@ const OurHubsGallery = () => {
       <div className="section overflow-hidden px-0">
         <h2 className="sr-only">Наші HUBи</h2>
         {/* Верхній еліпс + заголовок */}
-        <div className="relative mx-auto pt-43 3xl:pt-[116px] 3xl:pb-0">
-          <div className="absolute inset-x-0 z-10 top-18 1xl:top-20 3xl:-top-1 4xl:-top-10 h-[200px] pointer-events-none">
+        <div className="relative mx-auto pt-43 lg:pt-[83px] 3xl:pt-[116px] 3xl:pb-0">
+          <div className="absolute inset-x-0 z-10 top-18 lg:-top-5 1xl:top-10 3xl:top-1 4xl:-top-10 h-[200px] pointer-events-none">
             <svg
-              className="w-full h-full max-w-[568px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cod-black"
+              className="w-full h-full max-w-[768px] lg:max-w-[1024px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cod-black"
               aria-hidden="true"
             >
               <use href="/images/svg/icons.svg#icon-Ellipse-top" />
             </svg>
             <h2
               id="gallery-title"
-              className="absolute inset-0 z-20 flex items-center justify-center -top-50 1xl:-top-20 3xl:-top-28 4xl:-top-18 text-dust-white text-[32px]/[110%] 1xl:text-[42px] 3xl:text-[54px] 4xl:text-[62px] tracking-[-0.02em] font-second 4xl:font-medium"
+              className="absolute inset-0 z-20 flex items-center justify-center -top-50 lg:-top-25 1xl:-top-20 3xl:-top-28 4xl:-top-18 text-dust-white text-[32px]/[110%] 1xl:text-[42px] 3xl:text-[54px] 4xl:text-[62px] tracking-[-0.02em] font-second 4xl:font-medium"
             >
               Наші HUBи
             </h2>
@@ -128,14 +128,14 @@ const OurHubsGallery = () => {
             </Swiper>
 
             {/* Нижній еліпс */}
-            <div className="absolute h-[200px] -bottom-20 1xl:-bottom-20 3xl:-bottom-10 4xl:bottom-[-1px] z-10 inset-x-0 pointer-events-none">
-              <svg className="w-full h-full max-w-[568px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cod-black">
+            <div className="absolute h-[200px] -bottom-20 lg:-bottom-21 1xl:-bottom-20 3xl:-bottom-10 4xl:bottom-[-1px] z-10 inset-x-0 pointer-events-none">
+              <svg className="w-full h-full max-w-[768px] lg:max-w-[1024px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cod-black">
                 <use href="/images/svg/icons.svg#icon-Ellipse-45-7" />
               </svg>
             </div>
 
             {/* Індикатори */}
-            <ul className="absolute -bottom-2 1xl:-bottom-1 3xl:bottom-10 4xl:bottom-20 left-1/2 z-20 transform -translate-x-1/2 flex gap-2.5">
+            <ul className="absolute -bottom-2 lg:-bottom-1 1xl:-bottom-1 3xl:bottom-10 4xl:bottom-20 left-1/2 z-20 transform -translate-x-1/2 flex gap-2.5">
               {images.map((_, idx) => (
                 <li key={idx}>
                   <button
