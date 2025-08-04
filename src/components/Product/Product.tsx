@@ -30,8 +30,8 @@ export default function Product() {
           />
         </div>
 
-        <div className="flex flex-col 1xl:w-1/2 3xl:justify-center">
-          <ul className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap lg:justify-center 1xl:justify-start 1xl:flex-col gap-y-4.5 4xl:gap-y-14 mb-15 1xl:mb-27 4xl:mb-35 1xl:gap-10.5">
+        <div className="flex flex-col 1xl:w-1/2 1xl:justify-start 3xl:justify-center">
+          <ul className="flex flex-col md:flex-row md:flex-wrap 1xl:flex-col gap-y-4.5 4xl:gap-y-14 mb-15 1xl:mb-27 4xl:mb-35 1xl:gap-10.5">
             <li className="flex flex-col gap-2 4xl:gap-3 max-w-[260px] w-1/2">
               <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Тип комбінації:
@@ -58,7 +58,7 @@ export default function Product() {
             </li>
           </ul>
 
-          <div className="flex gap-2 lg:justify-center 4xl:gap-5">
+          <div className="flex gap-2 lg:justify-center 1xl:justify-start 4xl:gap-5">
             <button
               onClick={handlePrev}
               className="flex justify-center shrink-0 items-center w-13 h-13 4xl:w-16 4xl:h-16 bg-cod-gray rounded-full border-tangerine border"
