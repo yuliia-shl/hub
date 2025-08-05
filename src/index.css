@@ -87,16 +87,10 @@
   --font-third: 'Inter', sans-serif;
   --font-fourth: 'Sofia Sans', sans-serif;
   --font-fifth: 'Manrope', sans-serif;
-  --font-primary: 'Nunito Sans', sans-serif;
-  --font-second: 'Unbounded', sans-serif;
-  --font-third: 'Inter', sans-serif;
-  --font-fourth: 'Sofia Sans', sans-serif;
-  --font-fifth: 'Manrope', sans-serif;
 
   /* Custom screen sizes */
-  --breakpoint-xs: 375px;
   --breakpoint-xs: 568px;
-  --breakpoint-xs: 1024px;
+  --breakpoint-lg: 1024px;
   --breakpoint-1xl: 1440px;
   --breakpoint-3xl: 1920px;
   --breakpoint-4xl: 2560px;
@@ -138,10 +132,6 @@
   --color-gray: #7f7f7f;
   --color-form: rgba(230, 230, 230, 0.5);
   --color-mountain-mist: #8d8d8d;
-
-  /* --color-menu: rgba(117, 117, 117, 0.77);
-  --color-reason: rgba(255, 255, 255, 0.4);
-  */
 }
 
 @layer base {
@@ -177,7 +167,7 @@ h2 {
 
 @layer components {
   .section {
-    @apply mx-auto w-full max-w-[375px] px-3 xs:max-w-[568px] xs:px-6 2xs:max-w-[1024px] 2xs:px-8 1xl:max-w-[1440px] 1xl:px-10 3xl:max-w-[1920px] 3xl:px-[90px] 4xl:max-w-[2560px] 4xl:px-40;
+    @apply mx-auto w-full max-w-[375px] px-3 xs:max-w-[568px] xs:px-6 lg:max-w-[1024px] lg:px-8 1xl:max-w-[1440px] 1xl:px-10 3xl:max-w-[1920px] 3xl:px-[90px] 4xl:max-w-[2560px] 4xl:px-40;
   }
 }
 
