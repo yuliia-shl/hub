@@ -4,7 +4,7 @@ import BookModal from '../BookModal/BookModal';
 import BurgerToggle from '../BurgerToggle/BurgerToggle';
 import SmartButton from '../ui/Button/SmartButton';
 import HeaderNav from '../HeaderNav/HeaderNav';
-import clsx from 'clsx';
+
 
 type HeaderProps = {
   setActiveIndex: (index: number) => void;
