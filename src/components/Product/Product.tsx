@@ -36,7 +36,7 @@ export default function Product() {
               <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Тип комбінації:
               </h4>
-              <p className="font-semibold text-xl/[140%] 1xl:text-[26px]/[108%]4xl:text-[34px]/[108%]  text-mercury-white">
+              <p className="font-semibold text-[18px]/[156%] xs:text-xl/[140%] 1xl:text-[26px]/[108%]4xl:text-[34px]/[108%]  text-mercury-white">
                 {currentProduct.type}
               </p>
             </li>
@@ -44,7 +44,7 @@ export default function Product() {
               <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Розмір:
               </h4>
-              <p className="font-semibold text-xl/[140%] 1xl:text-[26px]/[108%] 4xl:text-[34px]/[108%] text-mercury-white">
+              <p className="font-semibold text-[18px]/[156%] xs:text-xl/[140%] 1xl:text-[26px]/[108%] 4xl:text-[34px]/[108%] text-mercury-white">
                 {currentProduct.size}
               </p>
             </li>
@@ -52,7 +52,7 @@ export default function Product() {
               <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Склад:
               </h4>
-              <p className="font-semibold text-xl/[140%] 1xl:text-[26px]/[108%] 4xl:text-[34px]/[108%] text-mercury-white">
+              <p className="font-semibold text-[18px]/[156%] xs:text-xl/[140%] 1xl:text-[26px]/[108%] 4xl:text-[34px]/[108%] text-mercury-white">
                 {currentProduct.composition}
               </p>
             </li>
