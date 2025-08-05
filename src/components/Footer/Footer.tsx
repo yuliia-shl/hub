@@ -1,13 +1,23 @@
-const Footer = () => {
+ interface FooterProps {
+   onPolicyClick: () => void;
+}
+
+const Footer = ({ onPolicyClick} : FooterProps) => {
   return (
     <footer className="w-full pb-[7px] lg:pb-5 1xl:pb-14.5 4xl:pb-17">
       <div className="section">
         <div className="pb-17 lg:pb-5 4xl:pb-6.5">
           <div className="flex flex-row justify-between 1xl:justify-none mb-15 lg:mb-8 4xl:mb-15">
             <div className="flex flex-row items-start  gap-x-[6px] lg:gap-x-2.5 4xl:gap-x-3">
-              <svg className="w-[36px] h-[50px] lg:w-[56px] lg:h-[78px] 4xl:w-[68px] 4xl:h-[96px] fill-tangerine group-hover:fill-tangerine transition-colors duration-300">
-                <use href="/images/svg/icons.svg#icon-logo" />
-              </svg>
+              <a
+                href="/"
+                aria-label="На головну"
+              >
+                <svg className="w-[36px] h-[50px] lg:w-[56px] lg:h-[78px] 4xl:w-[68px] 4xl:h-[96px] fill-tangerine group-hover:fill-tangerine transition-colors duration-300">
+                  <use href="/images/svg/icons.svg#icon-logo" />
+                </svg>
+              </a>
+
               <div className="flex flex-col pt-2 lg:pt-3 4xl:pt-5">
                 <span className="text-xl/[120%] lg:text-[32px] 4xl:text-[38px] text-tangerine font-semibold font-second">
                   MBK MASH
@@ -17,10 +27,10 @@ const Footer = () => {
                 </span>
               </div>
             </div>
-
+                      {/*Cоціальні мережі*/}
             <div className="flex gap-x-4 lg:gap-x-5 lg:pt-4 lg:w-1/2 4xl:gap-x-14">
               <a
-                href="#"
+                href="https://t.me/HUB_mvk_mash"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Telegram"
@@ -31,7 +41,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/HUB_mvk_mash "
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -39,6 +49,17 @@ const Footer = () => {
               >
                 <svg className="w-12 h-12 lg:w-14 lg:h-14 4xl:w-20.5 4xl:h-20.5 fill-tangerine">
                   <use href="/images/svg/icons.svg#icon-insta" />
+                </svg>
+              </a>
+              <a
+                href="https://www.tiktok.com/@hub.mvkmash"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Tik-Tok"
+                className="group"
+              >
+                <svg className="w-12 h-12 1xl:w-14 1xl:h-14 4xl:w-20.5 4xl:h-20.5 fill-tangerine">
+                  <use href="/images/svg/icons.svg#icon-Union" />
                 </svg>
               </a>
             </div>
@@ -80,6 +101,10 @@ const Footer = () => {
                 <a
                   href="#"
                   className="w-1/2 text-lg/[126%] tracking-[-0.03em] text-mountain-mist underline"
+                   onClick={e => {
+                    e.preventDefault();
+                    onPolicyClick();
+                  }}
                 >
                   Політика конфіденційності
                 </a>
