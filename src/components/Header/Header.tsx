@@ -34,7 +34,7 @@ const Header = ({ setActiveIndex }: HeaderProps) => {
                 onClick={() => setOpenBookModal(true)}
                 label="Отримати консультацію"
                 variant="primary"
-                className="hidden [@media(min-width:480px)]:flex text-star-dust border-star-dust text-[18px]/[1] font-normal px-3 py-3 w-xl:text-[18px]"
+                className="hidden xs:flex text-star-dust border-star-dust text-[18px]/[1] font-normal px-3 py-3 w-xl:text-[18px]"
               />
             )}
             {/* Передаємо стан та функцію для зміни стану в BurgerToggle */}
