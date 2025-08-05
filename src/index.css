@@ -94,7 +94,9 @@
   --font-fifth: 'Manrope', sans-serif;
 
   /* Custom screen sizes */
+  --breakpoint-xs: 375px;
   --breakpoint-xs: 568px;
+  --breakpoint-xs: 1024px;
   --breakpoint-1xl: 1440px;
   --breakpoint-3xl: 1920px;
   --breakpoint-4xl: 2560px;
@@ -175,7 +177,7 @@ h2 {
 
 @layer components {
   .section {
-    @apply mx-auto w-full max-w-[375px] px-3 xs:max-w-[568px] xs:px-6 2xs:max-w-[992px] 2xs:px-8 1xl:max-w-[1440px] 1xl:px-10 3xl:max-w-[1920px] 3xl:px-[90px] 4xl:max-w-[2560px] 4xl:px-40;
+    @apply mx-auto w-full max-w-[375px] px-3 xs:max-w-[568px] xs:px-6 2xs:max-w-[1024px] 2xs:px-8 1xl:max-w-[1440px] 1xl:px-10 3xl:max-w-[1920px] 3xl:px-[90px] 4xl:max-w-[2560px] 4xl:px-40;
   }
 }
 
