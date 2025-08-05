@@ -165,6 +165,14 @@ button {
   cursor: pointer;
 }
 
+h1 {
+  font-size: clamp(24px, 10.1325px + 3.7vw, 48px);
+}
+
+h2 {
+  font-size: clamp(22px, 10.5625px + 3.05vw, 34px);
+}
+
 @layer components {
   .section {
     @apply mx-auto max-w-[768px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] px-6 1xl:px-10 3xl:px-22.5 4xl:px-40;
