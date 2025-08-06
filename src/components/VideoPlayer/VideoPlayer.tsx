@@ -21,8 +21,8 @@ const VideoPlayer = () => {
 
       {/* Контент поверх відео */}
 
-      <div className="section flex flex-col justify-around 1xl:justify-center 1xl:items-center h-full">
-        <HiroTitle className="1xl:flex flex-col items-center 1xl:mb-12 4xl:mb-8.5" />
+      <div className="section flex flex-col justify-around lg:justify-center lg:items-center h-full">
+        <HiroTitle className="lg:flex flex-col items-center lg:mb-12 4xl:mb-8.5" />
         <SmartButton
           label="Рішення для бізнесу"
           icon="/images/svg/icons.svg#icon-arrow-up-right"
@@ -30,7 +30,7 @@ const VideoPlayer = () => {
           iconStroke="currentColor"
           iconPosition="right"
           href="#more-info"
-          className="1xl:inline-flex ml-auto 1xl:ml-0 4xl:text-[20px]/[1]"
+          className="lg:inline-flex ml-auto lg:ml-0 4xl:text-[20px]/[1]"
         />
       </div>
     </div>

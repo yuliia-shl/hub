@@ -151,18 +151,53 @@
     @apply font-primary text-mercury-white bg-cod-black text-base leading-[1.37] h-full;
     scrollbar-gutter: stable;
   }
+
+  h1 {
+    font-size: clamp(24px, 10.1325px + 3.7vw, 44px);
+  }
+
+  @media (min-width: 1440px) {
+    h1 {
+      font-size: clamp(44px, -20.3px + 4.46vw, 94px);
+    }
+  }
+  h2 {
+    font-size: clamp(22px, 10.5625px + 3.05vw, 34px);
+  }
+
+  @media (min-width: 1440px) {
+    h2 {
+      font-size: clamp(34px, 18px + 1.5vw, 62px);
+    }
+  }
 }
 
 button {
   cursor: pointer;
 }
 
-h1 {
-  font-size: clamp(24px, 10.1325px + 3.7vw, 48px);
+@layer base {
+  h1 {
+    font-size: clamp(24px, 10.1325px + 3.7vw, 44px);
+  }
+
+  @media (min-width: 1440px) {
+    h1 {
+      font-size: clamp(44px, -20.3px + 4.46vw, 94px);
+    }
+  }
 }
 
-h2 {
-  font-size: clamp(22px, 10.5625px + 3.05vw, 34px);
+@layer base {
+  h2 {
+    font-size: clamp(22px, 10.5625px + 3.05vw, 34px);
+  }
+
+  @media (min-width: 1440px) {
+    h2 {
+      font-size: clamp(34px, 18px + 1.5vw, 62px);
+    }
+  }
 }
 
 @layer components {
