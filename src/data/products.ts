@@ -10,18 +10,18 @@ export const products: products[] = [
     type: 'MultiVita Hub',
     size: 'Базовий',
     composition: 'БК, Флоромат, Хімчистка, Ячейки з підігрівом',
-    png: '/public/images/products/multivita.png',
+    png: '/public/images/products/multivita-4x.png',
   },
   {
     type: 'ComfyMix Hub',
     size: 'Середній',
     composition: 'БК, Флоромат, Підігрів, Вендінг, Кава + Мікрохвильовка',
-    png: '/public/images/products/comfymix.png',
+    png: '/public/images/products/comfymix-4x.png',
   },
   {
     type: 'MegaStore Hub',
     size: 'Великий',
     composition: 'БК, Флоромат, Підігрів, Хімчистка, Камери збереження ',
-    png: '/public/images/products/megastore.png',
+    png: '/public/images/products/megastore-4x.png',
   },
 ];

@@ -26,7 +26,7 @@ export default function BurgerToggle({
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative z-50 flex flex-col justify-center items-center w-12 h-12 1xl:hidden"
+        className="relative z-50 flex flex-col justify-center items-center w-12 h-12 lg:hidden"
         aria-label="Toggle menu"
       >
         <span
@@ -47,7 +47,7 @@ export default function BurgerToggle({
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 -z-1 section bg-cod-black/90 flex flex-col  gap-13 text-4xl/[1] text-boulder-dust 1xl:hidden">
+        <div className="fixed inset-0 -z-1 section bg-cod-black/90 flex flex-col  gap-13 text-4xl/[1] text-boulder-dust lg:hidden">
           <BurgerMenu
             isOpen={isOpen}
             setIsOpen={setIsOpen}
