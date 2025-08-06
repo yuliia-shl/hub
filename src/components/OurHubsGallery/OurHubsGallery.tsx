@@ -13,10 +13,13 @@ const OurHubsGallery = () => {
     if (w >= 2560) return { width: 1156, height: 769, peek: 421, gap: 120 };
     if (w >= 1920) return { width: 1156, height: 769, peek: 262, gap: 120 };
     if (w >= 1440) return { width: 1082, height: 720, peek: 40, gap: 112 };
-    return { width: 568, height: 654, peek: 0, gap: 16 };
+     if (w >= 1024) return { width: 1024, height: 827, peek: 0, gap: 0 };
+      if (w >= 568) return { width: 568, height: 654, peek: 0, gap: 0 };
+       if (w >= 375) return { width: 375, height: 554, peek: 0, gap: 0 };
+    return {  width: 1024, height: 827, peek: 0, gap: 0 };
   };
 
-  const { peek, gap } = getSlideConfig();
+ const { width: slideW, height: slideH, peek, gap } = getSlideConfig();
 
   return (
     <section
@@ -30,17 +33,19 @@ const OurHubsGallery = () => {
       <div className="section overflow-hidden px-0">
         <h2 className="sr-only">Наші HUBи</h2>
         {/* Верхній еліпс + заголовок */}
-        <div className="relative mx-auto pt-6 pb-11.5 md:pt-43 lg:pt-[83px] 3xl:pt-[116px] 3xl:pb-0">
-          <div className="absolute inset-x-0 z-10 -top-16 md:top-18 lg:-top-5 1xl:top-10 3xl:top-1 4xl:-top-10 h-[200px] pointer-events-none">
+        <div className="relative mx-auto pt-6 pb-11.5 px-0 xs:pt-43 lg:pt-[83px] 3xl:pt-[116px] 3xl:pb-0">
+          <div className="absolute inset-x-0 z-10 -top-8 xs:top-35 lg:-top-1 1xl:top-10 3xl:top-1 4xl:-top-1 pointer-events-none">
             <svg
-              className="w-full h-full max-w-[375px] md:max-w-[768px] lg:max-w-[1024px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cod-black"
+              className="w-full h-full max-w-[375px] max-h-[200px] xs:max-w-[568px] lg:max-w-[1024px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cod-black
+              "
               aria-hidden="true"
+
             >
               <use href="/images/svg/icons.svg#icon-Ellipse-top" />
             </svg>
             <h2
               id="gallery-title"
-              className="absolute inset-0 z-20 flex items-center justify-center -top-8 md:-top-50 lg:-top-25 1xl:-top-20 3xl:-top-28 4xl:-top-18 text-dust-white text-[22px]/[110%] md:text-[32px]/[110%] 1xl:text-[42px] 3xl:text-[54px] 4xl:text-[62px] tracking-[-0.02em] font-second 4xl:font-medium"
+              className="absolute inset-0 z-20 flex items-center justify-center -top-15 xs:-top-20 lg:-top-20 1xl:-top-20 3xl:-top-28 4xl:-top-18 text-dust-white text-[22px]/[110%] xs:text-[32px]/[110%] 1xl:text-[42px] 3xl:text-[54px] 4xl:text-[62px] tracking-[-0.02em] font-second 4xl:font-medium"
             >
               Наші HUBи
             </h2>
@@ -90,13 +95,16 @@ const OurHubsGallery = () => {
                 sensitivity: 1,
               }}
               onSwiper={swiper => (swiperRef.current = swiper)}
-              onSlideChange={swiper => setActive(swiper.realIndex)}
+              onRealIndexChange={swiper => { 
+                console.log(swiper.realIndex);
+                setActive(swiper.realIndex);
+              }}
               
             >
               {images.map((fileName, idx) => {
-                const slideW = getSlideConfig().width;
+              
                 return (
-                  <SwiperSlide key={idx} style={{ width: slideW }}>
+                  <SwiperSlide key={idx} style={{ width: slideW, height: slideH, willChange: 'transform', }}>
                     <picture>
                       {/* WebP 2x */}
                       <source
@@ -128,22 +136,26 @@ const OurHubsGallery = () => {
             </Swiper>
 
             {/* Нижній еліпс */}
-            <div className="absolute h-[200px] -bottom-20 lg:-bottom-21 1xl:-bottom-20 3xl:-bottom-10 4xl:bottom-[-1px] z-10 inset-x-0 pointer-events-none">
-              <svg className="w-full h-full max-w-[375px] md:max-w-[768px] lg:max-w-[1024px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cod-black">
+            <div className="absolute h-[200px] -bottom-20 lg:-bottom-21 1xl:-bottom-20 3xl:-bottom-10 4xl:-bottom-2 z-10 inset-x-0 pointer-events-none overflow-hidden">
+              <svg className="w-full h-full max-w-[375px] xs:max-w-[568px] lg:max-w-[1024px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cod-black">
                 <use href="/images/svg/icons.svg#icon-Ellipse-45-7" />
               </svg>
             </div>
 
             {/* Індикатори */}
-            <ul className="absolute bottom-0 md:-bottom-2 lg:-bottom-1 1xl:-bottom-1 3xl:bottom-10 4xl:bottom-20 left-1/2 z-20 transform -translate-x-1/2 flex gap-2.5">
+            <ul className="absolute bottom-0 xs:-bottom-1 lg:-bottom-1 1xl:-bottom-1 3xl:bottom-10 4xl:bottom-15 left-1/2 z-20 transform -translate-x-1/2 flex gap-2.5">
               {images.map((_, idx) => (
                 <li key={idx}>
                   <button
                     type="button"
-                    onClick={() => swiperRef.current?.slideTo(idx)}
+                    onClick={() => {
+                      const swiper = swiperRef.current;
+                      if (swiper && swiper.slideToLoop) {
+                        swiper.slideToLoop(idx, 0); }
+                      }}
                     aria-label={`Перейти до слайду ${idx + 1}`}
                     aria-current={active === idx ? 'true' : undefined}
-                    className={`h-2 rounded-[34px] md:rounded-4xl transition-all ${
+                    className={`h-2 rounded-[34px] xs:rounded-4xl transition-all ${
                       active === idx
                         ? 'w-17 bg-masala-light'
                         : 'w-7.5 bg-woodsmoke-dust'
