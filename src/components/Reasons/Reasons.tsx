@@ -3,7 +3,7 @@ const Reasons = () => {
     <section id="reasons" className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
       <div className="section flex flex-col 1xl:flex-row-reverse gap-[108px] 1xl:gap-4 3xl:gap-[122px] 4xl:gap-[108px] 4xl:justify-end">
         <div className="w-full shrink-1 4xl:pt-13 4xl:max-w-[1370px]">
-          <h2 className="mb-14.5 1xl:mb-20 3xl:mb-17 4xl:mb-15 font-second text-[32px]/[110%] 1xl:text-[42px] 3xl:text-[54px] 4xl:text-[62px] font-medium text-center 1xl:text-left 1xl:ml-1 3xl:ml-0">
+          <h2 className="mb-14.5 1xl:mb-20 3xl:mb-17 4xl:mb-15 font-second font-medium text-center 1xl:text-left 1xl:ml-1 3xl:ml-0">
             Чому саме MVK MASH?
           </h2>
           <ul className="grid grid-cols-1 1xl:grid-cols-2 gap-21.5 1xl:gap-x-6.5 4xl:gap-x-32.5 1xl:gap-y-23.5 3xl:gap-y-21.5">

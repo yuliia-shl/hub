@@ -18,7 +18,7 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
   return (
     <section className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
       <div className="section">
-        <h2 className="text-[34px]/[110%] tracking-[-0.02em] font-second text-center text-mercury-white mb-8 1xl:text-[42px] 1xl:text-left 1xl:mb-20 3xl:text-[54px] 3xl:mb-22 4xl:text-[62px] 4xl:font-medium 4xl:mb-15">
+        <h2 className="leading-[110%] tracking-[-0.02em] font-second text-center text-mercury-white mb-8 4xl:font-medium 4xl:mb-15">
           Ваш бізнес з HUB
         </h2>
 
@@ -68,7 +68,7 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
             })}
           </ul>
 
-          <div className="flex flex-col gap-14 p-7 pt-3 bg-cod-dark rounded-lg lg:flex-row lg:gap-24 1xl:px-11 lg:py-10 lg:justify-between lg:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
+          <div className="flex flex-col gap-14 lg:p-7 pt-3 bg-cod-dark rounded-lg lg:flex-row lg:gap-24 1xl:px-11 lg:py-10 lg:justify-between lg:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
             <ul className="flex flex-col gap-7 1xl:gap-10 lg:justify-around">
               {advantages.map((advantage, index) => {
                 return (
