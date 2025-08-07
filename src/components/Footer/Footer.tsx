@@ -1,5 +1,5 @@
 interface FooterProps {
-  onPolicyClick: () => void;
+  onPolicyClick?: () => void;
 }
 
 const Footer = ({ onPolicyClick }: FooterProps) => {
@@ -102,7 +102,7 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
                   className="w-1/2 text-lg/[126%] tracking-[-0.03em] text-mountain-mist underline"
                   onClick={e => {
                     e.preventDefault();
-                    onPolicyClick();
+                    onPolicyClick?.();
                   }}
                 >
                   Політика конфіденційності
