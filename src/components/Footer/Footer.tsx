@@ -1,18 +1,17 @@
- interface FooterProps {
-   onPolicyClick: () => void;
+interface FooterProps {
+  onPolicyClick: () => void;
 }
 
-const Footer = ({ onPolicyClick} : FooterProps) => {
+const Footer = ({ onPolicyClick }: FooterProps) => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="w-full pb-[7px] 1xl:pb-14.5 4xl:pb-17">
       <div className="section">
         <div className="pb-17 1xl:pb-5 4xl:pb-6.5">
           <div className="flex flex-row justify-between 1xl:justify-none mb-15 1xl:mb-8 4xl:mb-15">
             <div className="flex flex-row items-start gap-x-[6px] 1xl:gap-x-2.5 4xl:gap-x-3">
-              <a
-                href="/"
-                aria-label="На головну"
-              >
+              <a href="/" aria-label="На головну">
                 <svg className="w-[36px] h-[50px] 1xl:w-[56px] 1xl:h-[78px] 4xl:w-[68px] 4xl:h-[96px] fill-tangerine group-hover:fill-tangerine transition-colors duration-300">
                   <use href="/images/svg/icons.svg#icon-logo" />
                 </svg>
@@ -27,7 +26,7 @@ const Footer = ({ onPolicyClick} : FooterProps) => {
                 </span>
               </div>
             </div>
-                      {/*Cоціальні мережі*/}
+            {/*Cоціальні мережі*/}
             <div className="flex gap-x-4 1xl:gap-x-5 1xl:pt-4 4xl:gap-x-14 1xl:w-1/2">
               <a
                 href="https://t.me/HUB_mvk_mash"
@@ -80,7 +79,7 @@ const Footer = ({ onPolicyClick} : FooterProps) => {
                     href="mailto:hub@mbk-mash.com"
                     className="font-semibold leading-[125%] 1xl:text-lg/[111%] 4xl:text-xl/[111%] hover:underline"
                   >
-                    Hub@mbk-mash.com
+                    hub@mbk-mash.com
                   </a>
                 </div>
 
@@ -90,7 +89,7 @@ const Footer = ({ onPolicyClick} : FooterProps) => {
                   </p>
                   <p className="font-semibold leading-[125%] 1xl:text-lg/[111%] hover:underline">
                     м. Київ, вул. Солом’янська 3
-                    <span className="block">000 323 22 22</span>
+                    <span className="block">+38 (050) 213 80 55</span>
                   </p>
                 </div>
               </div>
@@ -112,7 +111,7 @@ const Footer = ({ onPolicyClick} : FooterProps) => {
 
               <div className="flex flex-col gap-4 1xl:mr-24.5 1xl:max-w-[280px]">
                 <p className="leading-[120%] font-medium text-mountain-mist">
-                  © 2003–2025 ТОВ «MBK MASH»
+                  © 2003–{currentYear} ТОВ «MBK MASH»
                 </p>
                 <p className="leading-[120%] font-medium text-mountain-mist 1xl:text-left">
                   Всі права захищені. Використання матеріалів сайту{' '}

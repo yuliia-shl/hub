@@ -10,10 +10,7 @@ const FAQ = () => {
           <h2 className="text-[32px]/[110%] 1xl:text-[42px] 3xl:text-5xl 4xl:text-[62px] font-second font-medium text-center 1xl:text-left tracking-[-0.02em]">
             Часті питання
           </h2>
-          <AskUsButton
-            targetId="more-info-section"
-            className="hidden 1xl:flex"
-          />
+          <AskUsButton targetId="more-info" className="hidden 1xl:flex" />
         </div>
         {/*Right: list */}
         <ul className="flex flex-col w-full gap-21 1xl:gap-14.5 mb-25 1xl:mb-19 3xl:mb-10 4xl:mb-20 1xl:max-w-[902px] 3xl:max-w-[1156px] 4xl:max-w-[1486px]">
@@ -32,7 +29,7 @@ const FAQ = () => {
           ))}
         </ul>
         {/* Mobile-only button под списком */}
-        <AskUsButton targetId="more-info-section" className="flex 1xl:hidden" />
+        <AskUsButton targetId="more-info" className="flex 1xl:hidden" />
       </div>
     </section>
   );

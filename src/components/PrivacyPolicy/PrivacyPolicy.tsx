@@ -1,7 +1,15 @@
+import SmartButton from '../ui/Button/SmartButton';
+
 export default function PrivacyPolicy() {
   return (
-    <div className="section flex flex-col gap-10 py-40">
-      <h2 className="text-5xl">Політика щодо обробки персональних даних</h2>
+    <div className="relative section flex flex-col gap-10 pt-10 pb-30">
+      <SmartButton
+        className="flex absolute z-150 py-3 top-0 right-3 -mt-14"
+        variant="primary"
+        label="На головну"
+        href="/"
+      />
+      <h2>Політика щодо обробки персональних даних</h2>
 
       <h3 className="font-semibold text-tangerine">1. Загальні положення</h3>
       <ul>

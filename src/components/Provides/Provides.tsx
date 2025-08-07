@@ -2,7 +2,10 @@ export default function Provides() {
   return (
     <section className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
       <div className="section flex flex-col 1xl:flex-row 1xl:flex-wrap">
-        <h2 className="font-second text-mercury-white tracking-[-0.02em] font-medium mb-9.5 lg:text-[38px]/[110%] 1xl:text-[42px] 3xl:text-[54px] 4xl:text-[62px] 1xl:mr-11 3xl:mr-17.5 4xl:mr-23 1xl:mb-0">
+        <h2
+          className="font-second text-mercury-white tracking-[-0.02em] font-medium mb-9.5 lg:text-[38px]/[110%] 1xl:text-[42px] 3xl:text-[54px] 4xl:text-[62px] 1xl:mr-11 3xl:mr-17.5 4xl:mr-23 1xl:mb-0"
+          id="provides"
+        >
           Що надає HUB?
         </h2>
         <ul className="flex flex-col gap-y-6 lg:gap-x-8 text-boulder-dust xs:text-xl/[110%] mb-13.5 lg:flex-row lg:flex-wrap 1xl:max-w-[904px] 1xl:gap-x-4 lg:gap-y-13.5  3xl:max-w-[1142px] 1xl:mb-27 4xl:text-[22px] 4xl:max-w-[1540px] 3xl:gap-x-13 4xl:gap-x-18 4xl:gap-y-16">

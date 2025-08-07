@@ -18,11 +18,11 @@ export default function Product() {
   return (
     <section className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
       <div className="section flex flex-col 1xl:flex-row-reverse 1xl:justify-end">
-        <h2 className="font-semibold font-second text-[32px]/[110%] text-mercury-white hidden">
+        <h2 className="font-semibold font-second text-[32px]/[110%] text-mercury-white sr-only">
           Product Page
         </h2>
 
-        <div className="mb-9 lg:mb-15 w-full flex lg:items-center justify-center">
+        <div className="mb-9 min-h-40 xs:min-h-60 lg:mb-15 w-full flex lg:items-center justify-center">
           <img
             src={currentProduct.png}
             alt={currentProduct.type}
@@ -31,7 +31,7 @@ export default function Product() {
         </div>
 
         <div className="flex flex-col 1xl:w-1/2 1xl:justify-start 3xl:justify-center">
-          <ul className="flex flex-col md:flex-row md:flex-wrap lg:justify-between 1xl:flex-col gap-y-4.5 4xl:gap-y-14 mb-15 1xl:mb-27 4xl:mb-35 1xl:gap-10.5">
+          <ul className="flex flex-col lg:flex-row md:flex-wrap lg:justify-between 1xl:flex-col gap-y-4.5 4xl:gap-y-14 mb-15 1xl:mb-27 4xl:mb-35 1xl:gap-10.5">
             <li className="flex flex-col gap-2 4xl:gap-3 max-w-[260px] w-1/2">
               <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Тип комбінації:
@@ -52,7 +52,7 @@ export default function Product() {
               <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Склад:
               </h4>
-              <p className="font-semibold text-[18px]/[156%] xs:text-xl/[140%] lg:text-[22px]/[127%] 1xl:text-[26px]/[108%] 4xl:text-[34px]/[108%] text-mercury-white">
+              <p className="font-semibold xs:min-h-14 text-[18px]/[156%] xs:text-xl/[140%] lg:text-[22px]/[127%] 1xl:text-[26px]/[108%] 4xl:text-[34px]/[108%] text-mercury-white lg:min-w-90">
                 {currentProduct.composition}
               </p>
             </li>
