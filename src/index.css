@@ -202,7 +202,7 @@ button {
 
 @layer components {
   .section {
-    @apply mx-auto w-full max-w-[375px] px-3 xs:max-w-[568px] xs:px-6 lg:max-w-[1024px] lg:px-8 1xl:max-w-[1440px] 1xl:px-10 3xl:max-w-[1920px] 3xl:px-[90px] 4xl:max-w-[2560px] 4xl:px-40;
+    @apply mx-auto max-w-[375px] xs:max-w-[568px] lg:max-w-[1024px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] px-3 xs:px-6 lg:px-10 1xl:px-10 3xl:px-22.5 4xl:px-40;
   }
 }
 
