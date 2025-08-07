@@ -115,7 +115,7 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
 
                 <a
                   href="#more-info"
-                  className="flex items-center justify-between w-full font-bold px-6 py-4.5 rounded-[45px] text-base/[100%] 4xl:text-xl text-cod-gray bg-tangerine hover:bg-chilean-fire focus:bg-chilean-fire transition-colors duration-300"
+                  className="flex items-center gap-8 justify-between w-full font-bold px-6 py-4.5 rounded-[45px] text-base/[100%] 4xl:text-xl text-cod-gray bg-tangerine hover:bg-chilean-fire focus:bg-chilean-fire transition-colors duration-300 lg:min-w-60 lg:w-fit 1xl:min-w-full"
                 >
                   <span className="text-base/[100%] 4xl:text-xl">
                     {buttonLabel}
