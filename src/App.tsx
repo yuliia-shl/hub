@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Provides from './components/Provides/Provides';
@@ -13,18 +14,22 @@ import OurHubsGallery from './components/OurHubsGallery/OurHubsGallery';
 import MoreInfo from './components/MoreInfo/MoreInfo';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import Footer from './components/Footer/Footer';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [showPolicy, setShowPolicy] = useState(false);
 
-    // колбек для показу політики + скролл нагору
   const openPolicy = () => {
     setShowPolicy(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const closePolicy = () => {
+    setShowPolicy(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -32,7 +37,8 @@ function App() {
     <>
       <Header
         setActiveIndex={setActiveIndex}
-        hideNav={showPolicy}
+        isPrivacy={showPolicy}
+        onShowHome={closePolicy}
       />
 
       {showPolicy ? (
@@ -55,9 +61,7 @@ function App() {
         </main>
       )}
 
-      <Footer
-        onPolicyClick={openPolicy}
-      />
+      <Footer onPolicyClick={openPolicy} />
     </>
   );
 }

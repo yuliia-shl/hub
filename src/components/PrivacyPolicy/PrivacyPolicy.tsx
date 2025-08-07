@@ -1,7 +1,7 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="section flex flex-col gap-10 py-40">
-      <h2 className="text-5xl">Політика щодо обробки персональних даних</h2>
+    <div className="relative section flex flex-col gap-10 pt-10 pb-30">
+      <h2>Політика щодо обробки персональних даних</h2>
 
       <h3 className="font-semibold text-tangerine">1. Загальні положення</h3>
       <ul>
