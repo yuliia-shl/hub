@@ -31,7 +31,7 @@ const Modules = () => {
 
   return (
     <section id="modules" className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
-      <div className="section xs:px-6 lg:px-8 1xl:px-10 3xl:px-23 4xl:px-40">
+      <div className="section p-0 xs:px-6 lg:px-8 1xl:px-10 3xl:px-23 4xl:px-40">
         <h2 className="sr-only">
           Модульні шафи самообслуговування для магазинів, аеропортів, тощо
         </h2>
