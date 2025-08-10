@@ -31,7 +31,7 @@ const Modules = () => {
 
   return (
     <section id="modules" className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
-      <div className="section xs:px-6 lg:px-8 1xl:px-10 3xl:px-23 4xl:px-40">
+      <div className="section p-0 xs:px-6 lg:px-8 1xl:px-10 3xl:px-23 4xl:px-40">
         <h2 className="sr-only">
           Модульні шафи самообслуговування для магазинів, аеропортів, тощо
         </h2>
@@ -40,7 +40,7 @@ const Modules = () => {
             <div className="px-3 flex flex-col gap-5.5 xs:gap-9.5 1xl:gap-[71px] 3xl:gap-[92px] 4xl:gap-[58px] 3xl:pt-15.5 4xl:pt-13.5 1xl:max-w-[606px] 3xl:max-w-[522px] 4xl:max-w-[735px] w-full">
               <div className="4xl:max-w-[522px]">
                 <div className="mb-5 xs:mb-13.5 lg:mb-9.5 4xl:mb-14">
-                  <h3 className="font-second capitalize text-[22px]/[110%] xs:text-[28px] lg:text-[40px] 3xl:leading-[75%] tracking-[-0.02em] mb-4 xs:mb-3 lg:mb-4.5">
+                  <h3 className="font-second capitalize text-[22px]/[110%] xs:text-[28px] lg:text-3xl 3xl:leading-[75%] tracking-[-0.02em] mb-4 xs:mb-3 lg:mb-4.5">
                     {title}
                   </h3>
                   <p className="font-medium min-h-[80px] xs:min-h-[60px] text-boulder-dark leading-[125%] 4xl:text-lg/[111%]">
