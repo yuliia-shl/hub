@@ -38,7 +38,7 @@ const BookModal = () => {
     };
 
     // #TODO delete log
-    // console.log('Sending data:', finalData);
+    console.log('Thank you', finalData.name);
   };
 
   return (
