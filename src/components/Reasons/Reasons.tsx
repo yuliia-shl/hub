@@ -6,8 +6,8 @@ const Reasons = () => {
           <h2 className="mb-14.5 1xl:mb-20 3xl:mb-17 4xl:mb-15 font-second font-medium text-center 1xl:text-left 1xl:ml-1 3xl:ml-0">
             Чому саме MVK MASH?
           </h2>
-          <ul className="grid grid-cols-1 1xl:grid-cols-2 gap-21.5 1xl:gap-x-6.5 4xl:gap-x-32.5 1xl:gap-y-23.5 3xl:gap-y-21.5">
-            <li className="border-t border-t-tuatara/75 pt-4.5 1xl:pt-10">
+          <ul className="grid grid-cols-1 lg:flex flex-wrap 1xl:grid-cols-2 gap-21.5 1xl:gap-x-6.5 4xl:gap-x-32.5 1xl:gap-y-23.5 3xl:gap-y-21.5">
+            <li className="border-t border-t-tuatara/75 pt-4.5 1xl:pt-10 lg:max-w-105">
               <div className="text-white/40 text-sm/2.5 flex gap-1 mb-4.5 1xl:mb-8.5">
                 <p>Причина </p>
                 <p>(01)</p>
@@ -21,7 +21,7 @@ const Reasons = () => {
                 об’єктів.
               </p>
             </li>
-            <li className="border-t border-t-tuatara/75 pt-4.5 1xl:pt-10">
+            <li className="border-t border-t-tuatara/75 pt-4.5 1xl:pt-10 lg:max-w-105">
               <div className="text-white/40 text-sm/2.5 flex gap-1 mb-4.5 1xl:mb-8.5">
                 <p>Причина </p>
                 <p>(02)</p>
@@ -35,7 +35,7 @@ const Reasons = () => {
                 Азії.
               </p>
             </li>
-            <li className="border-t border-t-tuatara/75 pt-4.5 1xl:pt-10">
+            <li className="border-t border-t-tuatara/75 pt-4.5 1xl:pt-10 lg:max-w-105">
               <div className="text-white/40 text-sm/2.5 flex gap-1 mb-4.5 1xl:mb-8.5">
                 <p>Причина </p>
                 <p>(03)</p>
@@ -52,7 +52,7 @@ const Reasons = () => {
           </ul>
         </div>
 
-        <div className="max:w-[520px] 1xl:pt-12.5 1xl:w-[440px] 3xl:pt-3 3xl:w-[460px] 4xl:pl-[94px] 4xl:pt-0 4xl:w-[648px] 4xl:items-start shrink-0">
+        <div className="lg:max-w-105 lg:ml-auto lg:-mt-80 1xl:mt-0 1xl:max:w-[520px] 1xl:pt-12.5 1xl:w-[440px] 3xl:pt-3 3xl:w-[460px] 4xl:pl-[94px] 4xl:pt-0 4xl:w-[648px] 4xl:items-start shrink-0">
           <img
             alt="Smart Locker HUB"
             src="/images/smart-locker.webp"

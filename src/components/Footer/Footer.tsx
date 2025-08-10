@@ -34,7 +34,7 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
                 aria-label="Telegram"
                 className="group"
               >
-                <svg className="w-10.5 h-10.5 xs:w-12 xs:h-12 lg:w-14 lg:h-14 4xl:w-20.5 4xl:h-20.5 fill-tangerine">
+                <svg className="w-10.5 h-10.5 xs:w-12 xs:h-12 lg:w-14 lg:h-14 4xl:w-20.5 4xl:h-20.5 fill-tangerine hover:fill-chilean-fire focus:fill-chilean-fire transition-colors duration-300">
                   <use href="/images/svg/icons.svg#icon-telegram" />
                 </svg>
               </a>
@@ -45,7 +45,7 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
                 aria-label="Instagram"
                 className="group"
               >
-                <svg className="w-10.5 h-10.5 xs:w-12 xs:h-12 lg:w-14 lg:h-14 4xl:w-20.5 4xl:h-20.5 fill-tangerine">
+                <svg className="w-10.5 h-10.5 xs:w-12 xs:h-12 lg:w-14 lg:h-14 4xl:w-20.5 4xl:h-20.5 fill-tangerine hover:fill-chilean-fire focus:fill-chilean-fire transition-colors duration-300">
                   <use href="/images/svg/icons.svg#icon-insta" />
                 </svg>
               </a>
@@ -56,7 +56,7 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
                 aria-label="Tik-Tok"
                 className="group"
               >
-                <svg className="w-10.5 h-10.5 xs:w-12 xs:h-12 lg:w-14 lg:h-14 4xl:w-20.5 4xl:h-20.5 fill-tangerine">
+                <svg className="w-10.5 h-10.5 xs:w-12 xs:h-12 lg:w-14 lg:h-14 4xl:w-20.5 4xl:h-20.5 fill-tangerine hover:fill-chilean-fire focus:fill-chilean-fire transition-colors duration-300">
                   <use href="/images/svg/icons.svg#icon-Union" />
                 </svg>
               </a>
@@ -86,7 +86,7 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
                   <p className="font-medium leading-[120%] 4xl:text-xl/[120%] text-mountain-mist">
                     Контакти:
                   </p>
-                  <p className="font-semibold leading-[125%] 4xl:text-lg/[111%] hover:underline">
+                  <p className="font-semibold leading-[125%] 4xl:text-lg/[111%]">
                     м. Київ, вул. Солом’янська 3
                     <span className="block">+38 (050) 213 80 55</span>
                   </p>
@@ -98,7 +98,7 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
               <div className="flex flex-row 4xl:order-2 mb-11 xs:mb-9.5 lg:mb-8 4xl:mb-0  1xl:whitespace-nowrap">
                 <a
                   href="#"
-                  className="text-lg/[126%] tracking-[-0.03em] text-mountain-mist underline"
+                  className="text-lg/[126%] tracking-[-0.03em] text-mountain-mist underline hover:text-tangerine group-focus:tangerine transition-colors duration-300"
                   onClick={e => {
                     e.preventDefault();
                     onPolicyClick?.();
