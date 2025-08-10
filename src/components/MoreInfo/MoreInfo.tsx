@@ -28,8 +28,8 @@ const MoreInfo = () => {
       phone: data.phone,
       email: data.email,
     };
-
-    console.log('Sending data:', finalData);
+    // #TODO delete log
+    // console.log('Sending data:', finalData);
   };
 
   return (

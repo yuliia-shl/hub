@@ -13,13 +13,13 @@ const OurHubsGallery = () => {
     if (w >= 2560) return { width: 1156, height: 769, peek: 421, gap: 120 };
     if (w >= 1920) return { width: 1156, height: 769, peek: 262, gap: 120 };
     if (w >= 1440) return { width: 1082, height: 720, peek: 40, gap: 112 };
-     if (w >= 1024) return { width: 1024, height: 827, peek: 0, gap: 0 };
-      if (w >= 568) return { width: 568, height: 654, peek: 0, gap: 0 };
-       if (w >= 375) return { width: 375, height: 554, peek: 0, gap: 0 };
-    return {  width: 1024, height: 827, peek: 0, gap: 0 };
+    if (w >= 1024) return { width: 1024, height: 827, peek: 0, gap: 0 };
+    if (w >= 568) return { width: 568, height: 654, peek: 0, gap: 0 };
+    if (w >= 375) return { width: 375, height: 554, peek: 0, gap: 0 };
+    return { width: 1024, height: 827, peek: 0, gap: 0 };
   };
 
- const { width: slideW, height: slideH, peek, gap } = getSlideConfig();
+  const { width: slideW, height: slideH, peek, gap } = getSlideConfig();
 
   return (
     <section
@@ -39,7 +39,6 @@ const OurHubsGallery = () => {
               className="w-full h-full max-w-[375px] max-h-[200px] xs:max-w-[568px] lg:max-w-[1024px] 1xl:max-w-[1440px] 3xl:max-w-[1920px] 4xl:max-w-[2560px] fill-cod-black
               "
               aria-hidden="true"
-
             >
               <use href="/images/svg/icons.svg#icon-Ellipse-top" />
             </svg>
@@ -95,16 +94,22 @@ const OurHubsGallery = () => {
                 sensitivity: 1,
               }}
               onSwiper={swiper => (swiperRef.current = swiper)}
-              onRealIndexChange={swiper => { 
-                console.log(swiper.realIndex);
+              onRealIndexChange={swiper => {
+                // #TODO delete log
+                // console.log(swiper.realIndex);
                 setActive(swiper.realIndex);
               }}
-              
             >
               {images.map((fileName, idx) => {
-              
                 return (
-                  <SwiperSlide key={idx} style={{ width: slideW, height: slideH, willChange: 'transform', }}>
+                  <SwiperSlide
+                    key={idx}
+                    style={{
+                      width: slideW,
+                      height: slideH,
+                      willChange: 'transform',
+                    }}
+                  >
                     <picture>
                       {/* WebP 2x */}
                       <source
@@ -151,8 +156,9 @@ const OurHubsGallery = () => {
                     onClick={() => {
                       const swiper = swiperRef.current;
                       if (swiper && swiper.slideToLoop) {
-                        swiper.slideToLoop(idx, 0); }
-                      }}
+                        swiper.slideToLoop(idx, 0);
+                      }
+                    }}
                     aria-label={`Перейти до слайду ${idx + 1}`}
                     aria-current={active === idx ? 'true' : undefined}
                     className={`h-2 rounded-[34px] xs:rounded-4xl transition-all ${
@@ -172,5 +178,3 @@ const OurHubsGallery = () => {
 };
 
 export default OurHubsGallery;
-
-
