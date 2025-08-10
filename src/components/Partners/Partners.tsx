@@ -1,7 +1,7 @@
 const Partners = () => {
   return (
     <section className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
-      <div className="section pt-7.5 1xl:pt-0">
+      <div className="section">
         <h2 className="mb-10.5 1xl:mb-12 3xl:mb-14.5 4xl:mb-15 text-mercury-white tracking-[-0.02em] font-second text-center 1xl:text-left">
           Наші партнери
         </h2>

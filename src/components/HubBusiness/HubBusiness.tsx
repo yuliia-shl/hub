@@ -18,7 +18,7 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
   return (
     <section className="pb-40 1xl:pb-55 3xl:pb-60 4xl:pb-70">
       <div className="section">
-        <h2 className="leading-[110%] tracking-[-0.02em] font-second text-center text-mercury-white mb-8 4xl:font-medium 4xl:mb-15">
+        <h2 className="leading-[110%] tracking-[-0.02em] font-second text-center lg:text-left text-mercury-white mb-8 4xl:font-medium 4xl:mb-15">
           Ваш бізнес з HUB
         </h2>
 
@@ -40,7 +40,7 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
                       ${getButtonWidth(
                         index,
                         activeIndex
-                      )} 1xl:w-full 1xl:min-h-32 4xl:min-h-41
+                      )} lg:w-full 1xl:min-h-32 4xl:min-h-41
                      ${
                        isActive
                          ? 'bg-woodsmoke-black text-tangerine'
@@ -48,13 +48,13 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
                      }`}
                   >
                     <span
-                      className={`font-second tracking-[-0.02em] text-[26px]/[110%] capitalize 4xl:text-4xl
-                      ${!isActive ? 'sr-only 1xl:not-sr-only' : ''}`}
+                      className={`font-second tracking-[-0.02em] text-[22px]/[110%] 1xl:text-[26px]/[110%] capitalize 4xl:text-4xl
+                      ${!isActive ? 'sr-only lg:not-sr-only' : ''}`}
                     >
                       {business.role}
                     </span>
                     <svg
-                      className={`w-8.5 h-8.5 fill-boulder-gray 1xl:hidden 
+                      className={`w-8.5 h-8.5 fill-boulder-gray lg:hidden 
                       ${isActive ? 'hidden' : ''}`}
                       aria-hidden="true"
                     >
@@ -68,7 +68,7 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
             })}
           </ul>
 
-          <div className="flex flex-col gap-14 lg:p-7 px-3 xs:px-7 pt-3 bg-cod-dark rounded-lg lg:flex-row lg:gap-24 1xl:px-11 lg:py-10 lg:justify-between lg:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
+          <div className="flex flex-col gap-14 px-3 pt-3 pb-4.5 xs:px-7 xs:pb-6.5 lg:px-9 lg:py-10 bg-cod-dark rounded-lg lg:flex-row 1xl:gap-24 1xl:px-11 lg:justify-between lg:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
             <ul className="flex flex-col gap-7 1xl:gap-10 lg:justify-around">
               {advantages.map((advantage, index) => {
                 return (
@@ -90,8 +90,8 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
               })}
             </ul>
 
-            <div className="flex flex-col lg:justify-around 1xl:max-w-[280px] 4xl:max-w-[364px]">
-              <div className="text-base/[137%] font-medium text-silver mb-21 1xl:mb-0 1xl:text-lg/[122%] 4xl:text-[22px]/[100%]">
+            <div className="flex flex-col lg:justify-around lg:max-w-[240px] 1xl:max-w-[280px] 4xl:max-w-[364px]">
+              <div className="text-base/[137%] font-medium text-silver mb-21 lg:mb-0 1xl:text-lg/[122%] 4xl:text-[22px]/[100%]">
                 <p className="mb-5">{helpText}</p>
                 <p className="">
                   Також ви можете ознайомитись з нашими пропозиціями в
@@ -124,14 +124,6 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
                     <use href="/images/svg/icons.svg#icon-arrow-up-right" />
                   </svg>
                 </a>
-                {/* <SmartButton
-                  label={buttonLabel}
-                  variant="secondary"
-                  icon="/images/svg/icons.svg#icon-arrow-up-right"
-                  iconClassName="w-4.5 h-4.5 stroke-cod-gray"
-                  iconPosition="right"
-                  className="flex justify-between w-full py-4.5"
-                /> */}
               </div>
             </div>
           </div>

@@ -39,7 +39,7 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/HUB_mvk_mash "
+                href="https://www.instagram.com/HUB_mvk_mash"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -75,10 +75,10 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
                     Запитання:
                   </p>
                   <a
-                    href="mailto:hub@mbk-mash.com"
+                    href="mailto:hub@mvk-mash.com"
                     className="font-semibold leading-[125%] 4xl:text-lg/[111%] hover:underline"
                   >
-                    hub@mbk-mash.com
+                    hub@mvk-mash.com
                   </a>
                 </div>
 
