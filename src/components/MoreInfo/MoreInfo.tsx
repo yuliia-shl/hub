@@ -29,7 +29,7 @@ const MoreInfo = () => {
       email: data.email,
     };
     // #TODO delete log
-    // console.log('Sending data:', finalData);
+    console.log('Thank you', finalData.name);
   };
 
   return (
@@ -39,10 +39,11 @@ const MoreInfo = () => {
           {/* Ліва колонка: заголовок + опис */}
           <div className="flex flex-col mb-6.5 xs:mb-0 lg:mb-9.5 1xl:max-w-[626px] 3xl:max-w-[498px] 4xl:max-w-[680px] 1xl:pt-[34px] 4xl:pt-[6px] justify-start gap-y-1.5 xs:gap-y-3.5 lg:gap-y-4.5 1xl:gap-y-7 3xl:gap-y-11">
             <h2 className="text-[22px]/[118%] xs:text-[32px]/[119%] lg:text-[42px]/[110%] 3xl:text-5xl tracking-[-0.02em] font-medium font-second">
-              Потрібно більше інформації? 
+              Потрібно більше інформації?
             </h2>
             <p className="text-base/[112%] w-[277px] xs:w-[426px] lg:w-[552px] 1xl:w-[439px] 3xl:w-[477px] xs:text-lg/[133%] lg:text-xl/[120%] 1xl:text-xl/[120%] text-boulder-dust">
-              Отримайте детальну презентацію про компанію та 40+ реалізованих проєктів
+              Отримайте детальну презентацію про компанію та 40+ реалізованих
+              проєктів
             </p>
           </div>
 
