@@ -116,7 +116,6 @@ export default function PrivacyPolicy() {
       </h3>
       <ul>
         <li>
-          3.
           <ul>
             <li>3.1. Оператор має право:</li>{' '}
             <li>

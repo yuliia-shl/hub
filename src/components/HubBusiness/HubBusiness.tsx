@@ -68,7 +68,7 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
             })}
           </ul>
 
-          <div className="flex flex-col gap-14 lg:p-7 pt-3 bg-cod-dark rounded-lg lg:flex-row lg:gap-24 1xl:px-11 lg:py-10 lg:justify-between lg:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
+          <div className="flex flex-col gap-14 lg:p-7 px-3 xs:px-7 pt-3 bg-cod-dark rounded-lg lg:flex-row lg:gap-24 1xl:px-11 lg:py-10 lg:justify-between lg:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
             <ul className="flex flex-col gap-7 1xl:gap-10 lg:justify-around">
               {advantages.map((advantage, index) => {
                 return (

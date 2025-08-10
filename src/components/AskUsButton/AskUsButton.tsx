@@ -21,7 +21,7 @@ const AskUsButton = ({ targetId, className = '' }: AskUsButtonProps) => {
         onClick={handleClick}
         className="flex items-center justify-center 1xl:justify-start py-5 px-17.5 xs:py-6.5 xs:px-14 max-w-[280px] max-h-[60px] xs:max-h-[76px] lg:max-w-[258px] lg:max-h-[60px] 1xl:max-w-[280px] 1xl:max-h-[60px] rounded-[45px] bg-cod-gray border border-tangerine lg:border-gray text-tangerine lg:text-gray text-xl/[100%] 
         xs:text-2xl/[100%] lg:text-xl/[100%] 1xl:text-2xl/[100%] whitespace-nowrap font-bold xs:font-semibold tracking-[-0.02em]
-        1xl:hover:bg-transparent 1xl:hover:border-tangerine 1xl:hover:text-tangerine focus:outline-none focus-visible:ring-2 focus-visible:ring-tangerine"
+        hover:bg-transparent hover:border-tangerine hover:text-tangerine focus:outline-none focus-visible:ring-2 focus-visible:ring-tangerine"
       >
         Запитати в нас
       </button>

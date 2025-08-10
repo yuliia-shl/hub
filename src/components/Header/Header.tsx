@@ -54,7 +54,7 @@ const Header = ({
                     onClick={() => setOpenBookModal(true)}
                     label="Отримати консультацію"
                     variant="primary"
-                    className="hidden xs:flex text-star-dust border-star-dust text:[16px] 1xl:text-[18px]/[1] font-normal px-3 py-3"
+                    className="hidden xs:flex text-star-dust border-star-dust text:[16px] 1xl:text-[18px]/[1] font-normal px-3 py-[15px] 1xl:py-3"
                   />
                 )}
 
