@@ -8,16 +8,16 @@ export default function Provides() {
         >
           Що надає HUB?
         </h2>
-        <ul className="flex flex-col gap-y-6 lg:gap-x-8 text-boulder-dust xs:text-xl/[110%] mb-13.5 lg:flex-row lg:flex-wrap 1xl:max-w-[904px] 1xl:gap-x-4 lg:gap-y-13.5  3xl:max-w-[1142px] 1xl:mb-27 4xl:text-[22px] 4xl:max-w-[1540px] 3xl:gap-x-13 4xl:gap-x-18 4xl:gap-y-16">
-          <li className="tracking-[0.02em] 3xl:tracking-[0.07em] 1xl:tracking-normal lg:max-w-114 1xl:max-w-[444px] 3xl:max-w-[544px] 4xl:max-w-[732px]">
+        <ul className="flex flex-col gap-y-6 lg:gap-x-8 text-boulder-dust xs:text-xl/[110%] mb-13.5 lg:flex-row lg:flex-wrap 1xl:max-w-[904px] 1xl:gap-x-3.5 lg:gap-y-13.5 3xl:max-w-[1142px] 1xl:mb-27 4xl:text-[22px] 4xl:max-w-[1540px] 3xl:gap-x-13 4xl:gap-x-18 4xl:gap-y-16">
+          <li className="tracking-[0.02em] 3xl:tracking-[0.07em] 1xl:tracking-normal lg:max-w-114 1xl:max-w-[440px] 3xl:max-w-[544px] 4xl:max-w-[732px]">
             Інноваційний ХАБ — це автоматичний комплекс для продажу товарів і
             послуг у локаціях з високим трафіком. 
           </li>
-          <li className="tracking-[0.02em] 3xl:tracking-[0.07em] 1xl:tracking-normal lg:max-w-114 1xl:max-w-[444px] 3xl:max-w-[544px] 4xl:max-w-[732px] order-3">
+          <li className="tracking-[0.02em] 3xl:tracking-[0.07em] 1xl:tracking-normal lg:max-w-114 1xl:max-w-[440px] 3xl:max-w-[544px] 4xl:max-w-[732px] order-3">
             Такі комплекси встановлюються в супермаркетах, ТРЦ, бізнес центрах,
             вокзалах та в житлових комплексах.
           </li>
-          <li className="tracking-[0.02em] 3xl:tracking-[0.07em] 1xl:tracking-normal lg:max-w-114 1xl:max-w-[444px] 3xl:max-w-[544px] 4xl:max-w-[732px]">
+          <li className="tracking-[0.02em] 3xl:tracking-[0.07em] 1xl:tracking-normal lg:max-w-114 1xl:max-w-[440px] 3xl:max-w-[544px] 4xl:max-w-[732px]">
             В одному місці, користувач отримує комплекс товарів та послуг від
             провідних торгових марок в автоматичному режимі ⦁ 24 години, 7 днів
             на тиждень. 
