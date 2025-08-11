@@ -12,7 +12,7 @@ const VideoPlayer = () => {
         playsInline
         preload="metadata"
         style={{ pointerEvents: 'none' }}
-        poster="/images/webp/AleksGolub-06543-2.webp"
+        poster="/images/webp/hub-gallery/AleksGolub-05946-2.webp"
       >
         <source src="/video/heroVideo.webm" type="video/webm" />
         <source src="/video/heroVideo.mp4" type="video/mp4" />
