@@ -22,7 +22,7 @@ export default function Product() {
           Product Page
         </h2>
 
-        <div className="mb-9 min-h-40 xs:min-h-60 lg:mb-15 w-full flex lg:items-center justify-center">
+        <div className="mb-9 min-h-40 xs:min-h-60 1xl:min-h-80 3xl:min-h-130 lg:mb-15 w-full flex lg:items-center justify-center">
           <img
             src={currentProduct.png}
             alt={currentProduct.type}
@@ -48,11 +48,11 @@ export default function Product() {
                 {currentProduct.size}
               </p>
             </li>
-            <li className="flex flex-col gap-2 4xl:gap-3 lg:max-w-[320px] 1xl:max-w-[520px]">
+            <li className="flex flex-col gap-2 4xl:gap-3 lg:max-w-[420px] 1xl:max-w-[720px]">
               <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Склад:
               </h4>
-              <p className="font-semibold xs:min-h-14 text-[18px]/[156%] xs:text-xl/[140%] lg:text-[22px]/[127%] 1xl:text-[26px]/[108%] 4xl:text-[34px]/[108%] text-mercury-white lg:min-w-90">
+              <p className="font-semibold min-h-28 text-[18px]/[156%] xs:text-xl/[140%] lg:text-[22px]/[127%] 1xl:text-[26px]/[108%] 1xl:min-h-[112px] 4xl:text-[34px]/[108%] text-mercury-white lg:min-w-90">
                 {currentProduct.composition}
               </p>
             </li>
