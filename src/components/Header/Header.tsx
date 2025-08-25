@@ -72,7 +72,7 @@ const Header = ({
       </header>
 
       <Modal isOpen={openBookModal} onClose={() => setOpenBookModal(false)}>
-        <BookModal />
+        <BookModal onClose={() => setOpenBookModal(false)} />
       </Modal>
     </>
   );
