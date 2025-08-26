@@ -10,6 +10,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { twMerge } from 'tailwind-merge';
 import { toast } from 'react-toastify';
 import { FiCheckCircle } from 'react-icons/fi';
+import axios from 'axios';
 
 const BookModal = ({ onClose }: { onClose: () => void }) => {
   const [activeIndex, setActiveIndex] = useState<number>(1);
@@ -41,23 +42,38 @@ const BookModal = ({ onClose }: { onClose: () => void }) => {
     };
 
     try {
-      const response = await fetch('/send.ph', {
-        method: 'POST',
+      await axios.post('/send.php', finalData, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: new URLSearchParams(finalData as any).toString(),
+        transformRequest: [data => new URLSearchParams(data).toString()],
       });
 
-      await response.text();
       toast.success('Запит на консультацію надіслано!', {
         icon: <FiCheckCircle color="#f08d34" size={24} />,
       });
       reset();
       onClose();
-    } catch (error) {
-      console.error('Send error:', error);
-      toast.error('Не вдалося надіслати запит. Спробуйте пізніше');
+    } catch (error: any) {
+      if (axios.isAxiosError(error)) {
+        const status = error.response?.status;
+
+        if (status === 401) {
+          toast.error('Сесія закінчилася. Увійдіть повторно.');
+        } else if (status === 422) {
+          toast.error(
+            'Дані некоректні. Перевірте правильність заповнення форми.'
+          );
+        } else if (status === 500) {
+          toast.error('Помилка сервера. Спробуйте пізніше.');
+        } else {
+          toast.error('Не вдалося надіслати запит. Спробуйте ще раз.');
+        }
+      } else {
+        toast.error(
+          'Помилка з’єднання з сервером. Перевірте підключення до мережі.'
+        );
+      }
     }
   };
 
