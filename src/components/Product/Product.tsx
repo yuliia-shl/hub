@@ -34,25 +34,25 @@ export default function Product() {
         <div className="flex flex-col 1xl:w-1/2 1xl:justify-start 3xl:justify-center">
           <ul className="flex flex-col lg:flex-row md:flex-wrap lg:justify-between 1xl:flex-col gap-y-4.5 4xl:gap-y-14 mb-15 1xl:mb-27 4xl:mb-35 1xl:gap-10.5">
             <li className="flex flex-col gap-2 4xl:gap-3 max-w-[260px] w-1/2">
-              <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
+              <h3 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Тип комбінації:
-              </h4>
+              </h3>
               <p className="font-semibold text-[18px]/[156%] xs:text-xl/[140%] lg:text-[22px]/[127%] 1xl:text-[26px]/[108%]4xl:text-[34px]/[108%]  text-mercury-white">
                 {currentProduct.type}
               </p>
             </li>
             <li className="flex flex-col gap-2 4xl:gap-3 max-w-[260px] w-1/2">
-              <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
+              <h3 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Розмір:
-              </h4>
+              </h3>
               <p className="font-semibold text-[18px]/[156%] xs:text-xl/[140%] lg:text-[22px]/[127%] 1xl:text-[26px]/[108%] 4xl:text-[34px]/[108%] text-mercury-white">
                 {currentProduct.size}
               </p>
             </li>
             <li className="flex flex-col gap-2 4xl:gap-3 lg:max-w-[420px] 1xl:max-w-[720px]">
-              <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
+              <h3 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Склад:
-              </h4>
+              </h3>
               <p className="font-semibold min-h-28 text-[18px]/[156%] xs:text-xl/[140%] lg:text-[22px]/[127%] 1xl:text-[26px]/[108%] 1xl:min-h-[112px] 4xl:text-[34px]/[108%] text-mercury-white lg:min-w-90">
                 {currentProduct.composition}
               </p>
