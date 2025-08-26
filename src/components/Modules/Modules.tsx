@@ -36,7 +36,12 @@ const Modules = () => {
           Модульні шафи самообслуговування для магазинів, аеропортів, тощо
         </h2>
         <div className="1xl:pt-14.5 4xl:pt-6.5 1xl:pb-4.5 3xl:py-4.5 4xl:pb-4.5 1xl:px-4.5 4xl:px-6.5 1xl:bg-cod-dark mb-10">
-          <div className="mb-5.5 1xl:mb-4 3xl:mb-1.5 flex flex-col 1xl:flex-row-reverse items-center 3xl:items-start gap-5.5 xs:gap-9.5 1xl:gap-15.5 4xl:gap-[158px] 1xl:justify-center 3xl:justify-end">
+          <div
+            role="tabpanel"
+            id={`tabpanel-${activeIndex}`}
+            aria-labelledby={`tab-${activeIndex}`}
+            className="mb-5.5 1xl:mb-4 3xl:mb-1.5 flex flex-col 1xl:flex-row-reverse items-center 3xl:items-start gap-5.5 xs:gap-9.5 1xl:gap-15.5 4xl:gap-[158px] 1xl:justify-center 3xl:justify-end"
+          >
             <div className="px-3 flex flex-col gap-5.5 xs:gap-9.5 1xl:gap-[71px] 3xl:gap-[92px] 4xl:gap-[58px] 3xl:pt-15.5 4xl:pt-13.5 1xl:max-w-[606px] 3xl:max-w-[522px] 4xl:max-w-[735px] w-full">
               <div className="4xl:max-w-[522px]">
                 <div className="mb-5 xs:mb-13.5 lg:mb-9.5 4xl:mb-14">
@@ -120,7 +125,11 @@ const Modules = () => {
             </picture>
           </div>
 
-          <ul className="px-2 xs:px-0 flex flex-wrap justify-between gap-1 xs:gap-1.5 4xl:gap-x-3 1xl:justify-center 3xl:justify-between">
+          <ul
+            role="tablist"
+            aria-label="Оберіть вкладку"
+            className="px-2 xs:px-0 flex flex-wrap justify-between gap-1 xs:gap-1.5 4xl:gap-x-3 1xl:justify-center 3xl:justify-between"
+          >
             {modules.map((module, index) => {
               const isActive = index === activeIndex;
 
@@ -128,7 +137,10 @@ const Modules = () => {
                 <li key={index}>
                   <button
                     type="button"
-                    aria-pressed={isActive}
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls={`tabpanel-${index}`}
+                    aria-label={`Перейти до вкладки ${module.title}`}
                     onClick={() => setActiveIndex(index)}
                     className={`flex items-center justify-center lg:justify-normal gap-2.5 xs:gap-4 lg:gap-2.5 1xl:gap-4 py-2.5 px-3.5 xs:p-3.5 lg:py-7 1xl:px-8 rounded-lg transition-colors duration-300 
                   ${getButtonWidth(

@@ -36,6 +36,7 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
                   <button
                     type="button"
                     aria-pressed={isActive}
+                    aria-label={`Вкладка ${business.role}`}
                     onClick={() => setActiveIndex(index)}
                     className={`flex items-center rounded-lg justify-center px-4 min-h-16 transition-colors duration-300
                       ${getButtonWidth(

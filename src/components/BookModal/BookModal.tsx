@@ -77,7 +77,7 @@ const BookModal = ({ onClose }: { onClose: () => void }) => {
     <div>
       <ul
         role="radiogroup"
-        aria-label="Оберіть роль"
+        aria-label="Оберіть вкладку"
         className="mx-auto flex border border-masala-light rounded-full bg-cod-gray mb-5 1xl:max-w-[600px]"
       >
         {businessForModal.map((business, index) => {
@@ -89,6 +89,7 @@ const BookModal = ({ onClose }: { onClose: () => void }) => {
                 type="button"
                 role="radio"
                 aria-checked={isActive}
+                aria-label={`Вкладка ${business.role}`}
                 onClick={() => {
                   setActiveIndex(index);
                   setValue('role', business.role, { shouldValidate: true });

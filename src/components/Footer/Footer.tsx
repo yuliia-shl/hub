@@ -11,7 +11,8 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
         <div className="pt-0 pb-0 xs:pb-17 lg:pb-5 4xl:pb-6.5">
           <div className="flex flex-row justify-between 1xl:justify-none mb-10.5 xs:mb-15 lg:mb-8 4xl:mb-15">
             <div className="flex flex-row items-start  gap-x-[5px] xs:gap-x-[6px] lg:gap-x-2.5 4xl:gap-x-3">
-              <a href="/" aria-label="На головну" className="flex gap-1.5">
+              <a href="/" className="flex gap-1.5">
+                <span className="sr-only">Повернутись на головну</span>
                 <svg className="w-[30px] h-[42px] xs:w-[36px] xs:h-[50px] lg:w-[56px] lg:h-[78px] 4xl:w-[68px] 4xl:h-[96px] fill-tangerine group-hover:fill-tangerine transition-colors duration-300">
                   <use href="/images/svg/icons.svg#icon-logo" />
                 </svg>

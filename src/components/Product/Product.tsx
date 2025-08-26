@@ -62,9 +62,13 @@ export default function Product() {
           <div className="flex gap-2 lg:justify-center 1xl:justify-start 4xl:gap-5">
             <button
               onClick={handlePrev}
+              aria-label="Попередній слайд"
               className="flex justify-center shrink-0 items-center w-13 h-13 4xl:w-16 4xl:h-16 bg-cod-gray rounded-full border-tangerine border"
             >
-              <svg className="w-6 h-6 4xl:w-8 4xl:h-8 stroke-tangerine rotate-180 hover:stroke-chilean-fire focus:stroke-chilean-fire transition-colors duration-300">
+              <svg
+                aria-hidden="true"
+                className="w-6 h-6 4xl:w-8 4xl:h-8 stroke-tangerine rotate-180 hover:stroke-chilean-fire focus:stroke-chilean-fire transition-colors duration-300"
+              >
                 <use href="/images/svg/icons.svg#icon-arrow-right" />
               </svg>
             </button>
@@ -78,9 +82,13 @@ export default function Product() {
 
             <button
               onClick={handleNext}
+              aria-label="Наступний слайд"
               className="flex justify-center shrink-0 items-center w-13 h-13 4xl:w-16 4xl:h-16 bg-cod-gray rounded-full border-tangerine border"
             >
-              <svg className="w-6 h-6 4xl:w-8 4xl:h-8 stroke-tangerine hover:stroke-chilean-fire focus:stroke-chilean-fire transition-colors duration-300">
+              <svg
+                aria-hidden="true"
+                className="w-6 h-6 4xl:w-8 4xl:h-8 stroke-tangerine hover:stroke-chilean-fire focus:stroke-chilean-fire transition-colors duration-300"
+              >
                 <use href="/images/svg/icons.svg#icon-arrow-right" />
               </svg>
             </button>
