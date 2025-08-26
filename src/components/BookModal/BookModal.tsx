@@ -11,6 +11,7 @@ import { twMerge } from 'tailwind-merge';
 import { toast } from 'react-toastify';
 import { FiCheckCircle } from 'react-icons/fi';
 import axios from 'axios';
+import { sendFormData } from '../../utils/sendForm';
 
 const BookModal = ({ onClose }: { onClose: () => void }) => {
   const [activeIndex, setActiveIndex] = useState<number>(1);
@@ -42,14 +43,9 @@ const BookModal = ({ onClose }: { onClose: () => void }) => {
     };
 
     try {
-      await axios.post('/send.php', finalData, {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        transformRequest: [data => new URLSearchParams(data).toString()],
-      });
+      await sendFormData(finalData);
 
-      toast.success('Запит на консультацію надіслано!', {
+      toast.success('Дякуємо! Ваш запит на консультацію надіслано!', {
         icon: <FiCheckCircle color="#f08d34" size={24} />,
       });
       reset();
@@ -67,12 +63,12 @@ const BookModal = ({ onClose }: { onClose: () => void }) => {
         } else if (status === 500) {
           toast.error('Помилка сервера. Спробуйте пізніше.');
         } else {
-          toast.error('Не вдалося надіслати запит. Спробуйте ще раз.');
+          toast.error(
+            'Не вдалося надіслати запит. Перевірте підключення до мережі або спробуйте пізніше.'
+          );
         }
       } else {
-        toast.error(
-          'Помилка з’єднання з сервером. Перевірте підключення до мережі.'
-        );
+        toast.error('Сталася помилка. Оновіть сторінку або спробуйте пізніше.');
       }
     }
   };
