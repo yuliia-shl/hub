@@ -7,7 +7,8 @@ type HubBusinessProps = {
 };
 
 const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
-  const { advantages, buttonLabel, helpText } = business[activeIndex];
+  const { advantages, buttonLabel, presentationBtn, helpText } =
+    business[activeIndex];
 
   const getButtonWidth = (index: number, activeIndex: number): string => {
     const isActive = index === activeIndex;
@@ -68,21 +69,21 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
             })}
           </ul>
 
-          <div className="flex flex-col gap-14 px-3 pt-3 pb-4.5 xs:px-7 xs:pb-6.5 lg:px-9 lg:py-10 bg-cod-dark rounded-lg lg:flex-row 1xl:gap-24 1xl:px-11 lg:justify-between lg:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
-            <ul className="flex flex-col gap-7 1xl:gap-10 lg:justify-around">
+          <div className="flex flex-col gap-14 px-3 pt-3 pb-4.5 xs:px-7 xs:pb-6.5 lg:px-10 lg:py-9 bg-cod-dark rounded-lg 1xl:flex-row 1xl:gap-24 1xl:px-11 1xl:py-10 1xl:justify-between  1xl:min-h-[542px] 3xl:gap-49 3xl:justify-start 4xl:gap-116 4xl:min-h-[686px] 3xl:px-18 4xl:py-22">
+            <ul className="flex flex-col gap-5 lg:min-h-[376px] 1xl:gap-10 lg:justify-around">
               {advantages.map((advantage, index) => {
                 return (
                   <li
                     key={index}
-                    className="grid grid-rows-2 gap-x-2 grid-cols-10 xs:grid-cols-16 items-center 1xl:gap-y-1"
+                    className="grid grid-rows-2 gap-x-2 grid-cols-10 xs:grid-cols-16 items-center lg:gap-y-1"
                   >
-                    <span className="col-span-1 text-4xl/[145%] xs:text-4xl/[183%] font-extralight text-masala-gray 1xl:text-[64px]/[103%] 1xl:col-span-1 1xl:row-span-2 4xl:text-[86px]/[77%]">
+                    <span className="flex items-center justify-center col-span-1 text-4xl/[145%] xs:text-4xl/[183%] font-extralight text-masala-gray lg:text-[64px]/[103%]  lg:row-span-2 4xl:text-[86px]/[77%]">
                       {index + 1}
                     </span>
-                    <span className="col-span-9 xs:col-span-15 text-xl xs:text-2xl/[117%] font-semibold tracking-[-0.02em] 3xl:tracking-normal 1xl:text-[32px]/[87%] 1xl:col-span-15 1xl:min-w-[824px] 3xl:min-w-[854px] 4xl:text-[34px]/[82%] 4xl:min-w-[910px]">
+                    <span className="col-span-9 xs:col-span-15 text-lg xs:text-2xl/[117%] font-semibold tracking-[-0.02em] 3xl:tracking-normal 1xl:text-[32px]/[87%] lg:col-span-15 1xl:min-w-[824px] 3xl:min-w-[854px] 4xl:text-[34px]/[82%] 4xl:min-w-[910px]">
                       {advantage.title}
                     </span>
-                    <span className="text-base/[137%] text-boulder-dust col-span-10 xs:col-span-16 1xl:col-span-15 1xl:text-lg/[122%] 1xl:max-w-[670px] 4xl:text-xl/[110%] 4xl:max-w-[890px]">
+                    <span className="text-base/[137%] text-boulder-dust col-span-10 xs:col-span-16 lg:col-span-15 1xl:text-lg/[122%] lg:max-w-[644px] 1xl:max-w-[670px] 4xl:text-xl/[110%] 4xl:max-w-[890px]">
                       {advantage.description}
                     </span>
                   </li>
@@ -90,8 +91,8 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
               })}
             </ul>
 
-            <div className="flex flex-col lg:justify-around lg:max-w-[240px] 1xl:max-w-[280px] 4xl:max-w-[364px]">
-              <div className="text-base/[137%] font-medium text-silver mb-21 lg:mb-0 1xl:text-lg/[122%] 4xl:text-[22px]/[100%]">
+            <div className="flex flex-col lg:justify-between 1xl:justify-around lg:flex-row 1xl:flex-col 1xl:max-w-[280px] 4xl:max-w-[364px]">
+              <div className="text-base/[137%] font-medium text-silver mb-21 lg:mb-0 lg:max-w-[476px] 1xl:text-lg/[122%] 4xl:text-[22px]/[100%]">
                 <p className="mb-5">{helpText}</p>
                 <p className="">
                   Також ви можете ознайомитись з нашими пропозиціями в
@@ -99,14 +100,15 @@ const HubBusiness = ({ activeIndex, setActiveIndex }: HubBusinessProps) => {
                 </p>
               </div>
 
-              <div className="flex gap-3 lg:flex-col 1xl:gap-4 4xl:gap-5">
+              <div className="flex gap-3 lg:flex-col lg:min-w-[280px] 1xl:gap-4 4xl:gap-5">
                 <a
                   href="#"
-                  download="Презентація інвесторам.pdf"
-                  className="group flex p-4 border-1 rounded-full border-tangerine 1xl:py-4.5 1xl:px-6 items-center lg:justify-between hover:border-chilean-fire focus:outline-chilean-fire focus:outline-2 transition-colors duration-300 4xl:py-5.5"
+                  download={`${presentationBtn}.pdf`}
+                  aria-label="Завантажити презентацію"
+                  className="group flex p-4 border-1 rounded-full border-tangerine lg:py-4.5 lg:px-6 items-center lg:justify-between hover:border-chilean-fire focus:outline-chilean-fire focus:outline-2 transition-colors duration-300 4xl:py-5.5"
                 >
                   <span className="hidden lg:block text-tangerine group-hover:text-chilean-fire group-focus:text-chilean-fire transition-colors duration-300 text-base/[100%] 4xl:text-xl">
-                    Презентація інвесторам
+                    {presentationBtn}
                   </span>
                   <svg className="w-5 h-5 fill-tangerine group-hover:fill-chilean-fire transition-colors duration-300">
                     <use href="/images/svg/icons.svg#icon-pdf" />

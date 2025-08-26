@@ -27,6 +27,7 @@ export default function Product() {
             src={currentProduct.png}
             alt={currentProduct.type}
             className="max-w-full max-h-40 xs:max-h-60 lg:max-h-80 3xl:max-h-130 4xl:max-h-160 h-full"
+            loading="lazy"
           />
         </div>
 
