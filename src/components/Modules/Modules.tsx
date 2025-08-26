@@ -142,14 +142,12 @@ const Modules = () => {
               const isActive = index === activeIndex;
 
               return (
-                <li
-                  key={index}
-                  role="tab"
-                  id={`tab-${index}`}
-                  aria-controls={`tabpanel-${index}`}
-                >
+                <li key={index} role="presentation">
                   <button
                     type="button"
+                    role="tab"
+                    id={`tab-${index}`}
+                    aria-controls={`tabpanel-${index}`}
                     aria-selected={isActive}
                     aria-label={`Перейти до вкладки ${module.title}`}
                     onClick={() => setActiveIndex(index)}
