@@ -3,8 +3,8 @@ $data = [
   "title" => 'Лендінг ХАБ', // назва заявки
   "source_id" => 21, // ідентифікатор джерела
   "manager_comment" => $_POST['manager_comment'], // коментар до заявки
-  "manager_id" => 21, //ідентифікатор відповідального менеджера
-  "pipeline_id" => 11, // ідентифікатор воронки (за відсутності параметра буде використана перша воронка у списку)
+  "manager_id" => 22, //ідентифікатор відповідального менеджера
+  "pipeline_id" => 2, // ідентифікатор воронки (за відсутності параметра буде використана перша воронка у списку)
   "contact" => [
     "full_name" => $_POST['name'],
     "email" => $_POST['email'],
@@ -26,7 +26,7 @@ $data = [
 //  "упаковуємо дані"
 $data_string = json_encode($data);
 
-// Ваш унікальний API ключ KeyCRM
+// API ключ KeyCRM
 $token = getenv('VITE_API_KEY');
 
 // відправляємо на сервер
@@ -47,29 +47,5 @@ curl_setopt(
   )
 );
 
-// 111
-if (!$token) {
-  file_put_contents('log.txt', "ERROR: API token not found\n", FILE_APPEND);
-}
-
-// $result = curl_exec($ch);
-// curl_close($ch);
-
 $result = curl_exec($ch);
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-if (curl_errno($ch)) {
-  $error_msg = curl_error($ch);
-  file_put_contents('log.txt', "CURL ERROR: $error_msg");
-  http_response_code(500);
-  echo json_encode(['success' => false, 'message' => 'Server error. Try again later.']);
-} elseif ($httpCode >= 400) {
-  file_put_contents('log.txt', "HTTP CODE: $httpCode\nRESULT: $result");
-  http_response_code($httpCode);
-  echo json_encode(['success' => false, 'message' => 'CRM rejected the request.']);
-} else {
-  file_put_contents('log.txt', "HTTP CODE: $httpCode\nRESULT: $result");
-  echo json_encode(['success' => true]);
-}
-
 curl_close($ch);
