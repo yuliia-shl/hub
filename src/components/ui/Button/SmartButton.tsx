@@ -41,7 +41,7 @@ export default function SmartButton({
 
   const variantClasses = {
     primary:
-      'bg-cod-gray 1xl:bg-woodsmoke-dimmed border-tangerine 1xl:border-star-dust-400 text-tangerine 1xl:text-star-dust-400 border-1 hover:text-tangerine hover:border-tangerine focus:outline-tangerine focus:outline-2 focus:text-tangerine',
+      'bg-cod-gray lg:bg-woodsmoke-dimmed border-tangerine lg:border-star-dust-400 text-tangerine lg:text-star-dust-400 border-1 hover:text-tangerine hover:border-tangerine focus:outline-tangerine focus:outline-2 focus:text-tangerine',
     secondary:
       'text-cod-gray bg-tangerine hover:bg-chilean-fire focus:bg-chilean-fire focus:outline-chilean-fire focus:outline-2 font-bold',
     danger:

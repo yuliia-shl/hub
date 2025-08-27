@@ -17,7 +17,7 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
                 </svg>
                 <div className="flex flex-col pt-1.5 xs:pt-2 lg:pt-3 4xl:pt-5">
                   <span className="leading-[120%] xs:text-xl lg:text-[32px] 4xl:text-[38px] text-tangerine font-semibold font-second">
-                    MBK MASH
+                    MVK MASH
                   </span>
                   <span className="text-[11px] leading-[120%] xs:text-sm lg:text-[22px] 4xl:text-[26px] text-white font-second">
                     SMART LOCKERS
@@ -75,10 +75,10 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
                     Запитання:
                   </p>
                   <a
-                    href="mailto:hub@mvk-mash.com"
+                    href="mailto:hub@smart-hubmvk.com"
                     className="font-semibold leading-[125%] 4xl:text-lg/[111%] hover:underline"
                   >
-                    hub@mvk-mash.com
+                    hub@smart-hubmvk.com
                   </a>
                 </div>
 
@@ -88,7 +88,12 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
                   </p>
                   <p className="font-semibold leading-[125%] 4xl:text-lg/[111%]">
                     м. Київ, вул. Солом’янська 3
-                    <span className="block">+38 (050) 213 80 55</span>
+                    <a
+                      href="tel:+380502138055"
+                      className="block hover:underline"
+                    >
+                      +38 (050) 213 80 55
+                    </a>
                   </p>
                 </div>
               </div>
@@ -110,7 +115,7 @@ const Footer = ({ onPolicyClick }: FooterProps) => {
 
               <div className="flex flex-col gap-4 lg:max-w-[296px] 1xl:max-w-[280px] 4xl:mr-24">
                 <p className="leading-[120%] font-medium text-mountain-mist">
-                  © 2003–{currentYear} ТОВ «MBK MASH»
+                  © 2003–{currentYear} ТОВ «MBK МАШ»
                 </p>
                 <p className="leading-[120%] font-medium text-mountain-mist lg:text-left">
                   Всі права захищені. Використання матеріалів сайту можливе
