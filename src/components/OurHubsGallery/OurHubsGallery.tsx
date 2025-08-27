@@ -95,8 +95,6 @@ const OurHubsGallery = () => {
               }}
               onSwiper={swiper => (swiperRef.current = swiper)}
               onRealIndexChange={swiper => {
-                // #TODO delete log
-                // console.log(swiper.realIndex);
                 setActive(swiper.realIndex);
               }}
             >

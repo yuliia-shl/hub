@@ -18,6 +18,7 @@ import Footer from './components/Footer/Footer';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import ToastProvider from './components/Toast/ToastProvider';
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -62,6 +63,7 @@ function App() {
       )}
 
       <Footer onPolicyClick={openPolicy} />
+      <ToastProvider />
     </>
   );
 }

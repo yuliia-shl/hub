@@ -27,31 +27,32 @@ export default function Product() {
             src={currentProduct.png}
             alt={currentProduct.type}
             className="max-w-full max-h-40 xs:max-h-60 lg:max-h-80 3xl:max-h-130 4xl:max-h-160 h-full"
+            loading="lazy"
           />
         </div>
 
         <div className="flex flex-col 1xl:w-1/2 1xl:justify-start 3xl:justify-center">
           <ul className="flex flex-col lg:flex-row md:flex-wrap lg:justify-between 1xl:flex-col gap-y-4.5 4xl:gap-y-14 mb-15 1xl:mb-27 4xl:mb-35 1xl:gap-10.5">
             <li className="flex flex-col gap-2 4xl:gap-3 max-w-[260px] w-1/2">
-              <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
+              <h3 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Тип комбінації:
-              </h4>
+              </h3>
               <p className="font-semibold text-[18px]/[156%] xs:text-xl/[140%] lg:text-[22px]/[127%] 1xl:text-[26px]/[108%]4xl:text-[34px]/[108%]  text-mercury-white">
                 {currentProduct.type}
               </p>
             </li>
             <li className="flex flex-col gap-2 4xl:gap-3 max-w-[260px] w-1/2">
-              <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
+              <h3 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Розмір:
-              </h4>
+              </h3>
               <p className="font-semibold text-[18px]/[156%] xs:text-xl/[140%] lg:text-[22px]/[127%] 1xl:text-[26px]/[108%] 4xl:text-[34px]/[108%] text-mercury-white">
                 {currentProduct.size}
               </p>
             </li>
             <li className="flex flex-col gap-2 4xl:gap-3 lg:max-w-[420px] 1xl:max-w-[720px]">
-              <h4 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
+              <h3 className="font-medium text-base/[137%] 1xl:text-lg/[122%] 4xl:text-[22px]/[118%] text-chicago-gray">
                 Склад:
-              </h4>
+              </h3>
               <p className="font-semibold min-h-28 text-[18px]/[156%] xs:text-xl/[140%] lg:text-[22px]/[127%] 1xl:text-[26px]/[108%] 1xl:min-h-[112px] 4xl:text-[34px]/[108%] text-mercury-white lg:min-w-90">
                 {currentProduct.composition}
               </p>
@@ -61,9 +62,13 @@ export default function Product() {
           <div className="flex gap-2 lg:justify-center 1xl:justify-start 4xl:gap-5">
             <button
               onClick={handlePrev}
+              aria-label="Попередній слайд"
               className="flex justify-center shrink-0 items-center w-13 h-13 4xl:w-16 4xl:h-16 bg-cod-gray rounded-full border-tangerine border"
             >
-              <svg className="w-6 h-6 4xl:w-8 4xl:h-8 stroke-tangerine rotate-180 hover:stroke-chilean-fire focus:stroke-chilean-fire transition-colors duration-300">
+              <svg
+                aria-hidden="true"
+                className="w-6 h-6 4xl:w-8 4xl:h-8 stroke-tangerine rotate-180 hover:stroke-chilean-fire focus:stroke-chilean-fire transition-colors duration-300"
+              >
                 <use href="/images/svg/icons.svg#icon-arrow-right" />
               </svg>
             </button>
@@ -77,9 +82,13 @@ export default function Product() {
 
             <button
               onClick={handleNext}
+              aria-label="Наступний слайд"
               className="flex justify-center shrink-0 items-center w-13 h-13 4xl:w-16 4xl:h-16 bg-cod-gray rounded-full border-tangerine border"
             >
-              <svg className="w-6 h-6 4xl:w-8 4xl:h-8 stroke-tangerine hover:stroke-chilean-fire focus:stroke-chilean-fire transition-colors duration-300">
+              <svg
+                aria-hidden="true"
+                className="w-6 h-6 4xl:w-8 4xl:h-8 stroke-tangerine hover:stroke-chilean-fire focus:stroke-chilean-fire transition-colors duration-300"
+              >
                 <use href="/images/svg/icons.svg#icon-arrow-right" />
               </svg>
             </button>
