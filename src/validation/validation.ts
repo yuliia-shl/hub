@@ -29,7 +29,7 @@ export const bookModalSchema = z.object({
   email: emailField,
   question: z
     .string()
-    .min(10, 'Поле має містити мінімум 10 символів')
+    .min(5, 'Поле має містити мінімум 5 символів')
     .max(200, 'Поле не може перевищувати 200 символів'),
 });
 

@@ -27,7 +27,8 @@ export default function BurgerToggle({
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="relative z-50 flex flex-col justify-center items-center w-12 h-12 lg:hidden"
-        aria-label="Toggle menu"
+        aria-label={isOpen ? 'Закрити меню' : 'Відкрити меню'}
+        aria-expanded={isOpen}
       >
         <span
           className={`bg-tangerine block h-0.5 w-12 transform transition duration-300 ease-in-out ${

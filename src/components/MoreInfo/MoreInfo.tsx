@@ -5,6 +5,10 @@ import {
   type WriteUsSchemaType,
 } from '../../validation/validation';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { sendFormData } from '../../utils/sendForm';
+import { toast } from 'react-toastify';
+import { FiCheckCircle } from 'react-icons/fi';
+import axios from 'axios';
 
 const MoreInfo = () => {
   const inputClass =
@@ -16,20 +20,48 @@ const MoreInfo = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<WriteUsSchemaType>({
     resolver: zodResolver(writeUsSchema),
     mode: 'onChange',
   });
 
-  const onSubmit = (data: WriteUsSchemaType) => {
+  const onSubmit = async (data: WriteUsSchemaType) => {
     const finalData = {
       ...data,
-      name: data.name,
-      phone: data.phone,
-      email: data.email,
+      name: data.name.replace(/\s+/g, ' ').trim(),
+      email: data.email.toLowerCase(),
     };
-    // #TODO delete log
-    console.log('Thank you', finalData.name);
+
+    try {
+      await sendFormData(finalData);
+
+      toast.success('Дякуємо! Ми зв’яжемось із Вами найближчим часом.', {
+        icon: <FiCheckCircle color="#f08d34" size={24} />,
+      });
+
+      reset();
+    } catch (error: any) {
+      if (axios.isAxiosError(error)) {
+        const status = error.response?.status;
+
+        if (status === 401) {
+          toast.error('Сесія закінчилася. Увійдіть повторно.');
+        } else if (status === 422) {
+          toast.error(
+            'Дані некоректні. Перевірте правильність заповнення форми.'
+          );
+        } else if (status === 500) {
+          toast.error('Помилка сервера. Спробуйте пізніше.');
+        } else {
+          toast.error(
+            'Не вдалося надіслати запит. Перевірте підключення до мережі або спробуйте пізніше.'
+          );
+        }
+      } else {
+        toast.error('Сталася помилка. Оновіть сторінку або спробуйте пізніше.');
+      }
+    }
   };
 
   return (

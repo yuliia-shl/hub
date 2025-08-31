@@ -8,8 +8,12 @@ import {
 } from '../../validation/validation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { twMerge } from 'tailwind-merge';
+import { toast } from 'react-toastify';
+import { FiCheckCircle } from 'react-icons/fi';
+import axios from 'axios';
+import { sendFormData } from '../../utils/sendForm';
 
-const BookModal = () => {
+const BookModal = ({ onClose }: { onClose: () => void }) => {
   const [activeIndex, setActiveIndex] = useState<number>(1);
   const inputClass =
     'form-book w-full bg-transparent border-b-[2px] border-mine-shaft pt-6.5 pb-3 focus:outline-none focus:border-boulder-light text-xl/[100%] peer caret-boulder-dark';
@@ -21,6 +25,7 @@ const BookModal = () => {
     handleSubmit,
     formState: { errors, isValid },
     setValue,
+    reset,
   } = useForm<BookModalSchemaType>({
     resolver: zodResolver(bookModalSchema),
     mode: 'onChange',
@@ -29,23 +34,50 @@ const BookModal = () => {
     },
   });
 
-  const onSubmit = (data: BookModalSchemaType) => {
+  const onSubmit = async (data: BookModalSchemaType) => {
     const finalData = {
       ...data,
-      name: data.name.replace(/\s+/g, ' ').trim(), //It replaces all sequences of whitespace characters (including spaces, tabs, newlines, etc.) with a single space.
+      name: data.name.replace(/\s+/g, ' ').trim(),
       email: data.email.toLowerCase(),
       question: data.question.replace(/\s+/g, ' ').trim(),
     };
 
-    // #TODO delete log
-    console.log('Thank you', finalData.name);
+    try {
+      await sendFormData(finalData);
+
+      toast.success('Дякуємо! Ваш запит на консультацію надіслано!', {
+        icon: <FiCheckCircle color="#f08d34" size={24} />,
+      });
+      reset();
+      onClose();
+    } catch (error: any) {
+      if (axios.isAxiosError(error)) {
+        const status = error.response?.status;
+
+        if (status === 401) {
+          toast.error('Сесія закінчилася. Увійдіть повторно.');
+        } else if (status === 422) {
+          toast.error(
+            'Дані некоректні. Перевірте правильність заповнення форми.'
+          );
+        } else if (status === 500) {
+          toast.error('Помилка сервера. Спробуйте пізніше.');
+        } else {
+          toast.error(
+            'Не вдалося надіслати запит. Перевірте підключення до мережі або спробуйте пізніше.'
+          );
+        }
+      } else {
+        toast.error('Сталася помилка. Оновіть сторінку або спробуйте пізніше.');
+      }
+    }
   };
 
   return (
     <div>
       <ul
         role="radiogroup"
-        aria-label="Оберіть роль"
+        aria-label="Оберіть вкладку"
         className="mx-auto flex border border-masala-light rounded-full bg-cod-gray mb-5 1xl:max-w-[600px]"
       >
         {businessForModal.map((business, index) => {
@@ -57,6 +89,7 @@ const BookModal = () => {
                 type="button"
                 role="radio"
                 aria-checked={isActive}
+                aria-label={`Вкладка ${business.role}`}
                 onClick={() => {
                   setActiveIndex(index);
                   setValue('role', business.role, { shouldValidate: true });

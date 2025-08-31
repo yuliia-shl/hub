@@ -57,6 +57,7 @@ const Reasons = () => {
             alt="Smart Locker HUB"
             src="/images/smart-locker.webp"
             className="w-full object-cover"
+            loading="lazy"
           />
         </div>
       </div>

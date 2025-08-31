@@ -57,7 +57,6 @@ const Modal = ({
           : 'opacity-0 pointer-events-none',
         modalBaseClasses
       )}
-      // TODO - to check if close modal on backdrop click needed
       onClick={onClose}
     >
       <div
