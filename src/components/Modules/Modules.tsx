@@ -1,14 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { modules } from '../../data/hub-modules';
 
 const Modules = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
-
-  // Коли змінюється activeIndex — скидаємо флаг
-  useEffect(() => {
-    setIsImageLoaded(false);
-  }, [activeIndex]);
 
   const getButtonWidth = (index: number, activeIndex: number): string => {
     const isActive = index === activeIndex;
@@ -119,13 +113,8 @@ const Modules = () => {
                     src={`/images/modules-mobile/${pictureShort}-1x.webp`}
                     srcSet={`/images/modules-mobile/${pictureShort}-2x.webp 2x, /images/modules-mobile/${pictureShort}-4x.webp 4x`}
                     alt={title}
-                    onLoad={() => setIsImageLoaded(true)}
-                    className={`
-              transition-opacity duration-700 ease-in-out
-            
-              w-[375px] xs:w-[520px] lg:w-[952px] 1xl:w-[656px] 3xl:w-[844px] 4xl:w-[945px]
-              h-[260px] xs:h-[362px] lg:h-[516px] 3xl:h-[582px] 4xl:h-[558px]
-            `}
+                    className={`transition-opacity duration-700 ease-in-out w-[375px] xs:w-[520px] lg:w-[952px] 1xl:w-[656px] 3xl:w-[844px] 4xl:w-[945px]
+              h-[260px] xs:h-[362px] lg:h-[516px] 3xl:h-[582px] 4xl:h-[558px]`}
                   />
                 </picture>
               </div>
