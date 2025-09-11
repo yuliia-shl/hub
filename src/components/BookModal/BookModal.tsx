@@ -16,7 +16,7 @@ import { sendFormData } from '../../utils/sendForm';
 const BookModal = ({ onClose }: { onClose: () => void }) => {
   const [activeIndex, setActiveIndex] = useState<number>(1);
   const inputClass =
-    'form-book w-full bg-transparent border-b-[2px] border-mine-shaft pt-6.5 pb-3 focus:outline-none focus:border-boulder-light text-xl/[100%] peer caret-boulder-dark';
+    'form-book w-full bg-transparent border-b-[2px] border-mine-shaft pt-3 pb-3 1xl:pt-6 focus:outline-none focus:border-boulder-light text-xl/[100%] peer caret-boulder-dark';
   const errorClass =
     'text-persian-red text-sm/[100%] tracking-[-0.02em] font-medium mt-2';
 
@@ -78,7 +78,7 @@ const BookModal = ({ onClose }: { onClose: () => void }) => {
       <ul
         role="radiogroup"
         aria-label="Оберіть вкладку"
-        className="mx-auto flex border border-masala-light rounded-full bg-cod-gray mb-5 1xl:max-w-[600px]"
+        className="mx-auto flex border border-masala-light rounded-full bg-cod-gray mb-5 lg:max-w-[600px]"
       >
         {businessForModal.map((business, index) => {
           const isActive = index === activeIndex;
@@ -94,7 +94,7 @@ const BookModal = ({ onClose }: { onClose: () => void }) => {
                   setActiveIndex(index);
                   setValue('role', business.role, { shouldValidate: true });
                 }}
-                className={`flex items-center justify-center p-4.5 border-masala-light rounded-full transition-colors duration-300 w-full h-full
+                className={`flex items-center justify-center px-5 py-1.5 xs:py-2 lg:py-4.5 border-masala-light rounded-full transition-colors duration-300 w-full h-full
                      ${
                        isActive
                          ? 'bg-woodsmoke-light text-tangerine border border-x-masala-light '
@@ -103,14 +103,14 @@ const BookModal = ({ onClose }: { onClose: () => void }) => {
               >
                 <span
                   className={`font-second tracking-[-0.02em] text-base/[100%] capitalize 
-                      ${!isActive ? 'sr-only 1xl:not-sr-only' : ''}`}
+                      ${!isActive ? 'sr-only lg:not-sr-only' : ''}`}
                   {...register('role')}
                 >
                   {business.role}
                 </span>
                 <svg
                   aria-hidden="true"
-                  className={`w-8.5 h-8.5 fill-boulder-gray 1xl:hidden 
+                  className={`w-8.5 h-8.5 fill-boulder-gray lg:hidden 
                       ${isActive ? 'hidden' : ''}`}
                 >
                   <use href={`/images/svg/icons.svg#icon-${business.icon}`} />
@@ -124,10 +124,10 @@ const BookModal = ({ onClose }: { onClose: () => void }) => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         noValidate
-        className="flex flex-col 1xl:flex-1 gap-12 1xl:gap-10 4xl:gap-12"
+        className="flex flex-col 1xl:flex-1 gap-10 4xl:gap-12"
       >
         <div className="flex flex-col w-full 1xl:flex-row 1xl:gap-3 4xl:gap-5">
-          <div className="flex flex-col gap-5 4xl:gap-14 mb-18 1xl:mb-0 1xl:w-full">
+          <div className="flex flex-col gap-5 4xl:gap-14 mb-10 1xl:mb-0 1xl:w-full">
             <div>
               <label htmlFor="name" className="sr-only">
                 Ім’я
@@ -223,7 +223,7 @@ const BookModal = ({ onClose }: { onClose: () => void }) => {
           type="submit"
           variant="secondary"
           className={twMerge(
-            'min-w-[280px] mx-auto py-5.5 text-2xl/[100%]',
+            'min-w-[280px] mx-auto py-3.5 lg:text-xl/[100%] xs:py-4.5 xs:text-lg/[100%] 1xl:py-5.5 1xl:text-2xl/[100%]',
             isValid ? 'opacity-100' : 'opacity-50'
           )}
         />

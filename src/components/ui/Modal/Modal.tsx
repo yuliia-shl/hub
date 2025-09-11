@@ -30,6 +30,12 @@ const Modal = ({
     if (isOpen) {
       document.addEventListener('keydown', handleEsc);
       document.body.style.overflow = 'hidden';
+
+      // 🔥 ВАЖЛИВО: зняти фокус з елементів у #root
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+
       if (rootElement) {
         rootElement.setAttribute('inert', ''); // makes the content unfocusable
         rootElement.setAttribute('aria-hidden', 'true'); // for accessibility
@@ -61,7 +67,7 @@ const Modal = ({
     >
       <div
         className={twMerge(
-          'relative bg-woodsmoke-black rounded-lg w-full xs:w-[502px] p-8.5 pt-19.5 transition-all duration-500 transform 1xl:w-[1076px] 1xl:px-13.5 1xl:py-11.5 3xl:py-14 4xl:w-[1488px] 4xl:px-[192px] 4xl:py-19',
+          'relative bg-woodsmoke-black rounded-lg w-full p-5.5 pt-13 transition-all duration-500 transform xs:w-[502px] xs:px-8.5 xs:pb-8.5 xs:pt-19 lg:w-[888px] lg:pt-15 lg:pb-12 lg:px-21 1xl:w-[1076px] 1xl:px-13.5 1xl:py-11.5 3xl:py-14 4xl:w-[1488px] 4xl:px-[192px] 4xl:py-19',
           isOpen
             ? 'opacity-100 scale-100 translate-y-0'
             : 'opacity-0 scale-95 -translate-y-4',
@@ -71,14 +77,14 @@ const Modal = ({
       >
         <button
           className={twMerge(
-            'group flex justify-center items-center absolute right-4 top-4 w-10 h-10 rounded-full hover:text-mercury-white transition-colors duration-300 4xl:right-6 4xl:top-6',
+            'group flex justify-center items-center absolute right-4 top-2 xs:top-4 w-8 h-8 xs:w-10 xs:h-10 rounded-full hover:text-mercury-white transition-colors duration-300 4xl:right-6 4xl:top-6',
             closeBtnClasses
           )}
           onClick={onClose}
         >
           <svg
             className={twMerge(
-              'w-7 h-7 stroke-storm-dust group-hover:stroke-mercury-white group-focus:stroke-mercury-white transition-colors duration-300',
+              'w-6 h-6 xs:w-7 xs:h-7 stroke-storm-dust group-hover:stroke-mercury-white group-focus:stroke-mercury-white transition-colors duration-300',
               btnIconClasses
             )}
           >
