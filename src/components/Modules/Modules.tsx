@@ -1,14 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { modules } from '../../data/hub-modules';
 
 const Modules = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
-
-  // Коли змінюється activeIndex — скидаємо флаг
-  useEffect(() => {
-    setIsImageLoaded(false);
-  }, [activeIndex]);
 
   const getButtonWidth = (index: number, activeIndex: number): string => {
     const isActive = index === activeIndex;
@@ -45,8 +39,8 @@ const Modules = () => {
                 id={`tabpanel-${index}`}
                 aria-labelledby={`tab-${index}`}
                 aria-hidden={!isActive}
-                hidden={!isActive}
-                className="mb-5.5 1xl:mb-4 3xl:mb-1.5 flex flex-col 1xl:flex-row-reverse items-center 3xl:items-start gap-5.5 xs:gap-9.5 1xl:gap-15.5 4xl:gap-[158px] 1xl:justify-center 3xl:justify-end"
+                className={`mb-5.5 1xl:mb-4 3xl:mb-1.5 flex flex-col 1xl:flex-row-reverse items-center 3xl:items-start gap-5.5 xs:gap-9.5 1xl:gap-15.5 4xl:gap-[158px] 1xl:justify-center 3xl:justify-end 
+                  ${!isActive ? 'hidden' : ''}`}
               >
                 <div className="px-3 flex flex-col gap-5.5 xs:gap-9.5 1xl:gap-[71px] 3xl:gap-[92px] 4xl:gap-[58px] 3xl:pt-15.5 4xl:pt-13.5 1xl:max-w-[606px] 3xl:max-w-[522px] 4xl:max-w-[735px] w-full">
                   <div className="4xl:max-w-[522px]">
@@ -119,14 +113,8 @@ const Modules = () => {
                     src={`/images/modules-mobile/${pictureShort}-1x.webp`}
                     srcSet={`/images/modules-mobile/${pictureShort}-2x.webp 2x, /images/modules-mobile/${pictureShort}-4x.webp 4x`}
                     alt={title}
-                    loading="lazy"
-                    onLoad={() => setIsImageLoaded(true)}
-                    className={`
-              transition-opacity duration-700 ease-in-out
-              ${isImageLoaded ? 'opacity-100' : 'opacity-0'}
-              w-[375px] xs:w-[520px] lg:w-[952px] 1xl:w-[656px] 3xl:w-[844px] 4xl:w-[945px]
-              h-[260px] xs:h-[362px] lg:h-[516px] 3xl:h-[582px] 4xl:h-[558px]
-            `}
+                    className={`transition-opacity duration-700 ease-in-out w-[375px] xs:w-[520px] lg:w-[952px] 1xl:w-[656px] 3xl:w-[844px] 4xl:w-[945px]
+              h-[260px] xs:h-[362px] lg:h-[516px] 3xl:h-[582px] 4xl:h-[558px]`}
                   />
                 </picture>
               </div>
@@ -183,16 +171,18 @@ const Modules = () => {
             })}
           </ul>
         </div>
-        <a
-          href="#more-info"
-          aria-label="Перейти до форми замовлення"
-          className="flex items-center gap-4 justify-between xs:ml-auto xs:min-w-[280px] lg:min-w-[290px] 4xl:min-w-[358px] 4xl:text-xl font-bold bg-tangerine text-cod-gray leading-none tracking-[-0.02em] py-3.5 xs:py-4 4xl:py-5.5 px-6 4xl:px-6 rounded-[45px] hover:bg-chilean-fire focus:bg-chilean-fire transition-colors duration-300 xs:w-fit"
-        >
-          <span>Хочу замовити!</span>
-          <svg className="w-4.5 h-4.5 stroke-cod-gray">
-            <use href={`/images/svg/icons.svg#icon-arrow-up-right`}></use>
-          </svg>
-        </a>
+        <div className="px-2">
+          <a
+            href="#more-info"
+            aria-label="Перейти до форми замовлення"
+            className="flex items-center gap-4 justify-between xs:ml-auto xs:min-w-[280px] lg:min-w-[290px] 4xl:min-w-[358px] 4xl:text-xl font-bold bg-tangerine text-cod-gray leading-none tracking-[-0.02em] py-3.5 xs:py-4 4xl:py-5.5 px-6 4xl:px-6 rounded-[45px] hover:bg-chilean-fire focus:bg-chilean-fire transition-colors duration-300 xs:w-fit"
+          >
+            <span>Хочу замовити!</span>
+            <svg className="w-4.5 h-4.5 stroke-cod-gray">
+              <use href={`/images/svg/icons.svg#icon-arrow-up-right`}></use>
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   );
